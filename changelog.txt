@@ -1,0 +1,28 @@
+===================================
+Poseidon Pro Changelog
+===================================
+
+Version 1.0.3
+-----------------------------------
+[improved] styling of license settings page
+[added] dismiss links to admin notices
+
+Version 1.0.2
+-----------------------------------
+[removed] site logo setting for sites using WP 4.5 or higher
+[added] support for new custom logo feature from WordPress 4.5
+[added] Magazine Posts List widget
+[added] Magazine Posts Sidebar widget
+[added] Magazine Posts Single widget
+[fixed] styling of footer widgets and footer mobile toggle
+
+Please update the Poseidon theme to v1.0.6 and set a new logo image on Appearance -> Customize -> Site Identity!
+
+Version 1.0.1
+-----------------------------------
+[improved] HTML markup of site title
+[updated] color settings for site title
+
+Version 1.0
+-----------------------------------
+Initial Version
