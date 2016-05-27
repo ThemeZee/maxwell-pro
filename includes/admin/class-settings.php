@@ -1,12 +1,12 @@
 <?php
 /***
- * Poseidon Pro Settings Class
+ * Maxwell Pro Settings Class
  *
  * Registers all plugin settings with the WordPress Settings API.
  * Handles license key activation with the ThemeZee Store API.
  *
  * @link https://codex.wordpress.org/Settings_API
- * @package Poseidon Pro
+ * @package Maxwell Pro
  */
 
 // Exit if accessed directly
@@ -14,13 +14,13 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 
 // Use class to avoid namespace collisions
-if ( ! class_exists( 'Poseidon_Pro_Settings' ) ) :
+if ( ! class_exists( 'Maxwell_Pro_Settings' ) ) :
 
-class Poseidon_Pro_Settings {
+class Maxwell_Pro_Settings {
 	/** Singleton *************************************************************/
 
 	/**
-	 * @var instance The one true Poseidon_Pro_Settings instance
+	 * @var instance The one true Maxwell_Pro_Settings instance
 	 */
 	private static $instance;
 	
@@ -32,7 +32,7 @@ class Poseidon_Pro_Settings {
 	/**
      * Creates or returns an instance of this class.
      *
-     * @return Poseidon_Pro_Settings A single instance of this class.
+     * @return Maxwell_Pro_Settings A single instance of this class.
      */
 	public static function instance() {
  
@@ -62,7 +62,7 @@ class Poseidon_Pro_Settings {
 		$this->options = wp_parse_args( 
 			
 			// Get saved theme options from WP database
-			get_option( 'poseidon_pro_settings' , array() ), 
+			get_option( 'maxwell_pro_settings' , array() ), 
 			
 			// Merge with Default Settings if setting was not saved yet
 			$this->default_settings()
@@ -113,33 +113,33 @@ class Poseidon_Pro_Settings {
 	function register_settings() {
 
 		// Make sure that options exist in database
-		if ( false == get_option( 'poseidon_pro_settings' ) ) {
-			add_option( 'poseidon_pro_settings' );
+		if ( false == get_option( 'maxwell_pro_settings' ) ) {
+			add_option( 'maxwell_pro_settings' );
 		}
 		
 		// Add License Section
-		add_settings_section( 'poseidon_pro_settings_license', esc_html__( 'Automatic Updates', 'poseidon-pro' ), array( $this, 'license_section_intro' ), 'poseidon_pro_settings' );
+		add_settings_section( 'maxwell_pro_settings_license', esc_html__( 'Automatic Updates', 'maxwell-pro' ), array( $this, 'license_section_intro' ), 'maxwell_pro_settings' );
 		
 		// Add License Status Setting
 		add_settings_field(
-			'poseidon_pro_settings[license_status]',
-			esc_html__( 'License Status', 'poseidon-pro' ),
+			'maxwell_pro_settings[license_status]',
+			esc_html__( 'License Status', 'maxwell-pro' ),
 			array( $this, 'license_status' ),
-			'poseidon_pro_settings',
-			'poseidon_pro_settings_license'
+			'maxwell_pro_settings',
+			'maxwell_pro_settings_license'
 		);
 		
 		// Add License Key Setting
 		add_settings_field(
-			'poseidon_pro_settings[license_key]',
-			esc_html__( 'License Key', 'poseidon-pro' ),
+			'maxwell_pro_settings[license_key]',
+			esc_html__( 'License Key', 'maxwell-pro' ),
 			array( $this, 'license_key' ),
-			'poseidon_pro_settings',
-			'poseidon_pro_settings_license'
+			'maxwell_pro_settings',
+			'maxwell_pro_settings_license'
 		);
 
 		// Creates our settings in the options table
-		register_setting( 'poseidon_pro_settings', 'poseidon_pro_settings', array( $this, 'sanitize_settings' ) );
+		register_setting( 'maxwell_pro_settings', 'maxwell_pro_settings', array( $this, 'sanitize_settings' ) );
 	}
 
 	/**
@@ -148,7 +148,7 @@ class Poseidon_Pro_Settings {
 	 * @return void
 	*/
 	function license_section_intro() {
-		printf( __( 'Please enter your license key. An active license key is needed for automatic plugin updates and <a href="%s" target="_blank">support</a>.', 'poseidon-pro' ), 'https://themezee.com/support/?utm_source=plugin-settings&utm_medium=textlink&utm_campaign=poseidon-pro&utm_content=support' );
+		printf( __( 'Please enter your license key. An active license key is needed for automatic plugin updates and <a href="%s" target="_blank">support</a>.', 'maxwell-pro' ), 'https://themezee.com/support/?utm_source=plugin-settings&utm_medium=textlink&utm_campaign=maxwell-pro&utm_content=support' );
 
 	}
 
@@ -163,7 +163,7 @@ class Poseidon_Pro_Settings {
 			return $input;
 		}
 
-		$saved    = get_option( 'poseidon_pro_settings', array() );
+		$saved    = get_option( 'maxwell_pro_settings', array() );
 		if( ! is_array( $saved ) ) {
 			$saved = array();
 		}
@@ -186,7 +186,7 @@ class Poseidon_Pro_Settings {
 	 *
 	 * Renders license status field.
 	 *
-	 * @global $this->options Array of all the Poseidon Pro Options
+	 * @global $this->options Array of all the Maxwell Pro Options
 	 * @return void
 	 */
 	function license_status() {
@@ -197,25 +197,25 @@ class Poseidon_Pro_Settings {
 		
 		if( 'valid' === $license_status ) {
 			
-			$html .= '<span class="license-status license-active">' . esc_html__( 'Active', 'poseidon-pro' ) . '</span>';
-			$html .= '<span class="license-description">' . esc_html__( 'You are receiving updates.', 'poseidon-pro' ) . '</span>';
+			$html .= '<span class="license-status license-active">' . esc_html__( 'Active', 'maxwell-pro' ) . '</span>';
+			$html .= '<span class="license-description">' . esc_html__( 'You are receiving updates.', 'maxwell-pro' ) . '</span>';
 			
 		} elseif( 'expired' === $license_status ) {
 			
-			$renewal_url = esc_url( add_query_arg( array( 'edd_license_key' => $license_key, 'download_id' => POSEIDON_PRO_PRODUCT_ID ), 'https://themezee.com/checkout' ) );
+			$renewal_url = esc_url( add_query_arg( array( 'edd_license_key' => $license_key, 'download_id' => MAXWELL_PRO_PRODUCT_ID ), 'https://themezee.com/checkout' ) );
 			
-			$html .= '<span class="license-status license-expired">' . esc_html__( 'Expired', 'poseidon-pro' ) . '</span>';
-			$html .= '<p class="license-description">' . esc_html__( 'Your license has expired, renew today to continue getting updates and support!', 'poseidon-pro' ) . '</p>';
-			$html .= '<a href="' . esc_url( $renewal_url ) . '" class="license-renewal button-primary">' . esc_html__( 'Renew Your License', 'poseidon-pro' ) . '</a>';
+			$html .= '<span class="license-status license-expired">' . esc_html__( 'Expired', 'maxwell-pro' ) . '</span>';
+			$html .= '<p class="license-description">' . esc_html__( 'Your license has expired, renew today to continue getting updates and support!', 'maxwell-pro' ) . '</p>';
+			$html .= '<a href="' . esc_url( $renewal_url ) . '" class="license-renewal button-primary">' . esc_html__( 'Renew Your License', 'maxwell-pro' ) . '</a>';
 		
 		} elseif( 'invalid' === $license_status ) {
 			
-			$html .= '<span class="license-status license-invalid">' . esc_html__( 'Invalid', 'poseidon-pro' ) . '</span>';
-			$html .= '<p class="license-description">' . esc_html__( 'Please make sure that you have not reached the site limit and expiration date.', 'poseidon-pro' ) . '</p>';
+			$html .= '<span class="license-status license-invalid">' . esc_html__( 'Invalid', 'maxwell-pro' ) . '</span>';
+			$html .= '<p class="license-description">' . esc_html__( 'Please make sure that you have not reached the site limit and expiration date.', 'maxwell-pro' ) . '</p>';
 		
 		} else {
 			
-			$html .= '<span class="license-status license-inactive">' . esc_html__( 'Inactive', 'poseidon-pro' ) . '</span>';
+			$html .= '<span class="license-status license-inactive">' . esc_html__( 'Inactive', 'maxwell-pro' ) . '</span>';
 		
 		}
 
@@ -227,7 +227,7 @@ class Poseidon_Pro_Settings {
 	 *
 	 * Renders license key field.
 	 *
-	 * @global $this->options Array of all the Poseidon Pro Options
+	 * @global $this->options Array of all the Maxwell Pro Options
 	 * @return void
 	 */
 	function license_key() {
@@ -238,13 +238,13 @@ class Poseidon_Pro_Settings {
 		
 		if( 'valid' === $license_status && ! empty( $license_key ) ) {
 			
-			$html .= '<input type="text" class="regular-text" readonly="readonly" id="poseidon_pro_settings[license_key]" name="poseidon_pro_settings[license_key]" value="' . esc_attr( stripslashes( $license_key ) ) . '"/><br/><br/>';
-			$html .= '<input type="submit" class="button" name="poseidon_pro_deactivate_license" value="' . esc_attr__( 'Deactivate License', 'poseidon-pro' ) . '"/>';
+			$html .= '<input type="text" class="regular-text" readonly="readonly" id="maxwell_pro_settings[license_key]" name="maxwell_pro_settings[license_key]" value="' . esc_attr( stripslashes( $license_key ) ) . '"/><br/><br/>';
+			$html .= '<input type="submit" class="button" name="maxwell_pro_deactivate_license" value="' . esc_attr__( 'Deactivate License', 'maxwell-pro' ) . '"/>';
 		
 		} else {
 			
-			$html .= '<input type="text" class="regular-text" id="poseidon_pro_settings[license_key]" name="poseidon_pro_settings[license_key]" value="' . esc_attr( stripslashes( $license_key ) ) . '"/><br/><br/>';
-			$html .= '<input type="submit" class="button" name="poseidon_pro_activate_license" value="' . esc_attr__( 'Activate License', 'poseidon-pro' ) . '"/>';
+			$html .= '<input type="text" class="regular-text" id="maxwell_pro_settings[license_key]" name="maxwell_pro_settings[license_key]" value="' . esc_attr( stripslashes( $license_key ) ) . '"/><br/><br/>';
+			$html .= '<input type="submit" class="button" name="maxwell_pro_activate_license" value="' . esc_attr__( 'Activate License', 'maxwell-pro' ) . '"/>';
 		
 		}
 
@@ -258,30 +258,30 @@ class Poseidon_Pro_Settings {
 	*/
 	public function activate_license() {
 		
-		if( ! isset( $_POST['poseidon_pro_settings'] ) )
+		if( ! isset( $_POST['maxwell_pro_settings'] ) )
 			return;
 
-		if( ! isset( $_POST['poseidon_pro_activate_license'] ) )
+		if( ! isset( $_POST['maxwell_pro_activate_license'] ) )
 			return;
 
-		if( ! isset( $_POST['poseidon_pro_settings']['license_key'] ) )
+		if( ! isset( $_POST['maxwell_pro_settings']['license_key'] ) )
 			return;
 
 		// retrieve the license from the database
 		$status  = $this->get( 'license_status' );
-		$license = trim( $_POST['poseidon_pro_settings']['license_key'] );
+		$license = trim( $_POST['maxwell_pro_settings']['license_key'] );
 
 		// data to send in our API request
 		$api_params = array(
 			'edd_action'=> 'activate_license',
 			'license' 	=> $license,
-			'item_name' => urlencode( POSEIDON_PRO_NAME ),
-			'item_id'   => POSEIDON_PRO_PRODUCT_ID,
+			'item_name' => urlencode( MAXWELL_PRO_NAME ),
+			'item_id'   => MAXWELL_PRO_PRODUCT_ID,
 			'url'       => home_url()
 		);
 		
 		// Call the custom API.
-		$response = wp_remote_post( POSEIDON_PRO_STORE_API_URL, array( 'timeout' => 35, 'sslverify' => true, 'body' => $api_params ) );
+		$response = wp_remote_post( MAXWELL_PRO_STORE_API_URL, array( 'timeout' => 35, 'sslverify' => true, 'body' => $api_params ) );
 
 		// make sure the response came back okay
 		if ( is_wp_error( $response ) )
@@ -294,9 +294,9 @@ class Poseidon_Pro_Settings {
 
 		$options['license_status'] = $license_data->license;
 
-		update_option( 'poseidon_pro_settings', $options );
+		update_option( 'maxwell_pro_settings', $options );
 
-		delete_transient( 'poseidon_pro_license_check' );
+		delete_transient( 'maxwell_pro_license_check' );
 
 	}
 	
@@ -307,29 +307,29 @@ class Poseidon_Pro_Settings {
 	*/
 	public function deactivate_license() {
 
-		if( ! isset( $_POST['poseidon_pro_settings'] ) )
+		if( ! isset( $_POST['maxwell_pro_settings'] ) )
 			return;
 
-		if( ! isset( $_POST['poseidon_pro_deactivate_license'] ) )
+		if( ! isset( $_POST['maxwell_pro_deactivate_license'] ) )
 			return;
 
-		if( ! isset( $_POST['poseidon_pro_settings']['license_key'] ) )
+		if( ! isset( $_POST['maxwell_pro_settings']['license_key'] ) )
 			return;
 
 		// retrieve the license from the database
-		$license = trim( $_POST['poseidon_pro_settings']['license_key'] );
+		$license = trim( $_POST['maxwell_pro_settings']['license_key'] );
 
 		// data to send in our API request
 		$api_params = array(
 			'edd_action'=> 'deactivate_license',
 			'license' 	=> $license,
-			'item_name' => urlencode( POSEIDON_PRO_NAME ),
-			'item_id'   => POSEIDON_PRO_PRODUCT_ID,
+			'item_name' => urlencode( MAXWELL_PRO_NAME ),
+			'item_id'   => MAXWELL_PRO_PRODUCT_ID,
 			'url'       => home_url()
 		);
 		
 		// Call the custom API.
-		$response = wp_remote_post( POSEIDON_PRO_STORE_API_URL, array( 'timeout' => 35, 'sslverify' => true, 'body' => $api_params ) );
+		$response = wp_remote_post( MAXWELL_PRO_STORE_API_URL, array( 'timeout' => 35, 'sslverify' => true, 'body' => $api_params ) );
 
 		// make sure the response came back okay
 		if ( is_wp_error( $response ) )
@@ -339,9 +339,9 @@ class Poseidon_Pro_Settings {
 
 		$options['license_status'] = 'inactive';
 
-		update_option( 'poseidon_pro_settings', $options );
+		update_option( 'maxwell_pro_settings', $options );
 
-		delete_transient( 'poseidon_pro_license_check' );
+		delete_transient( 'maxwell_pro_license_check' );
 
 	}
 
@@ -352,11 +352,11 @@ class Poseidon_Pro_Settings {
 	*/
 	public function check_license() {
 
-		if( ! empty( $_POST['poseidon_pro_settings'] ) ) {
+		if( ! empty( $_POST['maxwell_pro_settings'] ) ) {
 			return; // Don't fire when saving settings
 		}
 
-		$status = get_transient( 'poseidon_pro_license_check' );
+		$status = get_transient( 'maxwell_pro_license_check' );
 		
 		// Run the license check a maximum of once per day
 		if( false === $status ) {
@@ -370,13 +370,13 @@ class Poseidon_Pro_Settings {
 				$api_params = array(
 					'edd_action'=> 'check_license',
 					'license' 	=> $license_key,
-					'item_name' => urlencode( POSEIDON_PRO_NAME ),
-					'item_id'   => POSEIDON_PRO_PRODUCT_ID,
+					'item_name' => urlencode( MAXWELL_PRO_NAME ),
+					'item_id'   => MAXWELL_PRO_PRODUCT_ID,
 					'url'       => home_url()
 				);
 				
 				// Call the custom API.
-				$response = wp_remote_post( POSEIDON_PRO_STORE_API_URL, array( 'timeout' => 25, 'sslverify' => true, 'body' => $api_params ) );
+				$response = wp_remote_post( MAXWELL_PRO_STORE_API_URL, array( 'timeout' => 25, 'sslverify' => true, 'body' => $api_params ) );
 
 				// make sure the response came back okay
 				if ( is_wp_error( $response ) )
@@ -394,9 +394,9 @@ class Poseidon_Pro_Settings {
 			
 			$options['license_status'] = $status;
 			
-			update_option( 'poseidon_pro_settings', $options );
+			update_option( 'maxwell_pro_settings', $options );
 
-			set_transient( 'poseidon_pro_license_check', $status, DAY_IN_SECONDS );
+			set_transient( 'maxwell_pro_license_check', $status, DAY_IN_SECONDS );
 
 		}
 
@@ -416,6 +416,6 @@ class Poseidon_Pro_Settings {
 }
 
 // Run Setting Class
-Poseidon_Pro_Settings::instance();
+Maxwell_Pro_Settings::instance();
 
 endif;

@@ -1,10 +1,10 @@
 <?php
 /***
- * Poseidon Pro Settings Page Class
+ * Maxwell Pro Settings Page Class
  *
  * Adds a new tab on the themezee plugins page and displays the settings page.
  *
- * @package Poseidon Pro
+ * @package Maxwell Pro
  */
  
 // Exit if accessed directly
@@ -12,9 +12,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 
 // Use class to avoid namespace collisions
-if ( ! class_exists('Poseidon_Pro_Settings_Page') ) :
+if ( ! class_exists('Maxwell_Pro_Settings_Page') ) :
 
-class Poseidon_Pro_Settings_Page {
+class Maxwell_Pro_Settings_Page {
 
 	/**
 	 * Setup the Settings Page class
@@ -37,16 +37,16 @@ class Poseidon_Pro_Settings_Page {
 	*/
 	static function add_settings_page() {
 	
-		// Return early if Poseidon Theme is not active
-		if ( ! current_theme_supports( 'poseidon-pro'  ) ) {
+		// Return early if Maxwell Theme is not active
+		if ( ! current_theme_supports( 'maxwell-pro'  ) ) {
 			return;
 		}
 			
 		add_theme_page(
-			esc_html__( 'Pro Version', 'poseidon-pro' ),
-			esc_html__( 'Pro Version', 'poseidon-pro' ),
+			esc_html__( 'Pro Version', 'maxwell-pro' ),
+			esc_html__( 'Pro Version', 'maxwell-pro' ),
 			'edit_theme_options',
-			'poseidon-pro',
+			'maxwell-pro',
 			array( __CLASS__, 'display_settings_page' )
 		);
 		
@@ -67,18 +67,18 @@ class Poseidon_Pro_Settings_Page {
 
 		<div class="wrap pro-version-wrap">
 
-			<h1><?php echo POSEIDON_PRO_NAME; ?> <?php echo POSEIDON_PRO_VERSION; ?></h1>
+			<h1><?php echo MAXWELL_PRO_NAME; ?> <?php echo MAXWELL_PRO_VERSION; ?></h1>
 			
-			<div id="poseidon-pro-settings" class="poseidon-pro-settings-wrap">
+			<div id="maxwell-pro-settings" class="maxwell-pro-settings-wrap">
 				
-				<form class="poseidon-pro-settings-form" method="post" action="options.php">
+				<form class="maxwell-pro-settings-form" method="post" action="options.php">
 					<?php
-						settings_fields( 'poseidon_pro_settings' );
-						do_settings_sections( 'poseidon_pro_settings' );
+						settings_fields( 'maxwell_pro_settings' );
+						do_settings_sections( 'maxwell_pro_settings' );
 					?>
 				</form>
 				
-				<p><?php printf( __( 'You can find your license keys and manage your active sites on <a href="%s" target="_blank">themezee.com</a>.', 'poseidon-pro' ), __( 'https://themezee.com/license-keys/', 'poseidon-pro' ) . '?utm_source=plugin-settings&utm_medium=textlink&utm_campaign=poseidon-pro&utm_content=license-keys' ); ?></p>
+				<p><?php printf( __( 'You can find your license keys and manage your active sites on <a href="%s" target="_blank">themezee.com</a>.', 'maxwell-pro' ), __( 'https://themezee.com/license-keys/', 'maxwell-pro' ) . '?utm_source=plugin-settings&utm_medium=textlink&utm_campaign=maxwell-pro&utm_content=license-keys' ); ?></p>
 				
 			</div>
 			
@@ -95,18 +95,18 @@ class Poseidon_Pro_Settings_Page {
 	static function settings_page_css( $hook ) { 
 
 		// Load styles and scripts only on theme info page
-		if ( 'appearance_page_poseidon-pro' != $hook ) {
+		if ( 'appearance_page_maxwell-pro' != $hook ) {
 			return;
 		}
 		
 		// Embed theme info css style
-		wp_enqueue_style( 'poseidon-pro-settings-css', plugins_url('/assets/css/settings.css', dirname( dirname(__FILE__) ) ), array(), POSEIDON_PRO_VERSION );
+		wp_enqueue_style( 'maxwell-pro-settings-css', plugins_url('/assets/css/settings.css', dirname( dirname(__FILE__) ) ), array(), MAXWELL_PRO_VERSION );
 
 	}
 	
 }
 
-// Run Poseidon Pro Settings Page Class
-Poseidon_Pro_Settings_Page::setup();
+// Run Maxwell Pro Settings Page Class
+Maxwell_Pro_Settings_Page::setup();
 
 endif;

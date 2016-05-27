@@ -5,16 +5,16 @@
  * Displays credit link and footer text based on theme options
  * Registers and displays footer navigation
  *
- * @package Poseidon Pro
+ * @package Maxwell Pro
  */
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 // Use class to avoid namespace collisions
-if ( ! class_exists( 'Poseidon_Pro_Footer_Line' ) ) :
+if ( ! class_exists( 'Maxwell_Pro_Footer_Line' ) ) :
 
-class Poseidon_Pro_Footer_Line {
+class Maxwell_Pro_Footer_Line {
 
 	/**
 	 * Footer Line Setup
@@ -23,20 +23,20 @@ class Poseidon_Pro_Footer_Line {
 	*/
 	static function setup() {
 		
-		// Return early if Poseidon Theme is not active
-		if ( ! current_theme_supports( 'poseidon-pro'  ) ) {
+		// Return early if Maxwell Theme is not active
+		if ( ! current_theme_supports( 'maxwell-pro'  ) ) {
 			return;
 		}
 		
 		// Remove default footer text function and replace it with new one
-		remove_action( 'poseidon_footer_text', 'poseidon_footer_text' );
-		add_action( 'poseidon_footer_text', array( __CLASS__, 'footer_text' ) );
+		remove_action( 'maxwell_footer_text', 'maxwell_footer_text' );
+		add_action( 'maxwell_footer_text', array( __CLASS__, 'footer_text' ) );
 		
 		// Add Footer Settings in Customizer
 		add_action( 'customize_register', array( __CLASS__, 'footer_settings' ) );
 		
 		// Display footer navigation
-		add_action( 'poseidon_footer_menu', array( __CLASS__, 'display_footer_menu' ) );
+		add_action( 'maxwell_footer_menu', array( __CLASS__, 'display_footer_menu' ) );
 		
 	}
 	
@@ -48,7 +48,7 @@ class Poseidon_Pro_Footer_Line {
 	static function footer_text() { 
 
 		// Get Theme Options from Database
-		$theme_options = Poseidon_Pro_Customizer::get_theme_options();
+		$theme_options = Maxwell_Pro_Customizer::get_theme_options();
 		
 		// Display Footer Text
 		if ( $theme_options['footer_text'] <> '' ) :
@@ -60,9 +60,9 @@ class Poseidon_Pro_Footer_Line {
 		// Call Credit Link function of theme if credit link is activated
 		if ( true == $theme_options['credit_link'] ) :
 		
-			if ( function_exists( 'poseidon_footer_text' ) ) :
+			if ( function_exists( 'maxwell_footer_text' ) ) :
 			
-				poseidon_footer_text();
+				maxwell_footer_text();
 				
 			endif;
 			
@@ -105,42 +105,42 @@ class Poseidon_Pro_Footer_Line {
 	static function footer_settings( $wp_customize ) {
 
 		// Add Sections for Footer Settings
-		$wp_customize->add_section( 'poseidon_pro_section_footer', array(
-			'title'    => __( 'Footer Settings', 'poseidon-pro' ),
+		$wp_customize->add_section( 'maxwell_pro_section_footer', array(
+			'title'    => __( 'Footer Settings', 'maxwell-pro' ),
 			'priority' => 90,
-			'panel' => 'poseidon_options_panel' 
+			'panel' => 'maxwell_options_panel' 
 			)
 		);
 		
 		// Add Footer Text setting
-		$wp_customize->add_setting( 'poseidon_theme_options[footer_text]', array(
+		$wp_customize->add_setting( 'maxwell_theme_options[footer_text]', array(
 			'default'           => '',
 			'type'           	=> 'option',
 			'transport'         => 'refresh',
 			'sanitize_callback' => array( __CLASS__, 'sanitize_footer_text' )
 			)
 		);
-		$wp_customize->add_control( 'poseidon_theme_options[footer_text]', array(
-			'label'    => __( 'Footer Text', 'poseidon-pro' ),
-			'section'  => 'poseidon_pro_section_footer',
-			'settings' => 'poseidon_theme_options[footer_text]',
+		$wp_customize->add_control( 'maxwell_theme_options[footer_text]', array(
+			'label'    => __( 'Footer Text', 'maxwell-pro' ),
+			'section'  => 'maxwell_pro_section_footer',
+			'settings' => 'maxwell_theme_options[footer_text]',
 			'type'     => 'textarea',
 			'priority' => 1
 			)
 		);
 		
 		// Add Credit Link setting
-		$wp_customize->add_setting( 'poseidon_theme_options[credit_link]', array(
+		$wp_customize->add_setting( 'maxwell_theme_options[credit_link]', array(
 			'default'           => true,
 			'type'           	=> 'option',
 			'transport'         => 'refresh',
-			'sanitize_callback' => 'poseidon_sanitize_checkbox'
+			'sanitize_callback' => 'maxwell_sanitize_checkbox'
 			)
 		);
-		$wp_customize->add_control( 'poseidon_theme_options[credit_link]', array(
-			'label'    => __( 'Display Credit Link to ThemeZee on footer line', 'poseidon-pro' ),
-			'section'  => 'poseidon_pro_section_footer',
-			'settings' => 'poseidon_theme_options[credit_link]',
+		$wp_customize->add_control( 'maxwell_theme_options[credit_link]', array(
+			'label'    => __( 'Display Credit Link to ThemeZee on footer line', 'maxwell-pro' ),
+			'section'  => 'maxwell_pro_section_footer',
+			'settings' => 'maxwell_theme_options[credit_link]',
 			'type'     => 'checkbox',
 			'priority' => 2
 			)
@@ -170,21 +170,21 @@ class Poseidon_Pro_Footer_Line {
 	*/
 	static function register_footer_menu() {
 	
-		// Return early if Poseidon Theme is not active
-		if ( ! current_theme_supports( 'poseidon-pro'  ) ) {
+		// Return early if Maxwell Theme is not active
+		if ( ! current_theme_supports( 'maxwell-pro'  ) ) {
 			return;
 		}
 		
-		register_nav_menu( 'footer', esc_html__( 'Footer Navigation', 'poseidon-pro' ) );
+		register_nav_menu( 'footer', esc_html__( 'Footer Navigation', 'maxwell-pro' ) );
 		
 	}
 
 }
 
 // Run Class
-add_action( 'init', array( 'Poseidon_Pro_Footer_Line', 'setup' ) );
+add_action( 'init', array( 'Maxwell_Pro_Footer_Line', 'setup' ) );
 
 // Register footer navigation in backend
-add_action( 'after_setup_theme', array( 'Poseidon_Pro_Footer_Line', 'register_footer_menu' ), 20 );
+add_action( 'after_setup_theme', array( 'Maxwell_Pro_Footer_Line', 'register_footer_menu' ), 20 );
 
 endif;

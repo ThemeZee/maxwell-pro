@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Themes + Pro Versions + Add-ons package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Poseidon Pro\n"
+"Project-Id-Version: Maxwell Pro\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
 "POT-Creation-Date: 2016-05-03 17:44+0100\n"
 "PO-Revision-Date: 2016-05-03 17:45+0100\n"
@@ -16,11 +16,11 @@ msgstr ""
 "X-Generator: Poedit 1.5.7\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-#: poseidon-pro.php:196
+#: maxwell-pro.php:196
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: includes/admin/class-poseidon-pro-admin-notices.php:55
+#: includes/admin/class-maxwell-pro-admin-notices.php:55
 #, php-format
 msgid ""
 "Please enter your license key for the %1$s add-on in order to receive "
@@ -30,13 +30,13 @@ msgstr ""
 "Updates und Support zu erhalten. <a href=\"%2$s\">Lizenzschlüssel eingeben</"
 "a>"
 
-#: includes/admin/class-poseidon-pro-admin-notices.php:59
-#: includes/admin/class-poseidon-pro-admin-notices.php:87
-#: includes/admin/class-poseidon-pro-admin-notices.php:112
+#: includes/admin/class-maxwell-pro-admin-notices.php:59
+#: includes/admin/class-maxwell-pro-admin-notices.php:87
+#: includes/admin/class-maxwell-pro-admin-notices.php:112
 msgid "Dismiss Notice"
 msgstr "Nachricht ausblenden"
 
-#: includes/admin/class-poseidon-pro-admin-notices.php:83
+#: includes/admin/class-maxwell-pro-admin-notices.php:83
 #, php-format
 msgid ""
 "Your license for %1$s has expired. Please <a href=\"%2$s\">renew</a> to "
@@ -45,7 +45,7 @@ msgstr ""
 "Deine Lizenz für %1$s ist abgelaufen. Bitte <a href=\"%2$s\">erneuere sie</"
 "a>, um weiterhin Updates und Support zu erhalten!"
 
-#: includes/admin/class-poseidon-pro-admin-notices.php:108
+#: includes/admin/class-maxwell-pro-admin-notices.php:108
 #, php-format
 msgid ""
 "The %1$s add-on needs the %2$s theme activated in order to work. You should "
@@ -55,16 +55,16 @@ msgstr ""
 "Funktionsweise. Du solltest %1$s deaktivieren, wenn du dauerhaft zu einem "
 "anderen Theme gewechselt hast."
 
-#: includes/admin/class-poseidon-pro-admin-notices.php:135
+#: includes/admin/class-maxwell-pro-admin-notices.php:135
 msgid "Security check failed"
 msgstr "Security Check fehlgeschlagen"
 
-#: includes/admin/class-poseidon-pro-admin-notices.php:135
-#: includes/admin/class-poseidon-pro-plugin-updater.php:324
+#: includes/admin/class-maxwell-pro-admin-notices.php:135
+#: includes/admin/class-maxwell-pro-plugin-updater.php:324
 msgid "Error"
 msgstr "Fehler"
 
-#: includes/admin/class-poseidon-pro-plugin-updater.php:177
+#: includes/admin/class-maxwell-pro-plugin-updater.php:177
 #, php-format
 msgid ""
 "There is a new version of %1$s available. <a target=\"_blank\" class="
@@ -73,7 +73,7 @@ msgstr ""
 "Es gibt eine neue Version von %1$s. <a target=\"_blank\" class=\"thickbox\" "
 "href=\"%2$s\">Details zu Version %3$s ansehen</a>."
 
-#: includes/admin/class-poseidon-pro-plugin-updater.php:184
+#: includes/admin/class-maxwell-pro-plugin-updater.php:184
 #, php-format
 msgid ""
 "There is a new version of %1$s available. <a target=\"_blank\" class="
@@ -84,16 +84,16 @@ msgstr ""
 "href=\"%2$s\">Details zu Version %3$s ansehen</a> oder <a href=\"%4$s"
 "\">jetzt aktualisieren</a>."
 
-#: includes/admin/class-poseidon-pro-plugin-updater.php:324
+#: includes/admin/class-maxwell-pro-plugin-updater.php:324
 msgid "You do not have permission to install plugin updates"
 msgstr "Du hast keine Berechtigung zur Installation von Plugin Updates"
 
-#: includes/admin/class-poseidon-pro-settings-page.php:46
-#: includes/admin/class-poseidon-pro-settings-page.php:47
+#: includes/admin/class-maxwell-pro-settings-page.php:46
+#: includes/admin/class-maxwell-pro-settings-page.php:47
 msgid "Pro Version"
 msgstr "Pro Version"
 
-#: includes/admin/class-poseidon-pro-settings-page.php:81
+#: includes/admin/class-maxwell-pro-settings-page.php:81
 #, php-format
 msgid ""
 "You can find your license keys and manage your active sites on <a href=\"%s"
@@ -102,23 +102,23 @@ msgstr ""
 "Du findest deine Lizenzschlüssel und aktive Webseiten unter <a href=\"%s\" "
 "target=\"_blank\">themezee.com</a>."
 
-#: includes/admin/class-poseidon-pro-settings-page.php:81
+#: includes/admin/class-maxwell-pro-settings-page.php:81
 msgid "https://themezee.com/license-keys/"
 msgstr "https://themezee.com/de/lizenzschluessel/"
 
-#: includes/admin/class-poseidon-pro-settings.php:121
+#: includes/admin/class-maxwell-pro-settings.php:121
 msgid "Automatic Updates"
 msgstr "Automatische Updates"
 
-#: includes/admin/class-poseidon-pro-settings.php:126
+#: includes/admin/class-maxwell-pro-settings.php:126
 msgid "License Status"
 msgstr "Lizenz Status"
 
-#: includes/admin/class-poseidon-pro-settings.php:135
+#: includes/admin/class-maxwell-pro-settings.php:135
 msgid "License Key"
 msgstr "Lizenzschlüssel"
 
-#: includes/admin/class-poseidon-pro-settings.php:151
+#: includes/admin/class-maxwell-pro-settings.php:151
 #, php-format
 msgid ""
 "Please enter your license key. An active license key is needed for automatic "
@@ -128,19 +128,19 @@ msgstr ""
 "automatische Updates und <a href=\"%s\" target=\"_blank\">Support</a> zu "
 "erhalten."
 
-#: includes/admin/class-poseidon-pro-settings.php:200
+#: includes/admin/class-maxwell-pro-settings.php:200
 msgid "Active"
 msgstr "Aktiv"
 
-#: includes/admin/class-poseidon-pro-settings.php:201
+#: includes/admin/class-maxwell-pro-settings.php:201
 msgid "You are receiving updates."
 msgstr "Updates sind aktiviert."
 
-#: includes/admin/class-poseidon-pro-settings.php:207
+#: includes/admin/class-maxwell-pro-settings.php:207
 msgid "Expired"
 msgstr "Abgelaufen"
 
-#: includes/admin/class-poseidon-pro-settings.php:208
+#: includes/admin/class-maxwell-pro-settings.php:208
 msgid ""
 "Your license has expired, renew today to continue getting updates and "
 "support!"
@@ -148,15 +148,15 @@ msgstr ""
 "Deine Lizenz ist abgelaufen. Bitte erneuere sie, um weiterhin Updates und "
 "Support zu erhalten!"
 
-#: includes/admin/class-poseidon-pro-settings.php:209
+#: includes/admin/class-maxwell-pro-settings.php:209
 msgid "Renew Your License"
 msgstr "Lizenz verlängern"
 
-#: includes/admin/class-poseidon-pro-settings.php:213
+#: includes/admin/class-maxwell-pro-settings.php:213
 msgid "Invalid"
 msgstr "Ungültig"
 
-#: includes/admin/class-poseidon-pro-settings.php:214
+#: includes/admin/class-maxwell-pro-settings.php:214
 msgid ""
 "Please make sure that you have not reached the site limit and expiration "
 "date."
@@ -164,196 +164,196 @@ msgstr ""
 "Bitte stelle sicher, dass die max. Anzahl an Seiten und das Ablaufdatum der "
 "Lizenz nicht erreicht ist."
 
-#: includes/admin/class-poseidon-pro-settings.php:218
+#: includes/admin/class-maxwell-pro-settings.php:218
 msgid "Inactive"
 msgstr "Inaktiv"
 
-#: includes/admin/class-poseidon-pro-settings.php:242
+#: includes/admin/class-maxwell-pro-settings.php:242
 msgid "Deactivate License"
 msgstr "Lizenz deaktivieren"
 
-#: includes/admin/class-poseidon-pro-settings.php:247
+#: includes/admin/class-maxwell-pro-settings.php:247
 msgid "Activate License"
 msgstr "Lizenz aktivieren"
 
-#: includes/customizer/class-poseidon-pro-customize-font-control.php:30
+#: includes/customizer/class-maxwell-pro-customize-font-control.php:30
 msgid "Previous Font"
 msgstr "Vorherige Schriftart"
 
-#: includes/customizer/class-poseidon-pro-customize-font-control.php:31
+#: includes/customizer/class-maxwell-pro-customize-font-control.php:31
 msgid "Next Font"
 msgstr "Nächste Schriftart"
 
-#: includes/customizer/class-poseidon-pro-customize-font-control.php:32
+#: includes/customizer/class-maxwell-pro-customize-font-control.php:32
 msgctxt "default font button"
 msgid "Default"
 msgstr "Standard"
 
-#: includes/customizer/class-poseidon-pro-customize-font-list-control.php:29
+#: includes/customizer/class-maxwell-pro-customize-font-list-control.php:29
 msgid "Update Fonts"
 msgstr "Schriftarten aktualisieren"
 
-#: includes/modules/class-poseidon-pro-custom-colors.php:331
+#: includes/modules/class-maxwell-pro-custom-colors.php:331
 msgid "Theme Colors"
 msgstr "Theme Farben"
 
-#: includes/modules/class-poseidon-pro-custom-colors.php:350
+#: includes/modules/class-maxwell-pro-custom-colors.php:350
 msgctxt "color setting"
 msgid "Top Navigation"
 msgstr "Obere Navigation"
 
-#: includes/modules/class-poseidon-pro-custom-colors.php:367
+#: includes/modules/class-maxwell-pro-custom-colors.php:367
 msgctxt "color setting"
 msgid "Links and Buttons"
 msgstr "Links und Buttons"
 
-#: includes/modules/class-poseidon-pro-custom-colors.php:384
+#: includes/modules/class-maxwell-pro-custom-colors.php:384
 msgctxt "color setting"
 msgid "Navigation (primary)"
 msgstr "Navigation (primär)"
 
-#: includes/modules/class-poseidon-pro-custom-colors.php:401
+#: includes/modules/class-maxwell-pro-custom-colors.php:401
 msgctxt "color setting"
 msgid "Navigation (secondary)"
 msgstr "Navigation (sekundär)"
 
-#: includes/modules/class-poseidon-pro-custom-colors.php:418
+#: includes/modules/class-maxwell-pro-custom-colors.php:418
 msgctxt "color setting"
 msgid "Post Titles (primary)"
 msgstr "Beitragsüberschriften (primär)"
 
-#: includes/modules/class-poseidon-pro-custom-colors.php:435
+#: includes/modules/class-maxwell-pro-custom-colors.php:435
 msgctxt "color setting"
 msgid "Post Titles (secondary)"
 msgstr "Beitragsüberschriften (sekundär)"
 
-#: includes/modules/class-poseidon-pro-custom-colors.php:452
+#: includes/modules/class-maxwell-pro-custom-colors.php:452
 msgctxt "color setting"
 msgid "Widget Titles"
 msgstr "Widget Titel"
 
-#: includes/modules/class-poseidon-pro-custom-colors.php:469
+#: includes/modules/class-maxwell-pro-custom-colors.php:469
 msgctxt "color setting"
 msgid "Widget Links"
 msgstr "Widget Links"
 
-#: includes/modules/class-poseidon-pro-custom-colors.php:486
+#: includes/modules/class-maxwell-pro-custom-colors.php:486
 msgctxt "color setting"
 msgid "Footer Widgets"
 msgstr "Footer Widgets"
 
-#: includes/modules/class-poseidon-pro-custom-fonts.php:213
+#: includes/modules/class-maxwell-pro-custom-fonts.php:213
 msgid "Theme Fonts"
 msgstr "Theme Schriftarten"
 
-#: includes/modules/class-poseidon-pro-custom-fonts.php:232
+#: includes/modules/class-maxwell-pro-custom-fonts.php:232
 msgid "Base Font"
 msgstr "Basis Schriftart"
 
-#: includes/modules/class-poseidon-pro-custom-fonts.php:248
+#: includes/modules/class-maxwell-pro-custom-fonts.php:248
 msgctxt "font setting"
 msgid "Headings"
 msgstr "Überschriften"
 
-#: includes/modules/class-poseidon-pro-custom-fonts.php:264
+#: includes/modules/class-maxwell-pro-custom-fonts.php:264
 msgctxt "font setting"
 msgid "Navigation"
 msgstr "Navigation"
 
-#: includes/modules/class-poseidon-pro-custom-fonts.php:280
+#: includes/modules/class-maxwell-pro-custom-fonts.php:280
 msgctxt "font setting"
 msgid "Widget Titles"
 msgstr "Widget Titel"
 
-#: includes/modules/class-poseidon-pro-custom-fonts.php:297
+#: includes/modules/class-maxwell-pro-custom-fonts.php:297
 msgid "Choose available Fonts"
 msgstr "Verfügbare Schriftarten wählen"
 
-#: includes/modules/class-poseidon-pro-custom-fonts.php:301
+#: includes/modules/class-maxwell-pro-custom-fonts.php:301
 msgid "Default Browser Fonts (12)"
 msgstr "Standard Browser Schriftarten (12)"
 
-#: includes/modules/class-poseidon-pro-custom-fonts.php:302
+#: includes/modules/class-maxwell-pro-custom-fonts.php:302
 msgid "ThemeZee Favorite Fonts (35)"
 msgstr "Favoriten von ThemeZee (35)"
 
-#: includes/modules/class-poseidon-pro-custom-fonts.php:303
+#: includes/modules/class-maxwell-pro-custom-fonts.php:303
 msgid "Most Popular Google Fonts (100)"
 msgstr "Beliebteste Google Schriftarten (100)"
 
-#: includes/modules/class-poseidon-pro-custom-fonts.php:304
+#: includes/modules/class-maxwell-pro-custom-fonts.php:304
 msgid "All Google Fonts (650)"
 msgstr "Alle Google Schriftarten (650)"
 
-#: includes/modules/class-poseidon-pro-footer-line.php:109
+#: includes/modules/class-maxwell-pro-footer-line.php:109
 msgid "Footer Settings"
 msgstr "Footer-Einstellungen"
 
-#: includes/modules/class-poseidon-pro-footer-line.php:124
+#: includes/modules/class-maxwell-pro-footer-line.php:124
 msgid "Footer Text"
 msgstr "Footer Text"
 
-#: includes/modules/class-poseidon-pro-footer-line.php:141
+#: includes/modules/class-maxwell-pro-footer-line.php:141
 msgid "Display Credit Link to ThemeZee on footer line"
 msgstr "Zeige Link zu ThemeZee im Footer"
 
-#: includes/modules/class-poseidon-pro-footer-line.php:178
+#: includes/modules/class-maxwell-pro-footer-line.php:178
 msgid "Footer Navigation"
 msgstr "Footer Navigation"
 
-#: includes/modules/class-poseidon-pro-footer-widgets.php:95
+#: includes/modules/class-maxwell-pro-footer-widgets.php:95
 msgid "Footer Left"
 msgstr "Footer Links"
 
-#: includes/modules/class-poseidon-pro-footer-widgets.php:97
+#: includes/modules/class-maxwell-pro-footer-widgets.php:97
 msgid "Appears on footer on the left hand side."
 msgstr "Erscheint im Footer auf der linken Seite."
 
-#: includes/modules/class-poseidon-pro-footer-widgets.php:106
+#: includes/modules/class-maxwell-pro-footer-widgets.php:106
 msgid "Footer Center Left"
 msgstr "Footer Mitte Links"
 
-#: includes/modules/class-poseidon-pro-footer-widgets.php:108
+#: includes/modules/class-maxwell-pro-footer-widgets.php:108
 msgid "Appears on footer on center left position."
 msgstr "Erscheint im Footer auf der mittleren linken Seite."
 
-#: includes/modules/class-poseidon-pro-footer-widgets.php:117
+#: includes/modules/class-maxwell-pro-footer-widgets.php:117
 msgid "Footer Center Right"
 msgstr "Footer Mitte Rechts"
 
-#: includes/modules/class-poseidon-pro-footer-widgets.php:119
+#: includes/modules/class-maxwell-pro-footer-widgets.php:119
 msgid "Appears on footer on center right position."
 msgstr "Erscheint im Footer auf der mittleren rechten Seite."
 
-#: includes/modules/class-poseidon-pro-footer-widgets.php:128
+#: includes/modules/class-maxwell-pro-footer-widgets.php:128
 msgid "Footer Right"
 msgstr "Footer Rechts"
 
-#: includes/modules/class-poseidon-pro-footer-widgets.php:130
+#: includes/modules/class-maxwell-pro-footer-widgets.php:130
 msgid "Appears on footer on the right hand side."
 msgstr "Erscheint im Footer auf der rechten Seite."
 
-#: includes/modules/class-poseidon-pro-header-bar.php:102
+#: includes/modules/class-maxwell-pro-header-bar.php:102
 msgid "Top Navigation"
 msgstr "Obere Navigation"
 
-#: includes/modules/class-poseidon-pro-header-bar.php:103
+#: includes/modules/class-maxwell-pro-header-bar.php:103
 msgid "Social Icons"
 msgstr "Social Icons"
 
-#: includes/modules/class-poseidon-pro-header-spacing.php:140
+#: includes/modules/class-maxwell-pro-header-spacing.php:140
 msgid "Header Settings"
 msgstr "Header Einstellungen"
 
-#: includes/modules/class-poseidon-pro-header-spacing.php:158
+#: includes/modules/class-maxwell-pro-header-spacing.php:158
 msgid "Logo Image (replaces Site Title)"
 msgstr "Logo Bild (ersetzt Titel der Website)"
 
-#: includes/modules/class-poseidon-pro-header-spacing.php:177
+#: includes/modules/class-maxwell-pro-header-spacing.php:177
 msgid "Logo Spacing (default: 10)"
 msgstr "Logo Abstand (Standard: 10)"
 
-#: includes/modules/class-poseidon-pro-header-spacing.php:194
+#: includes/modules/class-maxwell-pro-header-spacing.php:194
 msgid "Navigation Spacing (default: 10)"
 msgstr "Navigation Abstand (Standard: 10)"
 

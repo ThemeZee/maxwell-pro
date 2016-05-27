@@ -2,9 +2,9 @@
 /***
  * Footer Widgets
  *
- * Registers footer widget areas and hooks into the Poseidon theme to display widgets
+ * Registers footer widget areas and hooks into the Maxwell theme to display widgets
  *
- * @package Poseidon Pro
+ * @package Maxwell Pro
  */
 
 // Exit if accessed directly
@@ -12,9 +12,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 
 // Use class to avoid namespace collisions
-if ( ! class_exists( 'Poseidon_Pro_Header_Bar' ) ) :
+if ( ! class_exists( 'Maxwell_Pro_Header_Bar' ) ) :
 
-class Poseidon_Pro_Header_Bar {
+class Maxwell_Pro_Header_Bar {
 
 	/**
 	 * Footer Widgets Setup
@@ -23,13 +23,13 @@ class Poseidon_Pro_Header_Bar {
 	*/
 	static function setup() {
 		
-		// Return early if Poseidon Theme is not active
-		if ( ! current_theme_supports( 'poseidon-pro'  ) ) {
+		// Return early if Maxwell Theme is not active
+		if ( ! current_theme_supports( 'maxwell-pro'  ) ) {
 			return;
 		}
 		
 		// Display Header Bar
-		add_action( 'poseidon_header_bar', array( __CLASS__, 'display_header_bar' ) );
+		add_action( 'maxwell_header_bar', array( __CLASS__, 'display_header_bar' ) );
 		
 	}
 	
@@ -93,14 +93,14 @@ class Poseidon_Pro_Header_Bar {
 	*/
 	static function register_nav_menus() {
 	
-		// Return early if Poseidon Theme is not active
-		if ( ! current_theme_supports( 'poseidon-pro'  ) ) {
+		// Return early if Maxwell Theme is not active
+		if ( ! current_theme_supports( 'maxwell-pro'  ) ) {
 			return;
 		}
 		
 		register_nav_menus( array(
-			'secondary' => esc_html__( 'Top Navigation', 'poseidon-pro' ),
-			'social' => esc_html__( 'Social Icons', 'poseidon-pro' ),
+			'secondary' => esc_html__( 'Top Navigation', 'maxwell-pro' ),
+			'social' => esc_html__( 'Social Icons', 'maxwell-pro' ),
 		) );
 		
 	}
@@ -108,9 +108,9 @@ class Poseidon_Pro_Header_Bar {
 }
 
 // Run Class
-add_action( 'init', array( 'Poseidon_Pro_Header_Bar', 'setup' ) );
+add_action( 'init', array( 'Maxwell_Pro_Header_Bar', 'setup' ) );
 
 // Register navigation menus in backend
-add_action( 'after_setup_theme', array( 'Poseidon_Pro_Header_Bar', 'register_nav_menus' ), 20 );
+add_action( 'after_setup_theme', array( 'Maxwell_Pro_Header_Bar', 'register_nav_menus' ), 20 );
 
 endif;

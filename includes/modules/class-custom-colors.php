@@ -4,7 +4,7 @@
  *
  * Adds color settings to Customizer and generates color CSS code
  *
- * @package Poseidon Pro
+ * @package Maxwell Pro
  */
 
 // Exit if accessed directly
@@ -12,9 +12,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 
 // Use class to avoid namespace collisions
-if ( ! class_exists( 'Poseidon_Pro_Custom_Colors' ) ) :
+if ( ! class_exists( 'Maxwell_Pro_Custom_Colors' ) ) :
 
-class Poseidon_Pro_Custom_Colors {
+class Maxwell_Pro_Custom_Colors {
 
 	/**
 	 * Custom Colors Setup
@@ -23,13 +23,13 @@ class Poseidon_Pro_Custom_Colors {
 	*/
 	static function setup() {
 		
-		// Return early if Poseidon Theme is not active
-		if ( ! current_theme_supports( 'poseidon-pro'  ) ) {
+		// Return early if Maxwell Theme is not active
+		if ( ! current_theme_supports( 'maxwell-pro'  ) ) {
 			return;
 		}
 		
 		// Add Custom Color CSS code to custom stylesheet output
-		add_filter( 'poseidon_pro_custom_css_stylesheet', array( __CLASS__, 'custom_colors_css' ) ); 
+		add_filter( 'maxwell_pro_custom_css_stylesheet', array( __CLASS__, 'custom_colors_css' ) ); 
 		
 		// Add Custom Color Settings
 		add_action( 'customize_register', array( __CLASS__, 'color_settings' ) );
@@ -43,10 +43,10 @@ class Poseidon_Pro_Custom_Colors {
 	static function custom_colors_css( $custom_css ) { 
 		
 		// Get Theme Options from Database
-		$theme_options = Poseidon_Pro_Customizer::get_theme_options();
+		$theme_options = Maxwell_Pro_Customizer::get_theme_options();
 		
 		// Get Default Fonts from settings
-		$default_options = Poseidon_Pro_Customizer::get_default_options();
+		$default_options = Maxwell_Pro_Customizer::get_default_options();
 
 		// Set Color CSS Variable
 		$color_css = '';
@@ -327,18 +327,18 @@ class Poseidon_Pro_Custom_Colors {
 	static function color_settings( $wp_customize ) {
 
 		// Add Section for Theme Colors
-		$wp_customize->add_section( 'poseidon_pro_section_colors', array(
-			'title'    => __( 'Theme Colors', 'poseidon-pro' ),
+		$wp_customize->add_section( 'maxwell_pro_section_colors', array(
+			'title'    => __( 'Theme Colors', 'maxwell-pro' ),
 			'priority' => 60,
-			'panel' => 'poseidon_options_panel' 
+			'panel' => 'maxwell_options_panel' 
 			)
 		);
 		
 		// Get Default Colors from settings
-		$default_options = Poseidon_Pro_Customizer::get_default_options();
+		$default_options = Maxwell_Pro_Customizer::get_default_options();
 		
 		// Add Top Navigation Color setting
-		$wp_customize->add_setting( 'poseidon_theme_options[top_navi_color]', array(
+		$wp_customize->add_setting( 'maxwell_theme_options[top_navi_color]', array(
 			'default'           => $default_options['top_navi_color'],
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
@@ -346,16 +346,16 @@ class Poseidon_Pro_Custom_Colors {
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control( 
-			$wp_customize, 'poseidon_theme_options[top_navi_color]', array(
-				'label'      => _x( 'Top Navigation', 'color setting', 'poseidon-pro' ),
-				'section'    => 'poseidon_pro_section_colors',
-				'settings'   => 'poseidon_theme_options[top_navi_color]',
+			$wp_customize, 'maxwell_theme_options[top_navi_color]', array(
+				'label'      => _x( 'Top Navigation', 'color setting', 'maxwell-pro' ),
+				'section'    => 'maxwell_pro_section_colors',
+				'settings'   => 'maxwell_theme_options[top_navi_color]',
 				'priority' => 1
 			) ) 
 		);
 		
 		// Add Link and Button Color setting
-		$wp_customize->add_setting( 'poseidon_theme_options[link_color]', array(
+		$wp_customize->add_setting( 'maxwell_theme_options[link_color]', array(
 			'default'           => $default_options['link_color'],
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
@@ -363,16 +363,16 @@ class Poseidon_Pro_Custom_Colors {
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control( 
-			$wp_customize, 'poseidon_theme_options[link_color]', array(
-				'label'      => _x( 'Links and Buttons', 'color setting', 'poseidon-pro' ),
-				'section'    => 'poseidon_pro_section_colors',
-				'settings'   => 'poseidon_theme_options[link_color]',
+			$wp_customize, 'maxwell_theme_options[link_color]', array(
+				'label'      => _x( 'Links and Buttons', 'color setting', 'maxwell-pro' ),
+				'section'    => 'maxwell_pro_section_colors',
+				'settings'   => 'maxwell_theme_options[link_color]',
 				'priority' => 2
 			) ) 
 		);
 		
 		// Add Navigation Primary Color setting
-		$wp_customize->add_setting( 'poseidon_theme_options[navi_primary_color]', array(
+		$wp_customize->add_setting( 'maxwell_theme_options[navi_primary_color]', array(
 			'default'           => $default_options['navi_primary_color'],
 			'type'           	=> 'option',
 			'transport'         => 'refresh',
@@ -380,16 +380,16 @@ class Poseidon_Pro_Custom_Colors {
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control( 
-			$wp_customize, 'poseidon_theme_options[navi_primary_color]', array(
-				'label'      => _x( 'Navigation (primary)', 'color setting', 'poseidon-pro' ),
-				'section'    => 'poseidon_pro_section_colors',
-				'settings'   => 'poseidon_theme_options[navi_primary_color]',
+			$wp_customize, 'maxwell_theme_options[navi_primary_color]', array(
+				'label'      => _x( 'Navigation (primary)', 'color setting', 'maxwell-pro' ),
+				'section'    => 'maxwell_pro_section_colors',
+				'settings'   => 'maxwell_theme_options[navi_primary_color]',
 				'priority' => 3
 			) ) 
 		);
 		
 		// Add Navigation Secondary Color setting
-		$wp_customize->add_setting( 'poseidon_theme_options[navi_secondary_color]', array(
+		$wp_customize->add_setting( 'maxwell_theme_options[navi_secondary_color]', array(
 			'default'           => $default_options['navi_secondary_color'],
 			'type'           	=> 'option',
 			'transport'         => 'refresh',
@@ -397,16 +397,16 @@ class Poseidon_Pro_Custom_Colors {
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control( 
-			$wp_customize, 'poseidon_theme_options[navi_secondary_color]', array(
-				'label'      => _x( 'Navigation (secondary)', 'color setting', 'poseidon-pro' ),
-				'section'    => 'poseidon_pro_section_colors',
-				'settings'   => 'poseidon_theme_options[navi_secondary_color]',
+			$wp_customize, 'maxwell_theme_options[navi_secondary_color]', array(
+				'label'      => _x( 'Navigation (secondary)', 'color setting', 'maxwell-pro' ),
+				'section'    => 'maxwell_pro_section_colors',
+				'settings'   => 'maxwell_theme_options[navi_secondary_color]',
 				'priority' => 4
 			) ) 
 		);
 		
 		// Add Post Primary Color setting
-		$wp_customize->add_setting( 'poseidon_theme_options[post_primary_color]', array(
+		$wp_customize->add_setting( 'maxwell_theme_options[post_primary_color]', array(
 			'default'           => $default_options['post_primary_color'],
 			'type'           	=> 'option',
 			'transport'         => 'refresh',
@@ -414,16 +414,16 @@ class Poseidon_Pro_Custom_Colors {
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control( 
-			$wp_customize, 'poseidon_theme_options[post_primary_color]', array(
-				'label'      => _x( 'Post Titles (primary)', 'color setting', 'poseidon-pro' ),
-				'section'    => 'poseidon_pro_section_colors',
-				'settings'   => 'poseidon_theme_options[post_primary_color]',
+			$wp_customize, 'maxwell_theme_options[post_primary_color]', array(
+				'label'      => _x( 'Post Titles (primary)', 'color setting', 'maxwell-pro' ),
+				'section'    => 'maxwell_pro_section_colors',
+				'settings'   => 'maxwell_theme_options[post_primary_color]',
 				'priority' => 5
 			) ) 
 		);
 		
 		// Add Post Secondary Color setting
-		$wp_customize->add_setting( 'poseidon_theme_options[post_secondary_color]', array(
+		$wp_customize->add_setting( 'maxwell_theme_options[post_secondary_color]', array(
 			'default'           => $default_options['post_secondary_color'],
 			'type'           	=> 'option',
 			'transport'         => 'refresh',
@@ -431,16 +431,16 @@ class Poseidon_Pro_Custom_Colors {
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control( 
-			$wp_customize, 'poseidon_theme_options[post_secondary_color]', array(
-				'label'      => _x( 'Post Titles (secondary)', 'color setting', 'poseidon-pro' ),
-				'section'    => 'poseidon_pro_section_colors',
-				'settings'   => 'poseidon_theme_options[post_secondary_color]',
+			$wp_customize, 'maxwell_theme_options[post_secondary_color]', array(
+				'label'      => _x( 'Post Titles (secondary)', 'color setting', 'maxwell-pro' ),
+				'section'    => 'maxwell_pro_section_colors',
+				'settings'   => 'maxwell_theme_options[post_secondary_color]',
 				'priority' => 6
 			) ) 
 		);
 
 		// Add Widget Title Color setting
-		$wp_customize->add_setting( 'poseidon_theme_options[widget_title_color]', array(
+		$wp_customize->add_setting( 'maxwell_theme_options[widget_title_color]', array(
 			'default'           => $default_options['widget_title_color'],
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
@@ -448,16 +448,16 @@ class Poseidon_Pro_Custom_Colors {
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control( 
-			$wp_customize, 'poseidon_theme_options[widget_title_color]', array(
-				'label'      => _x( 'Widget Titles', 'color setting', 'poseidon-pro' ),
-				'section'    => 'poseidon_pro_section_colors',
-				'settings'   => 'poseidon_theme_options[widget_title_color]',
+			$wp_customize, 'maxwell_theme_options[widget_title_color]', array(
+				'label'      => _x( 'Widget Titles', 'color setting', 'maxwell-pro' ),
+				'section'    => 'maxwell_pro_section_colors',
+				'settings'   => 'maxwell_theme_options[widget_title_color]',
 				'priority' => 7
 			) ) 
 		);
 		
 		// Add Widget Title Color setting
-		$wp_customize->add_setting( 'poseidon_theme_options[widget_link_color]', array(
+		$wp_customize->add_setting( 'maxwell_theme_options[widget_link_color]', array(
 			'default'           => $default_options['widget_link_color'],
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
@@ -465,16 +465,16 @@ class Poseidon_Pro_Custom_Colors {
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control( 
-			$wp_customize, 'poseidon_theme_options[widget_link_color]', array(
-				'label'      => _x( 'Widget Links', 'color setting', 'poseidon-pro' ),
-				'section'    => 'poseidon_pro_section_colors',
-				'settings'   => 'poseidon_theme_options[widget_link_color]',
+			$wp_customize, 'maxwell_theme_options[widget_link_color]', array(
+				'label'      => _x( 'Widget Links', 'color setting', 'maxwell-pro' ),
+				'section'    => 'maxwell_pro_section_colors',
+				'settings'   => 'maxwell_theme_options[widget_link_color]',
 				'priority' => 8
 			) ) 
 		);
 		
 		// Add Footer Widgets Color setting
-		$wp_customize->add_setting( 'poseidon_theme_options[footer_color]', array(
+		$wp_customize->add_setting( 'maxwell_theme_options[footer_color]', array(
 			'default'           => $default_options['footer_color'],
 			'type'           	=> 'option',
 			'transport'         => 'postMessage',
@@ -482,10 +482,10 @@ class Poseidon_Pro_Custom_Colors {
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control( 
-			$wp_customize, 'poseidon_theme_options[footer_color]', array(
-				'label'      => _x( 'Footer Widgets', 'color setting', 'poseidon-pro' ),
-				'section'    => 'poseidon_pro_section_colors',
-				'settings'   => 'poseidon_theme_options[footer_color]',
+			$wp_customize, 'maxwell_theme_options[footer_color]', array(
+				'label'      => _x( 'Footer Widgets', 'color setting', 'maxwell-pro' ),
+				'section'    => 'maxwell_pro_section_colors',
+				'settings'   => 'maxwell_theme_options[footer_color]',
 				'priority' => 9
 			) ) 
 		);
@@ -495,6 +495,6 @@ class Poseidon_Pro_Custom_Colors {
 }
 
 // Run Class
-add_action( 'init', array( 'Poseidon_Pro_Custom_Colors', 'setup' ) );
+add_action( 'init', array( 'Maxwell_Pro_Custom_Colors', 'setup' ) );
 
 endif;

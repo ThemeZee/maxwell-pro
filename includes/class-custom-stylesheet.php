@@ -4,7 +4,7 @@
  *
  * Creates a custom stylesheet including the custom color, custom fonts and header spacing CSS code
  *
- * @package Poseidon Pro
+ * @package Maxwell Pro
  */
 
 // Exit if accessed directly
@@ -12,9 +12,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 
 // Use class to avoid namespace collisions
-if ( ! class_exists( 'Poseidon_Pro_Custom_Stylesheet' ) ) :
+if ( ! class_exists( 'Maxwell_Pro_Custom_Stylesheet' ) ) :
 
-class Poseidon_Pro_Custom_Stylesheet {
+class Maxwell_Pro_Custom_Stylesheet {
 
 	/**
 	 * Footer Widgets Setup
@@ -23,8 +23,8 @@ class Poseidon_Pro_Custom_Stylesheet {
 	*/
 	static function setup() {
 		
-		// Return early if Poseidon Theme is not active
-		if ( ! current_theme_supports( 'poseidon-pro'  ) ) {
+		// Return early if Maxwell Theme is not active
+		if ( ! current_theme_supports( 'maxwell-pro'  ) ) {
 			return;
 		}
 		
@@ -50,7 +50,7 @@ class Poseidon_Pro_Custom_Stylesheet {
 			return;
 		}
 
-		wp_enqueue_style( 'poseidon-pro-custom-stylesheet', add_query_arg( 'poseidon_pro_custom_css', 1, home_url( '/' ) ) );
+		wp_enqueue_style( 'maxwell-pro-custom-stylesheet', add_query_arg( 'maxwell_pro_custom_css', 1, home_url( '/' ) ) );
 		
 	}
 	
@@ -61,7 +61,7 @@ class Poseidon_Pro_Custom_Stylesheet {
 	static function print_custom_css() {
 		
 		// Only print CSS if this is a stylesheet request
-		if( ! isset( $_GET['poseidon_pro_custom_css'] ) || intval( $_GET['poseidon_pro_custom_css'] ) !== 1 ) {
+		if( ! isset( $_GET['maxwell_pro_custom_css'] ) || intval( $_GET['maxwell_pro_custom_css'] ) !== 1 ) {
 			return;
 		}
 
@@ -106,13 +106,13 @@ class Poseidon_Pro_Custom_Stylesheet {
 	static function get_custom_css() {
 		
 		// Allow other modules to add CSS code per filter
-		return apply_filters( 'poseidon_pro_custom_css_stylesheet', '' );
+		return apply_filters( 'maxwell_pro_custom_css_stylesheet', '' );
 		
 	}
 
 }
 
 // Run Class
-add_action( 'init', array( 'Poseidon_Pro_Custom_Stylesheet', 'setup' ) );
+add_action( 'init', array( 'Maxwell_Pro_Custom_Stylesheet', 'setup' ) );
 
 endif;
