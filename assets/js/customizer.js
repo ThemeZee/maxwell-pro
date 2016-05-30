@@ -126,7 +126,7 @@
 			$("head").append(googleFontSource);
 			
 			// Set CSS
-			$('button, input[type="button"], input[type="reset"], input[type="submit"], .more-link, .widget-title, .post-pagination a, .post-pagination .current, .page-header .archive-title, .comments-header .comments-title, .comment-reply-title span, .tzwb-tabbed-content .tzwb-tabnavi li a')
+			$('.widget-title, .archive-title, .comments-header .comments-title, .comment-reply-title span')
 				.css('font-family', newval );
 				
 		} );
