@@ -124,9 +124,6 @@ class Maxwell_Pro {
 		require_once MAXWELL_PRO_PLUGIN_DIR . 'includes/widgets/widget-magazine-posts-list.php';
 		require_once MAXWELL_PRO_PLUGIN_DIR . 'includes/widgets/widget-magazine-posts-sidebar.php';
 		require_once MAXWELL_PRO_PLUGIN_DIR . 'includes/widgets/widget-magazine-posts-single.php';
-		
-		// Include Custom Stylesheet class
-		require_once MAXWELL_PRO_PLUGIN_DIR . 'includes/class-custom-stylesheet.php';
 
 	}
 	
@@ -166,6 +163,17 @@ class Maxwell_Pro {
 		
 		// Enqueue Plugin Stylesheet
 		wp_enqueue_style( 'maxwell-pro', MAXWELL_PRO_PLUGIN_URL . 'assets/css/maxwell-pro.css', array(), MAXWELL_PRO_VERSION );
+		
+		// Get Custom CSS
+		$custom_css = apply_filters( 'maxwell_pro_custom_css_stylesheet', '' );
+		
+		// Sanitize CSS Code
+		$custom_css = wp_kses( $custom_css, array( '\'', '\"' ) );
+		$custom_css = str_replace( '&gt;', '>', $custom_css );
+		$custom_css = preg_replace( '/\t\t\t\t/', '', $custom_css );
+		
+		// Enqueue Custom CSS
+		wp_add_inline_style( 'maxwell-pro', $custom_css );
 		
 	}
 	
