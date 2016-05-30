@@ -144,15 +144,15 @@ class Maxwell_Pro_Magazine_Posts_Sidebar_Widget extends WP_Widget {
 			// Display Posts
 			while( $posts_query->have_posts() ) : $posts_query->the_post(); ?>
 				
-				<article id="post-<?php the_ID(); ?>" <?php post_class( 'large-post clearfix' ); ?>>
+				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				
 					<header class="entry-header">
 	
-						<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail( 'maxwell-thumbnail-large' ); ?></a>
+						<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail(); ?></a>
 
-						<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-					
 						<?php $this->entry_meta( $settings ); ?>
+						
+						<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 				
 					</header><!-- .entry-header -->
 
@@ -160,7 +160,6 @@ class Maxwell_Pro_Magazine_Posts_Sidebar_Widget extends WP_Widget {
 					
 					<div class="entry-content clearfix">
 						<?php the_excerpt(); ?>
-						<?php maxwell_more_link(); ?>
 					</div><!-- .entry-content -->
 					
 					<?php endif; ?>
@@ -228,7 +227,7 @@ class Maxwell_Pro_Magazine_Posts_Sidebar_Widget extends WP_Widget {
 				
 				// Display Widget Title with link to category archive
 				echo '<div class="widget-header">';
-				echo '<h1 class="widget-title"><a class="category-archive-link" href="'. $link_url .'" title="'. $link_title . '">'. $widget_title . '</a></h1>';
+				echo '<h3 class="widget-title"><a class="category-archive-link" href="'. $link_url .'" title="'. $link_title . '">'. $widget_title . '</a></h3>';
 				echo '</div>';
 			
 			else:

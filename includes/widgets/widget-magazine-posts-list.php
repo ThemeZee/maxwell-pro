@@ -45,7 +45,6 @@ class Maxwell_Pro_Magazine_Posts_List_Widget extends WP_Widget {
 			'number'			=> 3,
 			'meta_date'			=> true,
 			'meta_author'		=> true,
-			'meta_category'		=> true,
 		);
 		
 		return $defaults;
@@ -151,10 +150,10 @@ class Maxwell_Pro_Magazine_Posts_List_Widget extends WP_Widget {
 					</a>
 					
 					<header class="entry-header">
-
-						<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
-						
+					
 						<?php $this->entry_meta( $settings ); ?>
+
+						<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 					
 					</header><!-- .entry-header -->
 
@@ -171,7 +170,7 @@ class Maxwell_Pro_Magazine_Posts_List_Widget extends WP_Widget {
 			endwhile;
 			
 			// Remove excerpt filter
-			remove_filter('excerpt_length', 'maxwell_excerpt_length');
+			remove_filter( 'excerpt_length', 'maxwell_excerpt_length' );
 			
 		endif;
 		
@@ -196,12 +195,6 @@ class Maxwell_Pro_Magazine_Posts_List_Widget extends WP_Widget {
 		if( true == $settings['meta_author'] ) {
 		
 			$postmeta .= maxwell_meta_author();
-			
-		}
-		
-		if( true == $settings['meta_category'] ) {
-		
-			$postmeta .= maxwell_meta_category();
 			
 		}
 		
@@ -233,7 +226,7 @@ class Maxwell_Pro_Magazine_Posts_List_Widget extends WP_Widget {
 				
 				// Display Widget Title with link to category archive
 				echo '<div class="widget-header">';
-				echo '<h1 class="widget-title"><a class="category-archive-link" href="'. $link_url .'" title="'. $link_title . '">'. $widget_title . '</a></h1>';
+				echo '<h3 class="widget-title"><a class="category-archive-link" href="'. $link_url .'" title="'. $link_title . '">'. $widget_title . '</a></h3>';
 				echo '</div>';
 			
 			else:
@@ -263,7 +256,6 @@ class Maxwell_Pro_Magazine_Posts_List_Widget extends WP_Widget {
 		$instance['number'] = (int)$new_instance['number'];
 		$instance['meta_date'] = !empty($new_instance['meta_date']);
 		$instance['meta_author'] = !empty($new_instance['meta_author']);
-		$instance['meta_category'] = !empty($new_instance['meta_category']);
 		
 		$this->delete_widget_cache();
 		
@@ -319,13 +311,6 @@ class Maxwell_Pro_Magazine_Posts_List_Widget extends WP_Widget {
 			<label for="<?php echo $this->get_field_id( 'meta_author' ); ?>">
 				<input class="checkbox" type="checkbox" <?php checked( $settings['meta_author'] ) ; ?> id="<?php echo $this->get_field_id( 'meta_author' ); ?>" name="<?php echo $this->get_field_name( 'meta_author' ); ?>" />
 				<?php esc_html_e( 'Display post author', 'maxwell-pro' ); ?>
-			</label>
-		</p>
-		
-		<p>
-			<label for="<?php echo $this->get_field_id( 'meta_category' ); ?>">
-				<input class="checkbox" type="checkbox" <?php checked( $settings['meta_category'] ) ; ?> id="<?php echo $this->get_field_id( 'meta_category' ); ?>" name="<?php echo $this->get_field_name( 'meta_category' ); ?>" />
-				<?php esc_html_e( 'Display post category', 'maxwell-pro' ); ?>
 			</label>
 		</p>
 		
