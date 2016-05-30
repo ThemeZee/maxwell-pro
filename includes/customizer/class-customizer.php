@@ -69,8 +69,8 @@ class Maxwell_Pro_Customizer {
 
 		$default_options = array(
 			'header_logo' 						=> '',
-			'logo_spacing'						=> 10,
-			'navi_spacing'						=> 10,
+			'header_spacing'					=> 30,
+			'logo_spacing'						=> 0,
 			'footer_text'						=> '',
 			'credit_link' 						=> true,
 			'top_navi_color'					=> '#303030',
