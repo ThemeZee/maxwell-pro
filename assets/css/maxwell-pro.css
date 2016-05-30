@@ -130,7 +130,6 @@
 	-ms-transform: rotate(270deg);
 }
 
-
 .top-navigation-menu li ul ul {
 	margin-left: 250px;
 	margin-left: 16rem;
@@ -177,16 +176,6 @@
 }
 
 /*--------------------------------------------------------------
-# Site Logo
---------------------------------------------------------------*/
-.site-branding .site-logo {
-	border: 0;
-	max-width: 100%;
-	height: auto;
-	vertical-align: top;
-}
-
-/*--------------------------------------------------------------
 # Magazine Post Widgets
 --------------------------------------------------------------*/
 
@@ -215,67 +204,42 @@
 /*--------------------------------------------------------------
 # Footer Widget Area
 --------------------------------------------------------------*/
-.footer-widgets-background {
-	background: #404040;
-	padding: 3em 0 0;
+.footer-widgets-wrap {
+	border-top: 1px solid #ddd;
+	padding: 2.5em 0 0;
 }
 
-.footer-widgets {
-	margin-right: -2em;
+.footer-widgets-columns {
+	display: flex;
+	flex-wrap: wrap;
+	margin-right: -3em;
 }
 
 .footer-widget-column {
-	float: left;
-	width: 25%;
-	padding-right: 2em;
+	display: flex;
+	width: 33.333333333333%;
+	padding-right: 3em;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
-.footer-widgets .widget {
-	color: #fff;
+.footer-widget-column .widget {
+	width: 100%;
 }
 
-.footer-widgets .widget-title {
-	color: #fff;
-	border-bottom: 4px solid rgba(255,255,255,0.08);
-}
+/* Footer Columns Fixes for IE 10 and IE 11 */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	
+	.footer-widgets-columns {
+		display: block;
+	}
 
-.footer-widgets .widget a:link, 
-.footer-widgets .widget a:visited  {
-	color: #eee;
-}
+	.footer-widget-column {
+		float: left;
+		display: block;
+	}
 
-.footer-widgets .widget a:hover, 
-.footer-widgets .widget a:active  {
-	color: rgba(255,255,255,0.6);
-}
-
-.footer-widgets .widget_tag_cloud .tagcloud a:link, 
-.footer-widgets .widget_tag_cloud .tagcloud a:visited {
-	color: #777;
-}
-
-.footer-widgets .widget_tag_cloud .tagcloud a:hover, 
-.footer-widgets .widget_tag_cloud .tagcloud a:active {
-	color: #fff;
-}
-
-.footer-widgets .tzwb-tabbed-content .tzwb-tabnavi {
-	border-top: 1px solid rgba(255,255,255,0.08);
-	border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-
-.footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a:link, 
-.footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a:visited  {
-	color: rgba(255,255,255,0.5);
-}
-
-.footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a:hover, 
-.footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a:active, 
-.footer-widgets .tzwb-tabbed-content .tzwb-tabnavi li a.current-tab {
-	color: #eee;
 }
 
 /*--------------------------------------------------------------
@@ -292,7 +256,7 @@
 .footer-navigation-menu {
 	display: inline;
 	margin: 0;
-	padding: 2em 0;
+	padding: 3em 0;
 	list-style-type: none;
 	list-style-position: outside;
 	position: relative;
@@ -305,34 +269,41 @@
 
 .footer-navigation-menu a {
 	display: block;
-	font-family: 'Raleway', Tahoma, Arial;
-	font-size: 14px;
-	font-size: 0.875rem;
-	font-weight: bold;
-	padding: 0.1em 1em;
-	text-transform: uppercase;
+	font-family: 'Titillium Web', Tahoma, Arial;
+	padding: 0 0.8em;
 	text-decoration: none;
-	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-ms-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
-	transition: all 0.2s ease;
 }
 
 .footer-navigation-menu a:link, 
 .footer-navigation-menu a:visited {
-	color: #404040;
+	color: #303030;
 	text-decoration: none;
 }
 
 .footer-navigation-menu a:hover,
 .footer-navigation-menu a:active {
-	color: #22aadd;
+	color: #999;
 }
 
 /*--------------------------------------------------------------
 # Media Queries
 --------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+## Desktop XX-Large ( < 1360px )
+--------------------------------------------------------------*/
+@media only screen and (max-width: 85em) {
+	
+	.footer-widgets-columns {
+		margin-right: -2em;
+	}
+
+	.footer-widget-column {
+		padding-right: 2em;
+	}
+	
+}
+
 
 /*--------------------------------------------------------------
 ## Desktop X-Large ( < 1200px )
@@ -350,14 +321,7 @@
 ## Desktop Medium ( < 1040px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 65em) {
-	
-	.footer-widget-column {
-		width: 50%;
-	}
-	
-	.footer-widget-column:nth-child(3) {
-		clear: left;
-	}
+
 	
 }
 
@@ -380,6 +344,18 @@
 		float: left;
 		margin: 0 1.5em 0 0;
 		max-width: 40%;
+	}
+	
+	/* Footer Widgets */
+	.footer-widgets-columns {
+		margin-right: 0;
+	}
+	
+	.footer-widget-column {
+		float: none;
+		display: block;
+		width: 100%;
+		padding-right: 0;
 	}
 	
 	/*** Mobile Top Navigation ***/
