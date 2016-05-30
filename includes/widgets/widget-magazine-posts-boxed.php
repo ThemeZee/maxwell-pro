@@ -1,14 +1,14 @@
 <?php
 /***
- * Magazine Posts Single Widget
+ * Magazine Posts Boxed Widget
  *
- * Display the latest posts from a selected category in a single layout. 
+ * Display the latest posts from a selected category in a boxed layout. 
  * Intented to be used in the Magazine Homepage widget area to built a magazine layouted page.
  *
  * @package Maxwell Pro
  */
 
-class Maxwell_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
+class Maxwell_Pro_Magazine_Posts_Boxed_Widget extends WP_Widget {
 
 	/**
 	 * Widget Constructor
@@ -17,12 +17,12 @@ class Maxwell_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 		
 		// Setup Widget
 		parent::__construct(
-			'maxwell-magazine-posts-single', // ID
-			sprintf( esc_html__( 'Magazine Posts: Single (%s)', 'maxwell-pro' ), 'Maxwell Pro' ), // Name
+			'maxwell-magazine-posts-boxed', // ID
+			sprintf( esc_html__( 'Magazine Posts: Boxed (%s)', 'maxwell-pro' ), 'Maxwell Pro' ), // Name
 			array( 
-				'classname' => 'maxwell-magazine-posts-single', 
-				'description' => esc_html__( 'Displays a single post from a selected category. Please use this widget ONLY in the Magazine Homepage widget area.', 'maxwell-pro' ),
-				'customize_selective_refresh' => true,  
+				'classname' => 'maxwell-magazine-posts-boxed', 
+				'description' => esc_html__( 'Displays your posts from a selected category in a boxed layout. Please use this widget ONLY in the Magazine Homepage widget area.', 'maxwell-pro' ),
+				'customize_selective_refresh' => true, 
 			) // Args
 		);
 
@@ -42,8 +42,9 @@ class Maxwell_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 		$defaults = array(
 			'title'				=> '',
 			'category'			=> 0,
+			'layout'			=> 'horizontal',
 			'meta_date'			=> true,
-			'meta_author'		=> true,
+			'meta_author'		=> false,
 		);
 		
 		return $defaults;
@@ -65,7 +66,7 @@ class Maxwell_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 				
 		// Get Widget Object Cache
 		if ( ! $this->is_preview() ) {
-			$cache = wp_cache_get( 'widget_maxwell_magazine_posts_single', 'widget' );
+			$cache = wp_cache_get( 'widget_maxwell_magazine_posts_boxed', 'widget' );
 		}
 		if ( ! is_array( $cache ) ) {
 			$cache = array();
@@ -86,7 +87,7 @@ class Maxwell_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 		// Output
 		echo $args['before_widget'];
 	?>
-		<div class="widget-magazine-posts-single widget-magazine-posts clearfix">
+		<div class="widget-magazine-posts-boxed widget-magazine-posts clearfix">
 
 			<?php // Display Title
 			$this->widget_title( $args, $settings ); ?>
@@ -104,7 +105,7 @@ class Maxwell_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 		// Set Cache
 		if ( ! $this->is_preview() ) {
 			$cache[ $this->id ] = ob_get_flush();
-			wp_cache_set( 'widget_maxwell_magazine_posts_single', $cache, 'widget' );
+			wp_cache_set( 'widget_maxwell_magazine_posts_boxed', $cache, 'widget' );
 		} else {
 			ob_end_flush();
 		}
@@ -124,59 +125,209 @@ class Maxwell_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 	 */
 	function render( $settings ) {
 		
+		if( 'horizontal' == $settings['layout'] ) : ?>
+		
+			<div class="magazine-posts-boxed-horizontal clearfix">
+			
+				<?php $this->magazine_posts_horizontal( $settings ); ?>
+
+			</div>
+		
+		<?php else: ?>
+			
+			<div class="magazine-posts-boxed-vertical clearfix">
+			
+				<?php $this->magazine_posts_vertical( $settings ); ?>
+
+			</div>
+		
+		<?php 
+		endif;
+
+	}
+	
+	
+	/**
+	 * Display Magazine Posts in Horizontal Layout
+	 *
+	 * @used-by this->render()
+	 *
+	 * @param array $instance / Settings for this widget instance
+	 */
+	function magazine_posts_horizontal( $settings ) {
+		
 		// Get latest posts from database
 		$query_arguments = array(
-			'posts_per_page' => 1,
+			'posts_per_page' => 4,
 			'ignore_sticky_posts' => true,
 			'cat' => (int)$settings['category']
 		);
 		$posts_query = new WP_Query( $query_arguments );
 		$i = 0;
-		
+
 		// Check if there are posts
 		if( $posts_query->have_posts() ) :
 		
 			// Limit the number of words for the excerpt
-			add_filter( 'excerpt_length', 'maxwell_excerpt_length' );
+			add_filter( 'excerpt_length', 'maxwell_magazine_posts_excerpt_length' );
 			
 			// Display Posts
-			while( $posts_query->have_posts() ) : $posts_query->the_post(); ?>
+			while( $posts_query->have_posts() ) :
 				
-				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		
-					<a href="<?php esc_url( the_permalink() ); ?>" rel="bookmark">
-						<?php the_post_thumbnail( 'maxwell-thumbnail-single' ); ?>
-					</a>
-					
-					<header class="entry-header">
+				$posts_query->the_post(); 
+				
+				if( isset($i) and $i == 0 ) : ?>
 
-						<?php $this->entry_meta( $settings ); ?>
+					<article id="post-<?php the_ID(); ?>" <?php post_class( 'large-post clearfix' ); ?>>
+
+						<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail( 'maxwell-thumbnail-large' ); ?></a>
 						
-						<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-					
-					</header><!-- .entry-header -->
+						<div class="post-content">
 
-					<div class="entry-content clearfix">
+							<header class="entry-header">
+			
+								<?php $this->entry_meta( $settings ); ?>
+								
+								<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+
+							</header><!-- .entry-header -->
+							
+							<div class="entry-content">
+								<?php the_excerpt(); ?>
+								<?php maxwell_more_link(); ?>
+							</div><!-- .entry-content -->
+							
+						</div>
+
+					</article>
+
+				<div class="medium-posts clearfix">
+
+				<?php else: ?>
+
+					<article id="post-<?php the_ID(); ?>" <?php post_class( 'medium-post clearfix' ); ?>>
+
+						<?php if ( has_post_thumbnail() ) : ?>
+							<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail( 'maxwell-thumbnail-medium' ); ?></a>
+						<?php endif; ?>
+
+						<div class="medium-post-content">
+							
+							<?php $this->entry_meta( $settings ); ?>
+							
+							<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>						
 						
-						<?php the_excerpt(); ?>
-						<?php maxwell_more_link(); ?>
-					
-					</div><!-- .entry-content -->
+						</div>
 
-				</article>
+					</article>
+
+				<?php
+				endif; $i++;
+				
+			endwhile; ?>
 			
-			<?php 
-			endwhile;
-			
+				</div><!-- end .medium-posts -->
+				
+			<?php
 			// Remove excerpt filter
-			remove_filter( 'excerpt_length', 'maxwell_excerpt_length' );
+			remove_filter( 'excerpt_length', 'maxwell_magazine_posts_excerpt_length' );
 			
 		endif;
 		
 		// Reset Postdata
 		wp_reset_postdata();
 
-	}
+	} // magazine_posts_horizontal()
+	
+	
+	/**
+	 * Displays Magazine Posts in Vertical Layout
+	 *
+	 * @used-by this->render()
+	 *
+	 * @param array $instance / Settings for this widget instance
+	 */
+	function magazine_posts_vertical( $settings ) {
+		
+		// Get latest posts from database
+		$query_arguments = array(
+			'posts_per_page' => 5,
+			'ignore_sticky_posts' => true,
+			'cat' => (int)$settings['category']
+		);
+		$posts_query = new WP_Query( $query_arguments );
+		$i = 0;
+
+		// Check if there are posts
+		if( $posts_query->have_posts() ) :
+		
+			// Limit the number of words for the excerpt
+			add_filter( 'excerpt_length', 'maxwell_magazine_posts_excerpt_length' );
+			
+			// Display Posts
+			while( $posts_query->have_posts() ) :
+				
+				$posts_query->the_post(); 
+				
+				if( isset($i) and $i == 0 ) : ?>
+
+					<article id="post-<?php the_ID(); ?>" <?php post_class( 'large-post clearfix' ); ?>>
+
+						<header class="entry-header">
+			
+							<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail( 'maxwell-thumbnail-large' ); ?></a>
+
+							<?php $this->entry_meta( $settings ); ?>
+							
+							<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+					
+						</header><!-- .entry-header -->
+						
+						<div class="entry-content">
+							<?php the_excerpt(); ?>
+							<?php maxwell_more_link(); ?>
+						</div><!-- .entry-content -->
+
+					</article>
+
+				<div class="small-posts clearfix">
+
+				<?php else: ?>
+
+					<article id="post-<?php the_ID(); ?>" <?php post_class( 'small-post clearfix' ); ?>>
+
+						<?php if ( has_post_thumbnail() ) : ?>
+							<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail( 'maxwell-thumbnail-small' ); ?></a>
+						<?php endif; ?>
+
+						<div class="small-post-content">
+							
+							<?php $this->entry_meta( $settings ); ?>
+							
+							<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>						
+							
+						</div>
+
+					</article>
+
+				<?php
+				endif; $i++;
+				
+			endwhile; ?>
+			
+				</div><!-- end .medium-posts -->
+				
+			<?php
+			// Remove excerpt filter
+			remove_filter( 'excerpt_length', 'maxwell_magazine_posts_excerpt_length' );
+			
+		endif;
+		
+		// Reset Postdata
+		wp_reset_postdata();
+
+	} // magazine_posts_vertical()
+	
 	
 	/**
 	 * Displays Entry Meta of Posts
@@ -252,6 +403,7 @@ class Maxwell_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 		$instance = $old_instance;
 		$instance['title'] = sanitize_text_field($new_instance['title']);
 		$instance['category'] = (int)$new_instance['category'];
+		$instance['layout'] = esc_attr($new_instance['layout']);
 		$instance['meta_date'] = !empty($new_instance['meta_date']);
 		$instance['meta_author'] = !empty($new_instance['meta_author']);
 		
@@ -293,6 +445,14 @@ class Maxwell_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 		</p>
 		
 		<p>
+			<label for="<?php echo $this->get_field_id('layout'); ?>"><?php esc_html_e( 'Post Layout:', 'maxwell-pro' ); ?></label><br/>
+			<select id="<?php echo $this->get_field_id('layout'); ?>" name="<?php echo $this->get_field_name('layout'); ?>">
+				<option <?php selected( $settings['layout'], 'horizontal' ); ?> value="horizontal" ><?php esc_html_e( 'Horizontal Arrangement', 'maxwell-pro' ); ?></option>
+				<option <?php selected( $settings['layout'], 'vertical' ); ?> value="vertical" ><?php esc_html_e( 'Vertical Arrangement', 'maxwell-pro' ); ?></option>
+			</select>
+		</p>
+		
+		<p>
 			<label for="<?php echo $this->get_field_id( 'meta_date' ); ?>">
 				<input class="checkbox" type="checkbox" <?php checked( $settings['meta_date'] ) ; ?> id="<?php echo $this->get_field_id( 'meta_date' ); ?>" name="<?php echo $this->get_field_name( 'meta_date' ); ?>" />
 				<?php esc_html_e( 'Display post date', 'maxwell-pro' ); ?>
@@ -315,7 +475,7 @@ class Maxwell_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 	 */
 	public function delete_widget_cache() {
 		
-		wp_cache_delete( 'widget_maxwell_magazine_posts_single', 'widget' );
+		wp_cache_delete( 'widget_maxwell_magazine_posts_boxed', 'widget' );
 		
 	}
 	

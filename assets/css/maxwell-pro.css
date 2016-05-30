@@ -179,6 +179,50 @@
 # Magazine Post Widgets
 --------------------------------------------------------------*/
 
+/* Magazine Posts Boxed Widget Horizontal Style */
+.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .wp-post-image {
+	float: left;	
+	width: 50%;
+	margin: 0;
+	padding-right: 1em;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .post-content {
+	float: right;
+	width: 50%;
+	padding-left: 1em;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .medium-posts {
+	margin-right: -2em;
+}
+
+/* Magazine Posts Boxed Widget Vertical Style */
+.widget-magazine-posts-boxed .magazine-posts-boxed-vertical .large-post {
+	float: left;
+	width: 50%;
+	margin-bottom: 1em;
+	padding-right: 1em;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.widget-magazine-posts-boxed .magazine-posts-boxed-vertical .small-posts {
+	width: 50%;
+	margin-left: 50%;
+	padding-left: 1em;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
 /* Magazine Posts List */
 .widget-magazine-posts-list .type-post .wp-post-image {
 	float: left;
@@ -326,6 +370,10 @@
 --------------------------------------------------------------*/
 @media only screen and (max-width: 70em) {
 	
+	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .more-link  {
+		display: none;
+	}
+	
 	.widget-magazine-posts-list .type-post .wp-post-image {
 		max-width: 40%;
 	}
@@ -343,6 +391,17 @@
 }
 
 /*--------------------------------------------------------------
+## Desktop Medium ( < 1040px )
+--------------------------------------------------------------*/
+@media only screen and (max-width: 65em) {
+	
+	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .entry-content {
+		display: none;
+	}
+
+}
+
+/*--------------------------------------------------------------
 ## Desktop Small ( < 960px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 60em) {
@@ -352,6 +411,11 @@
 	}
 	
 	/* Magazine Posts */
+	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .entry-content,
+	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .more-link {
+		display: inline-block;
+	}
+	
 	.widget-magazine-posts-list .type-post .wp-post-image {
 		max-width: 45%;
 	}
@@ -606,6 +670,10 @@
 --------------------------------------------------------------*/
 @media only screen and (max-width: 50em) {
 	
+	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .more-link  {
+		display: none;
+	}
+	
 	.widget-magazine-posts-list .type-post .wp-post-image {
 		max-width: 40%;
 	}
@@ -621,6 +689,17 @@
 	}
 	
 }
+
+/*--------------------------------------------------------------
+## Tablet Small ( < 720px )
+--------------------------------------------------------------*/
+@media only screen and (max-width: 45em) {
+	
+	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .entry-content {
+		display: none;
+	}
+	
+}
 	
 /*--------------------------------------------------------------
 ## Mobile Extra Large ( < 640px )
@@ -628,6 +707,26 @@
 @media only screen and (max-width: 40em) {
 	
 	/* Magazine Posts */
+	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .wp-post-image,
+	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .post-content,
+	.widget-magazine-posts-boxed .magazine-posts-boxed-vertical .large-post {
+		float: none;
+		width: 100%;
+		padding: 0;
+	}
+	
+	.widget-magazine-posts-boxed .magazine-posts-boxed-vertical .small-posts {
+		width: 100%;
+		padding-top: 1em;
+		margin-left: 0;
+		padding-left: 0;
+	}
+	
+	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .more-link,
+	.widget-magazine-posts-boxed .magazine-posts-boxed-horizontal .large-post .entry-content {
+		display: inline-block;
+	}
+	
 	.widget-magazine-posts-list .type-post .wp-post-image,
 	.widget-magazine-posts-sidebar .type-post .wp-post-image {
 		float: none;

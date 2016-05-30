@@ -20,7 +20,7 @@ class Maxwell_Pro_Magazine_Posts_Sidebar_Widget extends WP_Widget {
 			'maxwell-magazine-posts-sidebar', // ID
 			sprintf( esc_html__( 'Magazine Posts: Sidebar (%s)', 'maxwell-pro' ), 'Maxwell Pro' ), // Name
 			array( 
-				'classname' => 'maxwell_magazine_posts_sidebar', 
+				'classname' => 'maxwell-magazine-posts-sidebar', 
 				'description' => esc_html__( 'Displays your posts from a selected category. You can use this widget in the Sidebar widget area.', 'maxwell-pro' ),
 				'customize_selective_refresh' => true,  
 			) // Args
