@@ -352,16 +352,10 @@
 	.footer-widget-column {
 		padding-right: 2em;
 	}
-	
-}
 
-
-/*--------------------------------------------------------------
-## Desktop X-Large ( < 1200px )
---------------------------------------------------------------*/
-@media only screen and (max-width: 75em) {
-
-
+	.footer-navigation-menu {
+		padding: 2em 0;
+	}
 	
 }
 
@@ -637,7 +631,7 @@
 		display: inline-block;
 		background: none;
 		padding: 1em;
-		margin: 1em 0 0;
+		margin: 1.25em 0 0;
 	}
 	
 	.footer-navigation-toggle:hover,
@@ -663,7 +657,7 @@
 	}
 	
 	.footer-navigation-toggle:hover:after {
-		color: #22aadd;
+		color: #999;
 	}
 	
 	/* Footer Navigation Menu */
@@ -677,7 +671,7 @@
 		width: 100%;
 		display: none;
 		padding: 1.5em 0;
-		border-top: 2px solid #404040;
+		border-top: 1px solid #ddd;
 	}
 	
 	.site-footer .site-info {

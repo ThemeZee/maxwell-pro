@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Maxwell Pro\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
-"POT-Creation-Date: 2016-05-03 17:44+0100\n"
-"PO-Revision-Date: 2016-05-03 17:44+0100\n"
+"POT-Creation-Date: 2016-05-31 09:50+0100\n"
+"PO-Revision-Date: 2016-05-31 09:50+0100\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
 "Language: en_US\n"
@@ -20,54 +20,54 @@ msgstr ""
 "X-Textdomain-Support: yes\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: maxwell-pro.php:196
+#: maxwell-pro.php:206
 msgid "Settings"
 msgstr ""
 
-#: includes/admin/class-maxwell-pro-admin-notices.php:55
+#: includes/admin/class-admin-notices.php:55
 #, php-format
 msgid ""
 "Please enter your license key for the %1$s add-on in order to receive "
 "updates and support. <a href=\"%2$s\">Enter License Key</a>"
 msgstr ""
 
-#: includes/admin/class-maxwell-pro-admin-notices.php:59
-#: includes/admin/class-maxwell-pro-admin-notices.php:87
-#: includes/admin/class-maxwell-pro-admin-notices.php:112
+#: includes/admin/class-admin-notices.php:59
+#: includes/admin/class-admin-notices.php:87
+#: includes/admin/class-admin-notices.php:112
 msgid "Dismiss Notice"
 msgstr ""
 
-#: includes/admin/class-maxwell-pro-admin-notices.php:83
+#: includes/admin/class-admin-notices.php:83
 #, php-format
 msgid ""
 "Your license for %1$s has expired. Please <a href=\"%2$s\">renew</a> to "
 "continue getting updates and support!"
 msgstr ""
 
-#: includes/admin/class-maxwell-pro-admin-notices.php:108
+#: includes/admin/class-admin-notices.php:108
 #, php-format
 msgid ""
 "The %1$s add-on needs the %2$s theme activated in order to work. You should "
 "deactivate %1$s if you have switched to another theme permanently."
 msgstr ""
 
-#: includes/admin/class-maxwell-pro-admin-notices.php:135
+#: includes/admin/class-admin-notices.php:135
 msgid "Security check failed"
 msgstr ""
 
-#: includes/admin/class-maxwell-pro-admin-notices.php:135
-#: includes/admin/class-maxwell-pro-plugin-updater.php:324
+#: includes/admin/class-admin-notices.php:135
+#: includes/admin/class-plugin-updater.php:324
 msgid "Error"
 msgstr ""
 
-#: includes/admin/class-maxwell-pro-plugin-updater.php:177
+#: includes/admin/class-plugin-updater.php:177
 #, php-format
 msgid ""
 "There is a new version of %1$s available. <a target=\"_blank\" class="
 "\"thickbox\" href=\"%2$s\">View version %3$s details</a>."
 msgstr ""
 
-#: includes/admin/class-maxwell-pro-plugin-updater.php:184
+#: includes/admin/class-plugin-updater.php:184
 #, php-format
 msgid ""
 "There is a new version of %1$s available. <a target=\"_blank\" class="
@@ -75,268 +75,286 @@ msgid ""
 "\">update now</a>."
 msgstr ""
 
-#: includes/admin/class-maxwell-pro-plugin-updater.php:324
+#: includes/admin/class-plugin-updater.php:324
 msgid "You do not have permission to install plugin updates"
 msgstr ""
 
-#: includes/admin/class-maxwell-pro-settings-page.php:46
-#: includes/admin/class-maxwell-pro-settings-page.php:47
+#: includes/admin/class-settings-page.php:46
+#: includes/admin/class-settings-page.php:47
 msgid "Pro Version"
 msgstr ""
 
-#: includes/admin/class-maxwell-pro-settings-page.php:81
+#: includes/admin/class-settings-page.php:81
 #, php-format
 msgid ""
 "You can find your license keys and manage your active sites on <a href=\"%s"
 "\" target=\"_blank\">themezee.com</a>."
 msgstr ""
 
-#: includes/admin/class-maxwell-pro-settings-page.php:81
+#: includes/admin/class-settings-page.php:81
 msgid "https://themezee.com/license-keys/"
 msgstr ""
 
-#: includes/admin/class-maxwell-pro-settings.php:121
+#: includes/admin/class-settings.php:121
 msgid "Automatic Updates"
 msgstr ""
 
-#: includes/admin/class-maxwell-pro-settings.php:126
+#: includes/admin/class-settings.php:126
 msgid "License Status"
 msgstr ""
 
-#: includes/admin/class-maxwell-pro-settings.php:135
+#: includes/admin/class-settings.php:135
 msgid "License Key"
 msgstr ""
 
-#: includes/admin/class-maxwell-pro-settings.php:151
+#: includes/admin/class-settings.php:151
 #, php-format
 msgid ""
 "Please enter your license key. An active license key is needed for automatic "
 "plugin updates and <a href=\"%s\" target=\"_blank\">support</a>."
 msgstr ""
 
-#: includes/admin/class-maxwell-pro-settings.php:200
+#: includes/admin/class-settings.php:200
 msgid "Active"
 msgstr ""
 
-#: includes/admin/class-maxwell-pro-settings.php:201
+#: includes/admin/class-settings.php:201
 msgid "You are receiving updates."
 msgstr ""
 
-#: includes/admin/class-maxwell-pro-settings.php:207
+#: includes/admin/class-settings.php:207
 msgid "Expired"
 msgstr ""
 
-#: includes/admin/class-maxwell-pro-settings.php:208
+#: includes/admin/class-settings.php:208
 msgid ""
 "Your license has expired, renew today to continue getting updates and "
 "support!"
 msgstr ""
 
-#: includes/admin/class-maxwell-pro-settings.php:209
+#: includes/admin/class-settings.php:209
 msgid "Renew Your License"
 msgstr ""
 
-#: includes/admin/class-maxwell-pro-settings.php:213
+#: includes/admin/class-settings.php:213
 msgid "Invalid"
 msgstr ""
 
-#: includes/admin/class-maxwell-pro-settings.php:214
+#: includes/admin/class-settings.php:214
 msgid ""
 "Please make sure that you have not reached the site limit and expiration "
 "date."
 msgstr ""
 
-#: includes/admin/class-maxwell-pro-settings.php:218
+#: includes/admin/class-settings.php:218
 msgid "Inactive"
 msgstr ""
 
-#: includes/admin/class-maxwell-pro-settings.php:242
+#: includes/admin/class-settings.php:242
 msgid "Deactivate License"
 msgstr ""
 
-#: includes/admin/class-maxwell-pro-settings.php:247
+#: includes/admin/class-settings.php:247
 msgid "Activate License"
 msgstr ""
 
-#: includes/customizer/class-maxwell-pro-customize-font-control.php:30
+#: includes/customizer/class-customize-font-control.php:30
 msgid "Previous Font"
 msgstr ""
 
-#: includes/customizer/class-maxwell-pro-customize-font-control.php:31
+#: includes/customizer/class-customize-font-control.php:31
 msgid "Next Font"
 msgstr ""
 
-#: includes/customizer/class-maxwell-pro-customize-font-control.php:32
+#: includes/customizer/class-customize-font-control.php:32
 msgctxt "default font button"
 msgid "Default"
 msgstr ""
 
-#: includes/customizer/class-maxwell-pro-customize-font-list-control.php:29
+#: includes/customizer/class-customize-font-list-control.php:29
 msgid "Update Fonts"
 msgstr ""
 
-#: includes/modules/class-maxwell-pro-custom-colors.php:331
+#: includes/modules/class-custom-colors.php:265
 msgid "Theme Colors"
 msgstr ""
 
-#: includes/modules/class-maxwell-pro-custom-colors.php:350
-msgctxt "color setting"
-msgid "Top Navigation"
-msgstr ""
-
-#: includes/modules/class-maxwell-pro-custom-colors.php:367
+#: includes/modules/class-custom-colors.php:284
 msgctxt "color setting"
 msgid "Links and Buttons"
 msgstr ""
 
-#: includes/modules/class-maxwell-pro-custom-colors.php:384
+#: includes/modules/class-custom-colors.php:301
 msgctxt "color setting"
-msgid "Navigation (primary)"
+msgid "Top Navigation"
 msgstr ""
 
-#: includes/modules/class-maxwell-pro-custom-colors.php:401
+#: includes/modules/class-custom-colors.php:318
 msgctxt "color setting"
-msgid "Navigation (secondary)"
+msgid "Main Navigation"
 msgstr ""
 
-#: includes/modules/class-maxwell-pro-custom-colors.php:418
+#: includes/modules/class-custom-colors.php:335
 msgctxt "color setting"
-msgid "Post Titles (primary)"
+msgid "Post Titles"
 msgstr ""
 
-#: includes/modules/class-maxwell-pro-custom-colors.php:435
-msgctxt "color setting"
-msgid "Post Titles (secondary)"
-msgstr ""
-
-#: includes/modules/class-maxwell-pro-custom-colors.php:452
+#: includes/modules/class-custom-colors.php:352
 msgctxt "color setting"
 msgid "Widget Titles"
 msgstr ""
 
-#: includes/modules/class-maxwell-pro-custom-colors.php:469
-msgctxt "color setting"
-msgid "Widget Links"
-msgstr ""
-
-#: includes/modules/class-maxwell-pro-custom-colors.php:486
-msgctxt "color setting"
-msgid "Footer Widgets"
-msgstr ""
-
-#: includes/modules/class-maxwell-pro-custom-fonts.php:213
+#: includes/modules/class-custom-fonts.php:205
 msgid "Theme Fonts"
 msgstr ""
 
-#: includes/modules/class-maxwell-pro-custom-fonts.php:232
+#: includes/modules/class-custom-fonts.php:224
 msgid "Base Font"
 msgstr ""
 
-#: includes/modules/class-maxwell-pro-custom-fonts.php:248
+#: includes/modules/class-custom-fonts.php:240
 msgctxt "font setting"
 msgid "Headings"
 msgstr ""
 
-#: includes/modules/class-maxwell-pro-custom-fonts.php:264
+#: includes/modules/class-custom-fonts.php:256
 msgctxt "font setting"
 msgid "Navigation"
 msgstr ""
 
-#: includes/modules/class-maxwell-pro-custom-fonts.php:280
+#: includes/modules/class-custom-fonts.php:272
 msgctxt "font setting"
 msgid "Widget Titles"
 msgstr ""
 
-#: includes/modules/class-maxwell-pro-custom-fonts.php:297
+#: includes/modules/class-custom-fonts.php:289
 msgid "Choose available Fonts"
 msgstr ""
 
-#: includes/modules/class-maxwell-pro-custom-fonts.php:301
+#: includes/modules/class-custom-fonts.php:293
 msgid "Default Browser Fonts (12)"
 msgstr ""
 
-#: includes/modules/class-maxwell-pro-custom-fonts.php:302
+#: includes/modules/class-custom-fonts.php:294
 msgid "ThemeZee Favorite Fonts (35)"
 msgstr ""
 
-#: includes/modules/class-maxwell-pro-custom-fonts.php:303
+#: includes/modules/class-custom-fonts.php:295
 msgid "Most Popular Google Fonts (100)"
 msgstr ""
 
-#: includes/modules/class-maxwell-pro-custom-fonts.php:304
+#: includes/modules/class-custom-fonts.php:296
 msgid "All Google Fonts (650)"
 msgstr ""
 
-#: includes/modules/class-maxwell-pro-footer-line.php:109
+#: includes/modules/class-footer-line.php:109
 msgid "Footer Settings"
 msgstr ""
 
-#: includes/modules/class-maxwell-pro-footer-line.php:124
+#: includes/modules/class-footer-line.php:124
 msgid "Footer Text"
 msgstr ""
 
-#: includes/modules/class-maxwell-pro-footer-line.php:141
+#: includes/modules/class-footer-line.php:141
 msgid "Display Credit Link to ThemeZee on footer line"
 msgstr ""
 
-#: includes/modules/class-maxwell-pro-footer-line.php:178
+#: includes/modules/class-footer-line.php:178
 msgid "Footer Navigation"
 msgstr ""
 
-#: includes/modules/class-maxwell-pro-footer-widgets.php:95
-msgid "Footer Left"
+#: includes/modules/class-footer-widgets.php:77
+msgid "Footer"
 msgstr ""
 
-#: includes/modules/class-maxwell-pro-footer-widgets.php:97
-msgid "Appears on footer on the left hand side."
+#: includes/modules/class-footer-widgets.php:79
+msgid "Appears on the footer area."
 msgstr ""
 
-#: includes/modules/class-maxwell-pro-footer-widgets.php:106
-msgid "Footer Center Left"
-msgstr ""
-
-#: includes/modules/class-maxwell-pro-footer-widgets.php:108
-msgid "Appears on footer on center left position."
-msgstr ""
-
-#: includes/modules/class-maxwell-pro-footer-widgets.php:117
-msgid "Footer Center Right"
-msgstr ""
-
-#: includes/modules/class-maxwell-pro-footer-widgets.php:119
-msgid "Appears on footer on center right position."
-msgstr ""
-
-#: includes/modules/class-maxwell-pro-footer-widgets.php:128
-msgid "Footer Right"
-msgstr ""
-
-#: includes/modules/class-maxwell-pro-footer-widgets.php:130
-msgid "Appears on footer on the right hand side."
-msgstr ""
-
-#: includes/modules/class-maxwell-pro-header-bar.php:102
+#: includes/modules/class-header-bar.php:102
 msgid "Top Navigation"
 msgstr ""
 
-#: includes/modules/class-maxwell-pro-header-bar.php:103
+#: includes/modules/class-header-bar.php:103
 msgid "Social Icons"
 msgstr ""
 
-#: includes/modules/class-maxwell-pro-header-spacing.php:140
+#: includes/modules/class-header-spacing.php:96
 msgid "Header Settings"
 msgstr ""
 
-#: includes/modules/class-maxwell-pro-header-spacing.php:158
-msgid "Logo Image (replaces Site Title)"
+#: includes/modules/class-header-spacing.php:111
+msgid "Header Spacing (default: 30)"
 msgstr ""
 
-#: includes/modules/class-maxwell-pro-header-spacing.php:177
-msgid "Logo Spacing (default: 10)"
+#: includes/modules/class-header-spacing.php:128
+msgid "Logo Spacing (default: 0)"
 msgstr ""
 
-#: includes/modules/class-maxwell-pro-header-spacing.php:194
-msgid "Navigation Spacing (default: 10)"
+#: includes/widgets/widget-magazine-posts-boxed.php:21
+#, php-format
+msgid "Magazine Posts: Boxed (%s)"
+msgstr ""
+
+#: includes/widgets/widget-magazine-posts-boxed.php:24
+msgid ""
+"Displays your posts from a selected category in a boxed layout. Please use "
+"this widget ONLY in the Magazine Homepage widget area."
+msgstr ""
+
+#: includes/widgets/widget-magazine-posts-boxed.php:374
+#: includes/widgets/widget-magazine-posts-list.php:224
+#: includes/widgets/widget-magazine-posts-sidebar.php:225
+#: includes/widgets/widget-magazine-posts-single.php:223
+#, php-format
+msgid "View all posts from category %s"
+msgstr ""
+
+#: includes/widgets/widget-magazine-posts-boxed.php:427
+#: includes/widgets/widget-magazine-posts-list.php:277
+#: includes/widgets/widget-magazine-posts-sidebar.php:280
+#: includes/widgets/widget-magazine-posts-single.php:275
+msgid "Title:"
+msgstr ""
+
+#: includes/widgets/widget-magazine-posts-boxed.php:433
+#: includes/widgets/widget-magazine-posts-list.php:283
+#: includes/widgets/widget-magazine-posts-sidebar.php:286
+#: includes/widgets/widget-magazine-posts-single.php:281
+msgid "Category:"
+msgstr ""
+
+#: includes/widgets/widget-magazine-posts-boxed.php:436
+#: includes/widgets/widget-magazine-posts-list.php:286
+#: includes/widgets/widget-magazine-posts-sidebar.php:289
+#: includes/widgets/widget-magazine-posts-single.php:284
+msgid "All Categories"
+msgstr ""
+
+#: includes/widgets/widget-magazine-posts-boxed.php:448
+msgid "Post Layout:"
+msgstr ""
+
+#: includes/widgets/widget-magazine-posts-boxed.php:450
+msgid "Horizontal Arrangement"
+msgstr ""
+
+#: includes/widgets/widget-magazine-posts-boxed.php:451
+msgid "Vertical Arrangement"
+msgstr ""
+
+#: includes/widgets/widget-magazine-posts-boxed.php:458
+#: includes/widgets/widget-magazine-posts-list.php:306
+#: includes/widgets/widget-magazine-posts-sidebar.php:316
+#: includes/widgets/widget-magazine-posts-single.php:298
+msgid "Display post date"
+msgstr ""
+
+#: includes/widgets/widget-magazine-posts-boxed.php:465
+#: includes/widgets/widget-magazine-posts-list.php:313
+#: includes/widgets/widget-magazine-posts-sidebar.php:323
+#: includes/widgets/widget-magazine-posts-single.php:305
+msgid "Display post author"
 msgstr ""
 
 #: includes/widgets/widget-magazine-posts-list.php:21
@@ -350,51 +368,9 @@ msgid ""
 "use this widget ONLY in the Magazine Homepage widget area."
 msgstr ""
 
-#: includes/widgets/widget-magazine-posts-list.php:230
-#: includes/widgets/widget-magazine-posts-sidebar.php:225
-#: includes/widgets/widget-magazine-posts-single.php:229
-#, php-format
-msgid "View all posts from category %s"
-msgstr ""
-
-#: includes/widgets/widget-magazine-posts-list.php:284
-#: includes/widgets/widget-magazine-posts-sidebar.php:280
-#: includes/widgets/widget-magazine-posts-single.php:282
-msgid "Title:"
-msgstr ""
-
-#: includes/widgets/widget-magazine-posts-list.php:290
-#: includes/widgets/widget-magazine-posts-sidebar.php:286
-#: includes/widgets/widget-magazine-posts-single.php:288
-msgid "Category:"
-msgstr ""
-
-#: includes/widgets/widget-magazine-posts-list.php:293
-#: includes/widgets/widget-magazine-posts-sidebar.php:289
-#: includes/widgets/widget-magazine-posts-single.php:291
-msgid "All Categories"
-msgstr ""
-
-#: includes/widgets/widget-magazine-posts-list.php:305
+#: includes/widgets/widget-magazine-posts-list.php:298
 #: includes/widgets/widget-magazine-posts-sidebar.php:301
 msgid "Number of posts:"
-msgstr ""
-
-#: includes/widgets/widget-magazine-posts-list.php:313
-#: includes/widgets/widget-magazine-posts-sidebar.php:316
-#: includes/widgets/widget-magazine-posts-single.php:305
-msgid "Display post date"
-msgstr ""
-
-#: includes/widgets/widget-magazine-posts-list.php:320
-#: includes/widgets/widget-magazine-posts-sidebar.php:323
-#: includes/widgets/widget-magazine-posts-single.php:312
-msgid "Display post author"
-msgstr ""
-
-#: includes/widgets/widget-magazine-posts-list.php:327
-#: includes/widgets/widget-magazine-posts-single.php:319
-msgid "Display post category"
 msgstr ""
 
 #: includes/widgets/widget-magazine-posts-sidebar.php:21

@@ -116,30 +116,10 @@ class Maxwell_Pro_Custom_Colors {
 		
 			$color_css .= '
 				/* Top Navigation Color Setting */
-				.header-bar .social-icons-menu li a:before {
-					color: '. $theme_options['top_navi_color'] .';
-				}
-
-				.header-bar .social-icons-menu li a:hover:before {
-					color: #999;
-				}
-				
 				@media only screen and (min-width: 60.001em) {
 					
 					.top-navigation-menu ul {
 						background: '. $theme_options['top_navi_color'] .';
-					}
-					
-					.top-navigation-menu a:link, 
-					.top-navigation-menu a:visited,
-					.top-navigation-menu > .menu-item-has-children > a:after {
-						color: '. $theme_options['top_navi_color'] .';
-					}
-					
-					.top-navigation-menu a:hover, 
-					.top-navigation-menu a:active,
-					.top-navigation-menu a:hover:after {
-						color: #999;
 					}
 					
 				}
@@ -172,18 +152,6 @@ class Maxwell_Pro_Custom_Colors {
 						background: '. $theme_options['navi_color'] .';
 					}
 					
-					.main-navigation-menu a:link, 
-					.main-navigation-menu a:visited,
-					.main-navigation-menu > .menu-item-has-children > a:after {
-						color: '. $theme_options['navi_color'] .';
-					}
-					
-					.main-navigation-menu a:hover, 
-					.main-navigation-menu a:active,
-					.main-navigation-menu a:hover:after {
-						color: #999;
-					}
-					
 					.main-navigation-menu li.current-menu-item > a {
 						border-color: '. $theme_options['navi_color'] .';
 					}
@@ -194,11 +162,6 @@ class Maxwell_Pro_Custom_Colors {
 					
 					.main-navigation-toggle {
 						border-top: 0.3em solid '. $theme_options['navi_color'] .';
-					}
-					
-					.main-navigation-toggle,
-					.main-navigation-toggle:before {
-						color: '. $theme_options['navi_color'] .';
 					}
 	
 					.main-navigation-menu,
