@@ -343,7 +343,7 @@
 /*--------------------------------------------------------------
 ## Desktop XX-Large ( < 1360px )
 --------------------------------------------------------------*/
-@media only screen and (max-width: 85em) {
+@media only screen and (max-width: 80em) {
 	
 	.footer-widgets-columns {
 		margin-right: -2em;
