@@ -51,13 +51,13 @@ class Maxwell_Pro_Header_Spacing {
 			$margin = $theme_options['header_spacing'] / 10;
 
 			$custom_css .= '
-                @media only screen and (min-width: 85em) {
+				@media only screen and (min-width: 85em) {
 
-                    .header-main {
+					.header-main {
 						padding: '. $margin .'em 0;
-                    }
+					}
 
-                }
+				}
 				';
 
 		}
@@ -68,9 +68,9 @@ class Maxwell_Pro_Header_Spacing {
 			$margin = $theme_options['logo_spacing'] / 10;
 
 			$custom_css .= '
-                .site-branding {
+				.site-branding {
 					margin: '. $margin .'em 0;
-                }
+				}
 				';
 
 		}

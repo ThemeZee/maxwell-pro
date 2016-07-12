@@ -167,7 +167,8 @@ class Maxwell_Pro {
 		// Sanitize CSS Code.
 		$custom_css = wp_kses( $custom_css, array( '\'', '\"' ) );
 		$custom_css = str_replace( '&gt;', '>', $custom_css );
-		$custom_css = preg_replace( '/\t\t\t\t/', '', $custom_css );
+		$custom_css = preg_replace( '/\n/', '', $custom_css );
+		$custom_css = preg_replace( '/\t/', '', $custom_css );
 
 		// Enqueue Custom CSS.
 		wp_add_inline_style( 'maxwell-pro', $custom_css );

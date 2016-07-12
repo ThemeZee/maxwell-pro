@@ -53,58 +53,58 @@ class Maxwell_Pro_Custom_Colors {
 		if ( $theme_options['link_color'] != $default_options['link_color'] ) {
 
 			$custom_css .= '
-                /* Link and Button Color Setting */
-                a:link,
-                a:visited {
+				/* Link and Button Color Setting */
+				a:link,
+				a:visited {
 					color: '. $theme_options['link_color'] .';
-                }
+				}
 
-                a:hover,
-                a:focus,
-                a:active {
-                    color: #303030;
-                }
+				a:hover,
+				a:focus,
+				a:active {
+					color: #303030;
+				}
 
-                button,
-                input[type="button"],
-                input[type="reset"],
-                input[type="submit"],
-                .more-link,
-                .widget_tag_cloud .tagcloud a:hover,
-                .widget_tag_cloud .tagcloud a:active,
-                .entry-tags .meta-tags a:hover,
-                .entry-tags .meta-tags a:active,
-                .post-pagination a:hover,
-                .post-pagination a:active,
-                .post-pagination .current,
-                .infinite-scroll #infinite-handle span:hover,
-                .tzwb-tabbed-content .tzwb-tabnavi li a:hover,
-                .tzwb-tabbed-content .tzwb-tabnavi li a:active,
-                .tzwb-tabbed-content .tzwb-tabnavi li a.current-tab,
-                .tzwb-social-icons .social-icons-menu li a:link,
-                .tzwb-social-icons .social-icons-menu li a:visited {
-                    color: #fff;
+				button,
+				input[type="button"],
+				input[type="reset"],
+				input[type="submit"],
+				.more-link,
+				.widget_tag_cloud .tagcloud a:hover,
+				.widget_tag_cloud .tagcloud a:active,
+				.entry-tags .meta-tags a:hover,
+				.entry-tags .meta-tags a:active,
+				.post-pagination a:hover,
+				.post-pagination a:active,
+				.post-pagination .current,
+				.infinite-scroll #infinite-handle span:hover,
+				.tzwb-tabbed-content .tzwb-tabnavi li a:hover,
+				.tzwb-tabbed-content .tzwb-tabnavi li a:active,
+				.tzwb-tabbed-content .tzwb-tabnavi li a.current-tab,
+				.tzwb-social-icons .social-icons-menu li a:link,
+				.tzwb-social-icons .social-icons-menu li a:visited {
+					color: #fff;
 					background: '. $theme_options['link_color'] .';
-                }
+				}
 
-                button:hover,
-                input[type="button"]:hover,
-                input[type="reset"]:hover,
-                input[type="submit"]:hover,
-                button:focus,
-                input[type="button"]:focus,
-                input[type="reset"]:focus,
-                input[type="submit"]:focus,
-                button:active,
-                input[type="button"]:active,
-                input[type="reset"]:active,
-                input[type="submit"]:active,
-                .more-link:hover,
-                .more-link:active,
-                .tzwb-social-icons .social-icons-menu li a:active,
-                .tzwb-social-icons .social-icons-menu li a:hover {
-                    background: #303030;
-                }
+				button:hover,
+				input[type="button"]:hover,
+				input[type="reset"]:hover,
+				input[type="submit"]:hover,
+				button:focus,
+				input[type="button"]:focus,
+				input[type="reset"]:focus,
+				input[type="submit"]:focus,
+				button:active,
+				input[type="button"]:active,
+				input[type="reset"]:active,
+				input[type="submit"]:active,
+				.more-link:hover,
+				.more-link:active,
+				.tzwb-social-icons .social-icons-menu li a:active,
+				.tzwb-social-icons .social-icons-menu li a:hover {
+					background: #303030;
+				}
 				';
 
 		}
@@ -113,28 +113,28 @@ class Maxwell_Pro_Custom_Colors {
 		if ( $theme_options['top_navi_color'] != $default_options['top_navi_color'] ) {
 
 			$custom_css .= '
-                /* Top Navigation Color Setting */
-                @media only screen and (min-width: 60.001em) {
+				/* Top Navigation Color Setting */
+				@media only screen and (min-width: 60.001em) {
 
-                    .top-navigation-menu ul {
+					.top-navigation-menu ul {
 						background: '. $theme_options['top_navi_color'] .';
-                    }
+					}
 
-                }
+				}
 
-                @media only screen and (max-width: 60em) {
+				@media only screen and (max-width: 60em) {
 
-                    .top-navigation-toggle,
-                    .top-navigation-toggle:after {
+					.top-navigation-toggle,
+					.top-navigation-toggle:after {
 						color: '. $theme_options['top_navi_color'] .';
-                    }
+					}
 
-                    .top-navigation-menu,
-                    .top-navigation-menu ul {
+					.top-navigation-menu,
+					.top-navigation-menu ul {
 						background: '. $theme_options['top_navi_color'] .';
-                    }
+					}
 
-                }
+				}
 				';
 
 		}
@@ -143,31 +143,31 @@ class Maxwell_Pro_Custom_Colors {
 		if ( $theme_options['navi_color'] != $default_options['navi_color'] ) {
 
 			$custom_css .= '
-                /* Main Navigation Color Setting */
-                @media only screen and (min-width: 60.001em) {
+				/* Main Navigation Color Setting */
+				@media only screen and (min-width: 60.001em) {
 
-                    .main-navigation-menu ul {
+					.main-navigation-menu ul {
 						background: '. $theme_options['navi_color'] .';
-                    }
+					}
 
-                    .main-navigation-menu li.current-menu-item > a {
+					.main-navigation-menu li.current-menu-item > a {
 						border-color: '. $theme_options['navi_color'] .';
-                    }
+					}
 
-                }
+				}
 
-                @media only screen and (max-width: 60em) {
+				@media only screen and (max-width: 60em) {
 
-                    .main-navigation-toggle {
+					.main-navigation-toggle {
 						border-top: 0.3em solid '. $theme_options['navi_color'] .';
-                    }
+					}
 
-                    .main-navigation-menu,
-                    .main-navigation-menu ul {
+					.main-navigation-menu,
+					.main-navigation-menu ul {
 						background: '. $theme_options['navi_color'] .';
-                    }
+					}
 
-                }
+				}
 				';
 
 		}
@@ -176,16 +176,16 @@ class Maxwell_Pro_Custom_Colors {
 		if ( $theme_options['title_color'] != $default_options['title_color'] ) {
 
 			$custom_css .= '
-                /* Post Titles Primary Color Setting */
-                .site-title,
-                .site-title a:link,
-                .site-title a:visited,
-                .page-title,
-                .entry-title,
-                .entry-title a:link,
-                .entry-title a:visited {
+				/* Post Titles Primary Color Setting */
+				.site-title,
+				.site-title a:link,
+				.site-title a:visited,
+				.page-title,
+				.entry-title,
+				.entry-title a:link,
+				.entry-title a:visited {
 					color: '. $theme_options['title_color'] .';
-                }
+				}
 				';
 
 		}
@@ -194,15 +194,15 @@ class Maxwell_Pro_Custom_Colors {
 		if ( $theme_options['widget_title_color'] != $default_options['widget_title_color'] ) {
 
 			$custom_css .= '
-                /* Widget Titles Color Setting */
-                .widget-title,
-                .widget-title a:link,
-                .widget-title a:visited,
-                .archive-title,
-                .comments-header .comments-title,
-                .comment-reply-title span {
+				/* Widget Titles Color Setting */
+				.widget-title,
+				.widget-title a:link,
+				.widget-title a:visited,
+				.archive-title,
+				.comments-header .comments-title,
+				.comment-reply-title span {
 					color: '. $theme_options['widget_title_color'] .';
-                }
+				}
 				';
 
 		}

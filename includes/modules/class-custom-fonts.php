@@ -61,14 +61,14 @@ class Maxwell_Pro_Custom_Fonts {
 		if ( $theme_options['text_font'] != $default_options['text_font'] ) {
 
 			$custom_css .= '
-                /* Base Font Setting */
-                body,
-                button,
-                input,
-                select,
-                textarea {
+				/* Base Font Setting */
+				body,
+				button,
+				input,
+				select,
+				textarea {
 					font-family: "'.esc_attr( $theme_options['text_font'] ).'";
-                }
+				}
 				';
 
 		}
@@ -77,12 +77,12 @@ class Maxwell_Pro_Custom_Fonts {
 		if ( $theme_options['title_font'] != $default_options['title_font'] ) {
 
 			$custom_css .= '
-                /* Headings Font Setting */
-                .site-title,
-                .page-title,
-                .entry-title {
+				/* Headings Font Setting */
+				.site-title,
+				.page-title,
+				.entry-title {
 					font-family: "'.esc_attr( $theme_options['title_font'] ).'";
-                }
+				}
 				';
 
 		}
@@ -91,12 +91,12 @@ class Maxwell_Pro_Custom_Fonts {
 		if ( $theme_options['navi_font'] != $default_options['navi_font'] ) {
 
 			$custom_css .= '
-                /* Navigation Font Setting */
-                .top-navigation-menu a,
-                .main-navigation-menu a,
-                .footer-navigation-menu a {
+				/* Navigation Font Setting */
+				.top-navigation-menu a,
+				.main-navigation-menu a,
+				.footer-navigation-menu a {
 					font-family: "'.esc_attr( $theme_options['navi_font'] ).'";
-                }
+				}
 				';
 
 		}
@@ -105,13 +105,13 @@ class Maxwell_Pro_Custom_Fonts {
 		if ( $theme_options['widget_title_font'] != $default_options['widget_title_font'] ) {
 
 			$custom_css .= '
-                /* Widget Titles Font Setting */
-                .widget-title,
-                .archive-title,
-                .comments-header .comments-title,
-                .comment-reply-title span {
+				/* Widget Titles Font Setting */
+				.widget-title,
+				.archive-title,
+				.comments-header .comments-title,
+				.comment-reply-title span {
 					font-family: "'.esc_attr( $theme_options['widget_title_font'] ).'";
-                }
+				}
 				';
 
 		}
