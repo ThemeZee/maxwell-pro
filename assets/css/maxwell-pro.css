@@ -18,6 +18,7 @@
 	margin: 0 auto;
 	background: #fff;
 	border-bottom: 1px solid #ddd;
+	position: relative;
 }
 
 .top-navigation-toggle {
@@ -30,12 +31,10 @@
 	margin: 0;
 	list-style-type: none;
 	list-style-position: outside;
-	position: relative;
 }
 
 .top-navigation-menu li {
 	float: left;
-	position: relative;
 }
 
 .top-navigation-menu a {
@@ -80,20 +79,19 @@
 	padding: 0;
 	list-style-type: none;
 	list-style-position: outside;
+	color: #fff;
 	background: #303030;
 }
 
 .top-navigation-menu ul li{
-	margin: 0;
-	padding: 0;
-	border: none;
+	float: none;
+	position: relative;
 }
 
 .top-navigation-menu ul a {
-	width: 250px;
-	width: 16rem;
+	min-width: 250px;
+	min-width: 16rem;
 	padding: 1em;
-	float: left;
 	font-size: 13px;
 	font-size: 0.8125rem;
 	-webkit-box-sizing: border-box;
@@ -131,20 +129,12 @@
 }
 
 .top-navigation-menu li ul ul {
-	margin-left: 250px;
-	margin-left: 16rem;
+	top: 0;
+	left: 100%;
 }
 
-.top-navigation-menu li:hover ul ul,
-.top-navigation-menu li:hover ul ul ul,
-.top-navigation-menu li:hover ul ul ul ul {
-	display: none;
-}
-
-.top-navigation-menu li:hover ul,
-.top-navigation-menu li li:hover ul,
-.top-navigation-menu li li li:hover ul,
-.top-navigation-menu li li li li:hover ul {
+.top-navigation-menu li.menu-item-has-children:hover > ul,
+.top-navigation-menu li.menu-item-has-children[aria-expanded="true"] > ul {
 	display: block;
 }
 
