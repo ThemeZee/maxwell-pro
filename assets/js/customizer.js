@@ -17,14 +17,14 @@
 				.hover( function() { $( this ).css( 'color', '#303030' ); },
 					function() { $( this ).css( 'color', newval ); }
 				);
-			$( 'button, input[type="button"], input[type="reset"], input[type="submit"], .more-link, .post-pagination .current, .tzwb-tabbed-content .tzwb-tabnavi li a.current-tab, .tzwb-social-icons .social-icons-menu li a:link, .tzwb-social-icons .social-icons-menu li a:visited' )
+			$( 'button, input[type="button"], input[type="reset"], input[type="submit"], .more-link, .pagination .current, .tzwb-tabbed-content .tzwb-tabnavi li a.current-tab, .tzwb-social-icons .social-icons-menu li a:link, .tzwb-social-icons .social-icons-menu li a:visited' )
 				.css( 'color', '#ffffff' )
 				.css( 'background', newval );
 			$( 'button, input[type="button"], input[type="reset"], input[type="submit"], .more-link, .tzwb-social-icons .social-icons-menu li a' )
 				.hover( function() { $( this ).css( 'background', '#303030' ).css( 'color', '#ffffff' ); },
 					function() { $( this ).css( 'background', newval ).css( 'color', '#ffffff' ); }
 				);
-			$( '.widget_tag_cloud .tagcloud a, .entry-tags .meta-tags a, .post-pagination a, .infinite-scroll #infinite-handle span, .tzwb-tabbed-content .tzwb-tabnavi li a' )
+			$( '.widget_tag_cloud .tagcloud a, .entry-tags .meta-tags a, .pagination a, .infinite-scroll #infinite-handle span, .tzwb-tabbed-content .tzwb-tabnavi li a' )
 				.hover( function() { $( this ).css( 'background', newval ); },
 					function() { $( this ).css( 'background', '#303030' ); }
 				);
@@ -53,7 +53,7 @@
 
 			// Embed Font.
 			var fontFamilyUrl = newval.split( " " ).join( "+" );
-			var googleFontPath = "http://fonts.googleapis.com/css?family=" + fontFamilyUrl + ":400,700";
+			var googleFontPath = "https://fonts.googleapis.com/css?family=" + fontFamilyUrl + ":400,700";
 			var googleFontSource = "<link id='maxwell-pro-custom-text-font' href='" + googleFontPath + "' rel='stylesheet' type='text/css'>";
 			var checkLink = $( "head" ).find( "#maxwell-pro-custom-text-font" ).length;
 
@@ -74,7 +74,7 @@
 
 			// Embed Font.
 			var fontFamilyUrl = newval.split( " " ).join( "+" );
-			var googleFontPath = "http://fonts.googleapis.com/css?family=" + fontFamilyUrl + ":400,700";
+			var googleFontPath = "https://fonts.googleapis.com/css?family=" + fontFamilyUrl + ":400,700";
 			var googleFontSource = "<link id='maxwell-pro-custom-title-font' href='" + googleFontPath + "' rel='stylesheet' type='text/css'>";
 			var checkLink = $( "head" ).find( "#maxwell-pro-custom-title-font" ).length;
 
@@ -95,7 +95,7 @@
 
 			// Embed Font.
 			var fontFamilyUrl = newval.split( " " ).join( "+" );
-			var googleFontPath = "http://fonts.googleapis.com/css?family=" + fontFamilyUrl + ":400,700";
+			var googleFontPath = "https://fonts.googleapis.com/css?family=" + fontFamilyUrl + ":400,700";
 			var googleFontSource = "<link id='maxwell-pro-custom-navi-font' href='" + googleFontPath + "' rel='stylesheet' type='text/css'>";
 			var checkLink = $( "head" ).find( "#maxwell-pro-custom-navi-font" ).length;
 
@@ -116,7 +116,7 @@
 
 			// Embed Font.
 			var fontFamilyUrl = newval.split( " " ).join( "+" );
-			var googleFontPath = "http://fonts.googleapis.com/css?family=" + fontFamilyUrl + ":400,700";
+			var googleFontPath = "https://fonts.googleapis.com/css?family=" + fontFamilyUrl + ":400,700";
 			var googleFontSource = "<link id='maxwell-pro-custom-widget-title-font' href='" + googleFontPath + "' rel='stylesheet' type='text/css'>";
 			var checkLink = $( "head" ).find( "#maxwell-pro-custom-widget-title-font" ).length;
 
