@@ -2,6 +2,13 @@
 Maxwell Pro Changelog
 ===================================
 
+Version 1.0.4
+-----------------------------------
+* improved styling of footer navigation menu
+* changed Google Font URL to https in Customizer
+* updated custom color settings for pagination
+* updated EDD Plugin Updater class to version 1.6.9
+
 Version 1.0.3
 -----------------------------------
 * added RTL language support for all Pro features
