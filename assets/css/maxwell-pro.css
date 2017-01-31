@@ -272,7 +272,6 @@
 		display: block;
 		float: left;
 	}
-
 }
 
 /*--------------------------------------------------------------
@@ -378,7 +377,7 @@
 ## Desktop Small ( < 960px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 60em) {
-	.header-bar-wrap .header-bar {
+	.header-bar {
 		padding: 0;
 	}
 
@@ -704,6 +703,10 @@
 	.footer-navigation-menu li,
 	.footer-navigation-menu a {
 		display: block;
+	}
+
+	.footer-navigation-menu a {
+		padding: 0.4em 0;
 	}
 }
 
