@@ -21,10 +21,10 @@ class Maxwell_Pro_Magazine_Vertical_Box_Widget extends WP_Widget {
 		// Setup Widget.
 		parent::__construct(
 			'maxwell-magazine-vertical-box', // ID.
-			esc_html__( 'Magazine (Vertical Box)', 'maxwell' ), // Name.
+			esc_html__( 'Magazine (Vertical Box)', 'maxwell-pro' ), // Name.
 			array(
 				'classname' => 'maxwell-magazine-vertical-box-widget',
-				'description' => esc_html__( 'Displays your posts from a selected category in a vertical box. Please use this widget ONLY in the Magazine Homepage widget area.', 'maxwell' ),
+				'description' => esc_html__( 'Displays your posts from a selected category in a vertical box. Please use this widget ONLY in the Magazine Homepage widget area.', 'maxwell-pro' ),
 				'customize_selective_refresh' => true,
 			) // Args.
 		);
@@ -159,7 +159,7 @@ class Maxwell_Pro_Magazine_Vertical_Box_Widget extends WP_Widget {
 			if ( $settings['category'] > 0 ) :
 
 				// Set Link URL and Title for Category.
-				$link_title = sprintf( esc_html__( 'View all posts from category %s', 'maxwell' ), get_cat_name( $settings['category'] ) );
+				$link_title = sprintf( esc_html__( 'View all posts from category %s', 'maxwell-pro' ), get_cat_name( $settings['category'] ) );
 				$link_url = esc_url( get_category_link( $settings['category'] ) );
 
 				// Display Widget Title with link to category archive.
@@ -207,16 +207,16 @@ class Maxwell_Pro_Magazine_Vertical_Box_Widget extends WP_Widget {
 		?>
 
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php esc_html_e( 'Title:', 'maxwell' ); ?>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php esc_html_e( 'Title:', 'maxwell-pro' ); ?>
 				<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $settings['title'] ); ?>" />
 			</label>
 		</p>
 
 		<p>
-			<label for="<?php echo $this->get_field_id( 'category' ); ?>"><?php esc_html_e( 'Category:', 'maxwell' ); ?></label><br/>
+			<label for="<?php echo $this->get_field_id( 'category' ); ?>"><?php esc_html_e( 'Category:', 'maxwell-pro' ); ?></label><br/>
 			<?php // Display Category Select.
 				$args = array(
-					'show_option_all'    => esc_html__( 'All Categories', 'maxwell' ),
+					'show_option_all'    => esc_html__( 'All Categories', 'maxwell-pro' ),
 					'show_count' 		 => true,
 					'hide_empty'		 => false,
 					'selected'           => $settings['category'],
@@ -230,13 +230,3 @@ class Maxwell_Pro_Magazine_Vertical_Box_Widget extends WP_Widget {
 		<?php
 	}
 }
-
-/**
- * Register Widget
- */
-function maxwell_register_magazine_posts_vertical_box_widget() {
-
-	register_widget( 'Maxwell_Pro_Magazine_Vertical_Box_Widget' );
-
-}
-add_action( 'widgets_init', 'maxwell_register_magazine_posts_vertical_box_widget' );
