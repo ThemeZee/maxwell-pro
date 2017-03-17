@@ -56,7 +56,7 @@ class Maxwell_Pro_Custom_Colors {
 				/* Link and Button Color Setting */
 				a:link,
 				a:visited {
-					color: '. $theme_options['link_color'] .';
+					color: ' . $theme_options['link_color'] . ';
 				}
 
 				a:hover,
@@ -84,7 +84,7 @@ class Maxwell_Pro_Custom_Colors {
 				.tzwb-social-icons .social-icons-menu li a:link,
 				.tzwb-social-icons .social-icons-menu li a:visited {
 					color: #fff;
-					background: '. $theme_options['link_color'] .';
+					background: ' . $theme_options['link_color'] . ';
 				}
 
 				button:hover,
@@ -117,7 +117,7 @@ class Maxwell_Pro_Custom_Colors {
 				@media only screen and (min-width: 60.001em) {
 
 					.top-navigation-menu ul {
-						background: '. $theme_options['top_navi_color'] .';
+						background: ' . $theme_options['top_navi_color'] . ';
 					}
 
 				}
@@ -126,12 +126,12 @@ class Maxwell_Pro_Custom_Colors {
 
 					.top-navigation-toggle,
 					.top-navigation-toggle:after {
-						color: '. $theme_options['top_navi_color'] .';
+						color: ' . $theme_options['top_navi_color'] . ';
 					}
 
 					.top-navigation-menu,
 					.top-navigation-menu ul {
-						background: '. $theme_options['top_navi_color'] .';
+						background: ' . $theme_options['top_navi_color'] . ';
 					}
 
 				}
@@ -147,11 +147,11 @@ class Maxwell_Pro_Custom_Colors {
 				@media only screen and (min-width: 60.001em) {
 
 					.main-navigation-menu ul {
-						background: '. $theme_options['navi_color'] .';
+						background: ' . $theme_options['navi_color'] . ';
 					}
 
 					.main-navigation-menu li.current-menu-item > a {
-						border-color: '. $theme_options['navi_color'] .';
+						border-color: ' . $theme_options['navi_color'] . ';
 					}
 
 				}
@@ -159,12 +159,12 @@ class Maxwell_Pro_Custom_Colors {
 				@media only screen and (max-width: 60em) {
 
 					.main-navigation-toggle {
-						border-top: 0.3em solid '. $theme_options['navi_color'] .';
+						border-top: 0.3em solid ' . $theme_options['navi_color'] . ';
 					}
 
 					.main-navigation-menu,
 					.main-navigation-menu ul {
-						background: '. $theme_options['navi_color'] .';
+						background: ' . $theme_options['navi_color'] . ';
 					}
 
 				}
@@ -184,7 +184,7 @@ class Maxwell_Pro_Custom_Colors {
 				.entry-title,
 				.entry-title a:link,
 				.entry-title a:visited {
-					color: '. $theme_options['title_color'] .';
+					color: ' . $theme_options['title_color'] . ';
 				}
 				';
 
@@ -201,7 +201,7 @@ class Maxwell_Pro_Custom_Colors {
 				.archive-title,
 				.comments-header .comments-title,
 				.comment-reply-title span {
-					color: '. $theme_options['widget_title_color'] .';
+					color: ' . $theme_options['widget_title_color'] . ';
 				}
 				';
 

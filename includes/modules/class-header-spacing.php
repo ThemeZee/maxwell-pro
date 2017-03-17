@@ -54,7 +54,7 @@ class Maxwell_Pro_Header_Spacing {
 				@media only screen and (min-width: 85em) {
 
 					.header-main {
-						padding: '. $margin .'em 0;
+						padding: ' . $margin . 'em 0;
 					}
 
 				}
@@ -69,7 +69,7 @@ class Maxwell_Pro_Header_Spacing {
 
 			$custom_css .= '
 				.site-branding {
-					margin: '. $margin .'em 0;
+					margin: ' . $margin . 'em 0;
 				}
 				';
 
