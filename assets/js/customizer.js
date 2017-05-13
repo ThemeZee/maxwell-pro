@@ -17,10 +17,10 @@
 				.hover( function() { $( this ).css( 'color', '#303030' ); },
 					function() { $( this ).css( 'color', newval ); }
 				);
-			$( 'button, input[type="button"], input[type="reset"], input[type="submit"], .more-link, .pagination .current, .tzwb-tabbed-content .tzwb-tabnavi li a.current-tab, .tzwb-social-icons .social-icons-menu li a:link, .tzwb-social-icons .social-icons-menu li a:visited' )
+			$( 'button, input[type="button"], input[type="reset"], input[type="submit"], .more-link, .pagination .current, .tzwb-tabbed-content .tzwb-tabnavi li a.current-tab, .tzwb-social-icons .social-icons-menu li a:link, .tzwb-social-icons .social-icons-menu li a:visited, .post-slider-controls .zeeflex-direction-nav a' )
 				.css( 'color', '#ffffff' )
 				.css( 'background', newval );
-			$( 'button, input[type="button"], input[type="reset"], input[type="submit"], .more-link, .tzwb-social-icons .social-icons-menu li a' )
+			$( 'button, input[type="button"], input[type="reset"], input[type="submit"], .more-link, .tzwb-social-icons .social-icons-menu li a, .post-slider-controls .zeeflex-direction-nav a' )
 				.hover( function() { $( this ).css( 'background', '#303030' ).css( 'color', '#ffffff' ); },
 					function() { $( this ).css( 'background', newval ).css( 'color', '#ffffff' ); }
 				);
