@@ -59,21 +59,22 @@ class Maxwell_Pro_Customizer {
 	static function get_default_options() {
 
 		$default_options = array(
-			'header_logo' 						=> '',
-			'header_spacing'					=> 30,
-			'logo_spacing'						=> 0,
-			'footer_text'						=> '',
-			'credit_link' 						=> true,
-			'top_navi_color'					=> '#303030',
-			'link_color'						=> '#33bbcc',
-			'navi_color'						=> '#303030',
-			'title_color'						=> '#303030',
-			'widget_title_color'				=> '#303030',
-			'text_font' 						=> 'Titillium Web',
-			'title_font' 						=> 'Amaranth',
-			'navi_font' 						=> 'Titillium Web',
-			'widget_title_font' 				=> 'Amaranth',
-			'available_fonts'					=> 'favorites',
+			'header_logo'        => '',
+			'header_spacing'     => 30,
+			'logo_spacing'       => 0,
+			'scroll_to_top'      => false,
+			'footer_text'        => '',
+			'credit_link'        => true,
+			'top_navi_color'     => '#303030',
+			'link_color'         => '#33bbcc',
+			'navi_color'         => '#303030',
+			'title_color'        => '#303030',
+			'widget_title_color' => '#303030',
+			'text_font'          => 'Titillium Web',
+			'title_font'         => 'Amaranth',
+			'navi_font'          => 'Titillium Web',
+			'widget_title_font'  => 'Amaranth',
+			'available_fonts'    => 'favorites',
 		);
 
 		return $default_options;
