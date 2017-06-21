@@ -83,7 +83,10 @@ class Maxwell_Pro_Custom_Colors {
 				.tzwb-tabbed-content .tzwb-tabnavi li a.current-tab,
 				.tzwb-social-icons .social-icons-menu li a:link,
 				.tzwb-social-icons .social-icons-menu li a:visited,
-				.post-slider-controls .zeeflex-direction-nav a {
+				.post-slider-controls .zeeflex-direction-nav a,
+				.scroll-to-top-button,
+				.scroll-to-top-button:focus,
+				.scroll-to-top-button:active {
 					color: #fff;
 					background: ' . $theme_options['link_color'] . ';
 				}
@@ -105,7 +108,8 @@ class Maxwell_Pro_Custom_Colors {
 				.tzwb-social-icons .social-icons-menu li a:active,
 				.tzwb-social-icons .social-icons-menu li a:hover,
 				.post-slider-controls .zeeflex-direction-nav a:active,
-				.post-slider-controls .zeeflex-direction-nav a:hover {
+				.post-slider-controls .zeeflex-direction-nav a:hover,
+				.scroll-to-top-button:hover {
 					background: #303030;
 				}
 				';
