@@ -36,10 +36,10 @@ class Maxwell_Pro_Magazine_Posts_Sidebar_Widget extends WP_Widget {
 	private function default_settings() {
 
 		$defaults = array(
-			'title'				=> '',
-			'category'			=> 0,
-			'number'			=> 4,
-			'excerpt'			=> false,
+			'title'    => esc_html__( 'Magazine (Sidebar)', 'maxwell-pro' ),
+			'category' => 0,
+			'number'   => 4,
+			'excerpt'  => false,
 		);
 
 		return $defaults;
