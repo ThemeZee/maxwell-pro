@@ -24,7 +24,7 @@ class Maxwell_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 			esc_html__( 'Magazine (Single Post)', 'maxwell-pro' ), // Name.
 			array(
 				'classname' => 'maxwell-magazine-single-widget',
-				'description' => esc_html__( 'Displays a single post from a selected category. Please use this widget ONLY in the Magazine Homepage widget area.', 'maxwell-pro' ),
+				'description' => esc_html__( 'Displays a single post from a selected category.', 'maxwell-pro' ),
 				'customize_selective_refresh' => true,
 			) // Args.
 		);
@@ -36,7 +36,7 @@ class Maxwell_Pro_Magazine_Posts_Single_Widget extends WP_Widget {
 	private function default_settings() {
 
 		$defaults = array(
-			'title'	   => '',
+			'title'	   => esc_html__( 'Magazine (Single Post)', 'maxwell-pro' ),
 			'category' => 0,
 		);
 

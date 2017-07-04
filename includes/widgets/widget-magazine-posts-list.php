@@ -24,7 +24,7 @@ class Maxwell_Pro_Magazine_Posts_List_Widget extends WP_Widget {
 			esc_html__( 'Magazine (List)', 'maxwell-pro' ), // Name.
 			array(
 				'classname' => 'maxwell-magazine-list-widget',
-				'description' => esc_html__( 'Displays your posts from a selected category in a simple list layout.', 'maxwell-pro' ),
+				'description' => esc_html__( 'Displays your posts from a selected category in a list layout.', 'maxwell-pro' ),
 				'customize_selective_refresh' => true,
 			) // Args.
 		);
