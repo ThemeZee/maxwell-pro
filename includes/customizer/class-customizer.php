@@ -62,6 +62,7 @@ class Maxwell_Pro_Customizer {
 			'header_logo'        => '',
 			'header_spacing'     => 30,
 			'logo_spacing'       => 0,
+			'author_bio'         => false,
 			'scroll_to_top'      => false,
 			'footer_text'        => '',
 			'credit_link'        => true,
