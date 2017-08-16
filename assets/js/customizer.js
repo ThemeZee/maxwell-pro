@@ -8,7 +8,19 @@
 
 ( function( $ ) {
 
-	// Author Bio checkbox.
+	/* Header Search checkbox */
+	wp.customize( 'maxwell_theme_options[header_search]', function( value ) {
+		value.bind( function( newval ) {
+			if ( false === newval ) {
+				hideElement( '.primary-navigation-wrap .header-search' );
+			} else {
+				showElement( '.primary-navigation-wrap .header-search' );
+				$( '.primary-navigation-wrap .header-search' ).css( 'position', 'static' );
+			}
+		} );
+	} );
+
+	/* Author Bio checkbox */
 	wp.customize( 'maxwell_theme_options[author_bio]', function( value ) {
 		value.bind( function( newval ) {
 			if ( false === newval ) {

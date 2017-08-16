@@ -12,7 +12,7 @@
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 /**
- * Footer Line Class
+ * Author Bio Class
  */
 class Maxwell_Pro_Author_Bio {
 
@@ -73,7 +73,7 @@ class Maxwell_Pro_Author_Bio {
 	}
 
 	/**
-	 * Adds footer text and credit link setting
+	 * Adds author bio checkbox setting
 	 *
 	 * @param object $wp_customize / Customizer Object.
 	 */
