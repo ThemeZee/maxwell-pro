@@ -67,6 +67,7 @@ class Maxwell_Pro_Customizer {
 			'scroll_to_top'      => false,
 			'footer_text'        => '',
 			'credit_link'        => true,
+			'page_bg_color'      => '#ffffff',
 			'top_navi_color'     => '#303030',
 			'link_color'         => '#33bbcc',
 			'navi_color'         => '#303030',
