@@ -109,7 +109,6 @@
 .top-navigation-menu ul .menu-item-has-children > a:after {
 	display: inline-block;
 	margin: 0.3em 0 0 0.3em;
-	color: #fff;
 	content: '\f431';
 	vertical-align: top;
 	text-decoration: inherit;
@@ -641,10 +640,10 @@
 		display: inline;
 	}
 
-	.top-navigation-menu > .menu-item-has-children > a:after {
+	.top-navigation-menu > .menu-item-has-children > a:after,
+	.top-navigation-menu ul .menu-item-has-children > a:after {
 		display: none;
 	}
-
 
 	/* Top Navigation Toggle */
 	.top-navigation-toggle {
@@ -655,11 +654,14 @@
 	}
 
 	.top-navigation-toggle:hover,
-	.top-navigation-toggle:active,
-	.top-navigation-toggle:focus {
+	.top-navigation-toggle:active {
 		color: rgba(0,0,0,0.5);
 		background: none;
 		cursor: pointer;
+	}
+
+	.top-navigation-toggle:focus {
+		background: none;
 	}
 
 	.top-navigation-toggle:after {
@@ -690,11 +692,7 @@
 		display: block;
 		clear: left;
 		padding: 1em 1.25em;
-		border-bottom: 1px solid rgba(255,255,255,0.1);
-	}
-
-	.top-navigation-menu li:last-child a {
-		border-bottom: none;
+		border-top: 1px solid rgba(255,255,255,0.1);
 	}
 
 	.top-navigation-menu a:link,
@@ -710,13 +708,13 @@
 	.top-navigation-menu ul {
 		width: 100%;
 		border: none;
-		border-top: 1px solid rgba(255,255,255,0.1);
 	}
 
 	.top-navigation-menu ul a {
 		display: block;
 		padding-left: 3em;
 		width: 100%;
+		border-bottom: none;
 	}
 
 	.top-navigation-menu ul li ul a {
@@ -736,11 +734,11 @@
 		display: block;
 		float: right;
 		margin: 0;
-		padding: 0.75em 1.25em;
+		padding: 0.8em 1.2em;
+		color: #fff;
 	}
 
 	.top-navigation-menu .submenu-dropdown-toggle:before {
-		color: #fff;
 		content: '\f431';
 		vertical-align: middle;
 		text-decoration: inherit;
@@ -762,7 +760,7 @@
 	}
 
 	.top-navigation-menu ul .submenu-dropdown-toggle {
-		padding: 0.4em 1em;
+		padding: 0.55em 1em;
 	}
 
 	/* Footer Widgets */

@@ -274,7 +274,7 @@ class Maxwell_Pro_Custom_Colors {
 					.post-slider-controls .zeeflex-direction-nav a:hover,
 					.scroll-to-top-button:hover {
 						color: #222;
-						background: rgba(255,255,255,0.9);
+						background: #fff;
 					}
 				';
 			} // End if().
@@ -314,28 +314,55 @@ class Maxwell_Pro_Custom_Colors {
 			$custom_css .= '
 				/* Top Navigation Color Setting */
 				@media only screen and (min-width: 60.001em) {
-
 					.top-navigation-menu ul {
 						background: ' . $theme_options['top_navi_color'] . ';
 					}
-
 				}
 
 				@media only screen and (max-width: 60em) {
-
-					.top-navigation-toggle,
-					.top-navigation-toggle:after {
-						color: ' . $theme_options['top_navi_color'] . ';
-					}
-
 					.top-navigation-menu,
 					.top-navigation-menu ul {
 						background: ' . $theme_options['top_navi_color'] . ';
 					}
-
 				}
 			';
-		}
+
+			// Check if a light background color was chosen.
+			if ( self::is_color_light( $theme_options['top_navi_color'] ) ) {
+				$custom_css .= '
+					.top-navigation-menu a,
+					.top-navigation-menu ul,
+					.top-navigation-menu ul a {
+						border-color: rgba(0,0,0,0.1);
+					}
+
+					.top-navigation-menu ul a:link,
+					.top-navigation-menu ul a:visited,
+					.top-navigation-menu .submenu-dropdown-toggle {
+						color: #222;
+					}
+
+					.top-navigation-menu ul a:hover,
+					.top-navigation-menu ul a:active,
+					.top-navigation-menu .submenu-dropdown-toggle:hover,
+					.top-navigation-menu .submenu-dropdown-toggle:active {
+						background: rgba(0,0,0,0.1);
+					}
+
+					@media only screen and (max-width: 60em) {
+						.top-navigation-menu a:link,
+						.top-navigation-menu a:visited {
+							color: #222;
+						}
+
+						.top-navigation-menu a:hover,
+						.top-navigation-menu a:active {
+							background: rgba(0,0,0,0.1);
+						}
+					}
+				';
+			}
+		} // End if().
 
 		// Set Primary Navigation Color.
 		if ( $theme_options['navi_color'] !== $default_options['navi_color'] ) {
@@ -343,30 +370,66 @@ class Maxwell_Pro_Custom_Colors {
 			$custom_css .= '
 				/* Main Navigation Color Setting */
 				@media only screen and (min-width: 60.001em) {
-
 					.main-navigation-menu ul {
 						background: ' . $theme_options['navi_color'] . ';
 					}
 
-					.main-navigation-menu li.current-menu-item > a {
+					.main-navigation-menu > li.current-menu-item > a {
 						border-color: ' . $theme_options['navi_color'] . ';
 					}
-
 				}
 
 				@media only screen and (max-width: 60em) {
-
 					.main-navigation-toggle {
-						border-top: 0.3em solid ' . $theme_options['navi_color'] . ';
+						border-color: ' . $theme_options['navi_color'] . ';
 					}
 
 					.main-navigation-menu,
 					.main-navigation-menu ul {
 						background: ' . $theme_options['navi_color'] . ';
 					}
-
 				}
 			';
+
+			// Check if a light background color was chosen.
+			if ( self::is_color_light( $theme_options['navi_color'] ) ) {
+				$custom_css .= '
+					.main-navigation-menu ul,
+					.main-navigation-menu ul a {
+						border-color: rgba(0,0,0,0.1);
+					}
+
+					.main-navigation-menu ul a:link,
+					.main-navigation-menu ul a:visited,
+					.main-navigation-menu .submenu-dropdown-toggle {
+						color: #222;
+					}
+
+					.main-navigation-menu ul a:hover,
+					.main-navigation-menu ul a:active,
+					.main-navigation-menu .submenu-dropdown-toggle:hover,
+					.main-navigation-menu .submenu-dropdown-toggle:active {
+						background: rgba(0,0,0,0.1);
+					}
+
+					@media only screen and (max-width: 60em) {
+						.main-navigation-menu a,
+						.main-navigation-menu > li.current-menu-item > a {
+							border-color: rgba(0,0,0,0.1);
+						}
+
+						.main-navigation-menu a:link,
+						.main-navigation-menu a:visited {
+							color: #222;
+						}
+
+						.main-navigation-menu a:hover,
+						.main-navigation-menu a:active {
+							background: rgba(0,0,0,0.1);
+						}
+					}
+				';
+			}
 		}
 
 		// Set Title Color.
@@ -458,7 +521,7 @@ class Maxwell_Pro_Custom_Colors {
 		$wp_customize->add_setting( 'maxwell_theme_options[top_navi_color]', array(
 			'default'           => $default_options['top_navi_color'],
 			'type'              => 'option',
-			'transport'         => 'refresh',
+			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
@@ -474,7 +537,7 @@ class Maxwell_Pro_Custom_Colors {
 		$wp_customize->add_setting( 'maxwell_theme_options[navi_color]', array(
 			'default'           => $default_options['navi_color'],
 			'type'              => 'option',
-			'transport'         => 'refresh',
+			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
@@ -543,7 +606,7 @@ class Maxwell_Pro_Custom_Colors {
 	 * @param bool True if color is light.
 	 */
 	static function is_color_light( $hex_color ) {
-		return ( self::get_color_brightness( $hex_color ) > 130 );
+		return ( self::get_color_brightness( $hex_color ) > 149 );
 	}
 
 	/**
@@ -552,7 +615,7 @@ class Maxwell_Pro_Custom_Colors {
 	 * @param bool True if color is dark.
 	 */
 	static function is_color_dark( $hex_color ) {
-		return ( self::get_color_brightness( $hex_color ) <= 130 );
+		return ( self::get_color_brightness( $hex_color ) <= 149 );
 	}
 }
 
