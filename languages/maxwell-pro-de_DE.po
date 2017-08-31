@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Maxwell Pro\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
-"POT-Creation-Date: 2017-07-04 15:05+0200\n"
-"PO-Revision-Date: 2017-07-04 15:05+0200\n"
+"POT-Creation-Date: 2017-08-31 11:12+0200\n"
+"PO-Revision-Date: 2017-08-31 11:25+0200\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
 "Language: de_DE\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.8.12\n"
+"X-Generator: Poedit 2.0.3\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #: includes/admin/class-admin-notices.php:52
@@ -175,31 +175,49 @@ msgstr "Standard"
 msgid "Update Fonts"
 msgstr "Schriftarten aktualisieren"
 
-#: includes/modules/class-custom-colors.php:230
+#: includes/modules/class-author-bio.php:60
+#, php-format
+msgid "About %s"
+msgstr "Über %s"
+
+#: includes/modules/class-author-bio.php:62
+msgid "View all posts"
+msgstr "Alle Beiträge ansehen"
+
+#: includes/modules/class-author-bio.php:91
+msgid "Display Author Bio"
+msgstr "Autor Bio anzeigen"
+
+#: includes/modules/class-custom-colors.php:480
 msgid "Theme Colors"
 msgstr "Theme Farben"
 
-#: includes/modules/class-custom-colors.php:249
+#: includes/modules/class-custom-colors.php:497
+msgctxt "color setting"
+msgid "Page Background"
+msgstr "Theme Hintergrund"
+
+#: includes/modules/class-custom-colors.php:513
 msgctxt "color setting"
 msgid "Links and Buttons"
 msgstr "Links und Buttons"
 
-#: includes/modules/class-custom-colors.php:266
+#: includes/modules/class-custom-colors.php:529
 msgctxt "color setting"
 msgid "Top Navigation"
 msgstr "Obere Navigation"
 
-#: includes/modules/class-custom-colors.php:283
+#: includes/modules/class-custom-colors.php:545
 msgctxt "color setting"
 msgid "Main Navigation"
 msgstr "Hauptnavigation"
 
-#: includes/modules/class-custom-colors.php:300
+#: includes/modules/class-custom-colors.php:561
 msgctxt "color setting"
 msgid "Post Titles"
 msgstr "Beitrags-Titel"
 
-#: includes/modules/class-custom-colors.php:317
+#: includes/modules/class-custom-colors.php:577
 msgctxt "color setting"
 msgid "Widget Titles"
 msgstr "Widget Titel"
@@ -278,6 +296,18 @@ msgstr "Obere Navigation"
 #: includes/modules/class-header-bar.php:106
 msgid "Social Icons"
 msgstr "Social Icons"
+
+#: includes/modules/class-header-search.php:78
+msgid "Search"
+msgstr "Suche"
+
+#: includes/modules/class-header-search.php:104
+msgid "Header Search"
+msgstr "Header Suche"
+
+#: includes/modules/class-header-search.php:120
+msgid "Enable search field in header"
+msgstr "Suchfeld im Header anzeigen"
 
 #: includes/modules/class-header-spacing.php:91
 msgid "Header Settings"
@@ -358,13 +388,14 @@ msgid ""
 "Main Sidebar widget area."
 msgstr ""
 "Zeigt die Beiträge einer gewählten Kategorie. Bitte verwende dieses Widget "
-"in der Sidebar. "
+"in der Sidebar."
 
 #: includes/widgets/widget-magazine-posts-sidebar.php:228
 msgid "Display post excerpt"
 msgstr "Zeige Auszug des Beitrags"
 
 #: includes/widgets/widget-magazine-posts-single.php:24
+#: includes/widgets/widget-magazine-posts-single.php:39
 msgid "Magazine (Single Post)"
 msgstr "Magazin (Einzelner Beitrag)"
 
@@ -381,6 +412,6 @@ msgstr "Magazin (Vertikale Box)"
 msgid "Displays your posts from a selected category in a vertical box."
 msgstr "Zeigt die Beiträge einer gewählten Kategorie in einer vertikalen Box."
 
-#: maxwell-pro.php:212
+#: maxwell-pro.php:214
 msgid "Settings"
 msgstr "Einstellungen"
