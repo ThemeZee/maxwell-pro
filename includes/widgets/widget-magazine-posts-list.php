@@ -120,7 +120,7 @@ class Maxwell_Pro_Magazine_Posts_List_Widget extends WP_Widget {
 		if ( $posts_query->have_posts() ) :
 
 			// Limit the number of words for the excerpt.
-			add_filter( 'excerpt_length', 'maxwell_excerpt_length' );
+			add_filter( 'excerpt_length', 'maxwell_magazine_posts_excerpt_length' );
 
 			// Display Posts.
 			while ( $posts_query->have_posts() ) : $posts_query->the_post();
@@ -130,7 +130,7 @@ class Maxwell_Pro_Magazine_Posts_List_Widget extends WP_Widget {
 			endwhile;
 
 			// Remove excerpt filter.
-			remove_filter( 'excerpt_length', 'maxwell_excerpt_length' );
+			remove_filter( 'excerpt_length', 'maxwell_magazine_posts_excerpt_length' );
 
 		endif;
 
