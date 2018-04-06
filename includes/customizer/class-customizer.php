@@ -77,7 +77,6 @@ class Maxwell_Pro_Customizer {
 			'title_font'         => 'Amaranth',
 			'navi_font'          => 'Titillium Web',
 			'widget_title_font'  => 'Amaranth',
-			'available_fonts'    => 'favorites',
 		);
 
 		return $default_options;
