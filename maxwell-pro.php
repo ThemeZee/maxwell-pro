@@ -5,7 +5,7 @@ Plugin URI: http://themezee.com/addons/maxwell-pro/
 Description: Adds additional features like footer widgets, custom colors, custom fonts, custom menus, and Magazine Post widgets to the Maxwell theme.
 Author: ThemeZee
 Author URI: https://themezee.com/
-Version: 1.4
+Version: 1.5
 Text Domain: maxwell-pro
 Domain Path: /languages/
 License: GPL v3
@@ -62,7 +62,7 @@ class Maxwell_Pro {
 		define( 'MAXWELL_PRO_NAME', 'Maxwell Pro' );
 
 		// Define Version Number.
-		define( 'MAXWELL_PRO_VERSION', '1.4' );
+		define( 'MAXWELL_PRO_VERSION', '1.5' );
 
 		// Define Plugin Name.
 		define( 'MAXWELL_PRO_PRODUCT_ID', 65584 );
