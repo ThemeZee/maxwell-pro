@@ -54,6 +54,9 @@
 			custom_css = '.pagination a:hover, .pagination a:active, .tzwb-tabbed-content .tzwb-tabnavi li a:hover, .tzwb-tabbed-content .tzwb-tabnavi li a:active, .tzwb-tabbed-content .tzwb-tabnavi li a.current-tab { color: ' + text_color + '; background: ' + newval + '; }';
 
 			addColorStyles( custom_css, 3 );
+
+			$( '.has-primary-color' ).css( 'color', newval );
+			$( '.has-primary-background-color' ).css( 'background-color', newval );
 		} );
 	} );
 

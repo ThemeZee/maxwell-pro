@@ -5,11 +5,11 @@ Plugin URI: http://themezee.com/addons/maxwell-pro/
 Description: Adds additional features like footer widgets, custom colors, custom fonts, custom menus, and Magazine Post widgets to the Maxwell theme.
 Author: ThemeZee
 Author URI: https://themezee.com/
-Version: 1.5
+Version: 1.6
 Text Domain: maxwell-pro
 Domain Path: /languages/
-License: GPL v3
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Maxwell Pro
 Copyright(C) 2017, ThemeZee.com - support@themezee.com
@@ -17,7 +17,9 @@ Copyright(C) 2017, ThemeZee.com - support@themezee.com
 */
 
 // Exit if accessed directly.
-if ( ! defined( 'ABSPATH' ) ) { exit; }
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 
 /**
@@ -48,7 +50,6 @@ class Maxwell_Pro {
 
 		// Setup Action Hooks.
 		self::setup_actions();
-
 	}
 
 	/**
@@ -62,7 +63,7 @@ class Maxwell_Pro {
 		define( 'MAXWELL_PRO_NAME', 'Maxwell Pro' );
 
 		// Define Version Number.
-		define( 'MAXWELL_PRO_VERSION', '1.5' );
+		define( 'MAXWELL_PRO_VERSION', '1.6' );
 
 		// Define Plugin Name.
 		define( 'MAXWELL_PRO_PRODUCT_ID', 65584 );
@@ -78,7 +79,6 @@ class Maxwell_Pro {
 
 		// Plugin Root File.
 		define( 'MAXWELL_PRO_PLUGIN_FILE', __FILE__ );
-
 	}
 
 	/**
@@ -125,7 +125,6 @@ class Maxwell_Pro {
 		require_once MAXWELL_PRO_PLUGIN_DIR . 'includes/widgets/widget-magazine-posts-list.php';
 		require_once MAXWELL_PRO_PLUGIN_DIR . 'includes/widgets/widget-magazine-posts-sidebar.php';
 		require_once MAXWELL_PRO_PLUGIN_DIR . 'includes/widgets/widget-magazine-posts-single.php';
-
 	}
 
 	/**
@@ -147,7 +146,6 @@ class Maxwell_Pro {
 
 		// Add automatic plugin updater from ThemeZee Store API.
 		add_action( 'admin_init', array( __CLASS__, 'plugin_updater' ), 0 );
-
 	}
 
 	/**
@@ -180,7 +178,6 @@ class Maxwell_Pro {
 
 		// Enqueue Custom CSS.
 		wp_add_inline_style( 'maxwell-pro', $custom_css );
-
 	}
 
 	/**
@@ -200,7 +197,6 @@ class Maxwell_Pro {
 		register_widget( 'Maxwell_Pro_Magazine_Posts_List_Widget' );
 		register_widget( 'Maxwell_Pro_Magazine_Posts_Sidebar_Widget' );
 		register_widget( 'Maxwell_Pro_Magazine_Posts_Single_Widget' );
-
 	}
 
 	/**
@@ -231,16 +227,14 @@ class Maxwell_Pro {
 
 			// Setup the updater.
 			$maxwell_pro_updater = new Maxwell_Pro_Plugin_Updater( MAXWELL_PRO_STORE_API_URL, __FILE__, array(
-					'version' 	=> MAXWELL_PRO_VERSION,
-					'license' 	=> $license_key,
-					'item_name' => MAXWELL_PRO_NAME,
-					'item_id'   => MAXWELL_PRO_PRODUCT_ID,
-					'author' 	=> 'ThemeZee',
-				)
-			);
+				'version'   => MAXWELL_PRO_VERSION,
+				'license'   => $license_key,
+				'item_name' => MAXWELL_PRO_NAME,
+				'item_id'   => MAXWELL_PRO_PRODUCT_ID,
+				'author'    => 'ThemeZee',
+			) );
 
 		endif;
-
 	}
 }
 
