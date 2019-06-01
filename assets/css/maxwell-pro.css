@@ -966,3 +966,25 @@
 	}
 
 }
+
+/*--------------------------------------------------------------
+# CSS Hacks for Safari
+--------------------------------------------------------------*/
+
+/* Fix Flexbox issues for Safari 6.1-10.0 */
+@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
+	@media {
+		.footer-widgets-columns .footer-widget-column {
+			margin-right: -1px;
+		}
+	}
+}
+
+/* Fix Flexbox issues for Safari 10.1+ */
+@media not all and (min-resolution:.001dpcm) {
+	@media {
+		.footer-widgets-columns .footer-widget-column {
+			margin-right: -1px;
+		}
+	}
+}

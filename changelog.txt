@@ -2,6 +2,10 @@
 Maxwell Pro Changelog
 ===================================
 
+Version 1.6.2
+-----------------------------------
+* fixed footer widget layout for Safari flexbox bug
+
 Version 1.6.1
 -----------------------------------
 * display Scroll-to-Top button on all screen sizes
