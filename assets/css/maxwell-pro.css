@@ -1,13 +1,16 @@
 /*
  * Maxwell Pro CSS
  *
- * Copyright(C) 2015, ThemeZee.com - support@themezee.com
- * License: GPL v3
- * License URI: http://www.gnu.org/licenses/gpl-3.0.html
+ * Copyright(C) 2019, ThemeZee.com - support@themezee.com
+ * License: GNU General Public License v2 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  *
  * @package Maxwell Pro
  */
 
+/*--------------------------------------------------------------
+# - CSS Variables
+--------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
 # Header Bar
@@ -17,7 +20,7 @@
 	margin: 0 auto;
 	max-width: 1340px;
 	width: 100%;
-	border-bottom: 1px solid rgba(0,0,0,0.15);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 	background: #fff;
 }
 
@@ -66,7 +69,7 @@
 
 .top-navigation-menu a:hover,
 .top-navigation-menu a:active {
-	color: rgba(0,0,0,0.5);
+	color: rgba(0, 0, 0, 0.5);
 }
 
 .top-navigation-menu ul {
@@ -81,7 +84,7 @@
 	list-style-type: none;
 }
 
-.top-navigation-menu ul li{
+.top-navigation-menu ul li {
 	position: relative;
 	float: none;
 }
@@ -91,7 +94,7 @@
 	padding: 1em;
 	min-width: 250px;
 	min-width: 16rem;
-	border-bottom: 1px solid rgba(255,255,255,0.1);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 	font-size: 13px;
 	font-size: 0.8125rem;
 }
@@ -103,7 +106,7 @@
 
 .top-navigation-menu ul a:hover,
 .top-navigation-menu ul a:active {
-	background: rgba(255,255,255,0.1);
+	background: rgba(255, 255, 255, 0.1);
 }
 
 .top-navigation-menu ul .menu-item-has-children > a:after {
@@ -152,7 +155,7 @@
 }
 
 .header-bar .social-icons-menu li a:hover {
-	color: rgba(0,0,0,0.5);
+	color: rgba(0, 0, 0, 0.5);
 	text-decoration: none;
 }
 
@@ -175,7 +178,7 @@
 .header-search .header-search-icon:hover,
 .header-search .header-search-icon:active {
 	cursor: pointer;
-	color: rgba(0,0,0,0.5);
+	color: rgba(0, 0, 0, 0.5);
 }
 
 .header-search .header-search-icon:focus {
@@ -206,7 +209,7 @@
 	margin: -1px 0 0;
 	padding: 0;
 	z-index: 99;
-	border-top: 1px solid rgba(0,0,0,0.15);
+	border-top: 1px solid rgba(0, 0, 0, 0.15);
 	width: 100%;
 	box-sizing: border-box;
 	background: #fff;
@@ -237,7 +240,7 @@
 
 .header-search .header-search-form .header-search-close:hover {
 	cursor: pointer;
-	color: rgba(0,0,0,0.5);
+	color: rgba(0, 0, 0, 0.5);
 }
 
 .header-search .header-search-form .header-search-close .genericon-close {
@@ -256,10 +259,8 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
-
-
 /*--------------------------------------------------------------
-# Magazine Post Widgets
+# Magazine Widgets
 --------------------------------------------------------------*/
 
 /* Magazine Posts Boxed Widget Horizontal Style */
@@ -333,7 +334,7 @@
 .entry-author {
 	margin: 1.75em 0 0;
 	padding: 2em 0 0;
-	border-top: 1px solid rgba(0,0,0,0.15);
+	border-top: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .entry-author .author-avatar {
@@ -369,11 +370,11 @@
 }
 
 /*--------------------------------------------------------------
-# Footer Widget Area
+# Footer Widgets
 --------------------------------------------------------------*/
 .footer-widgets-wrap {
 	padding: 2.5em 0 0;
-	border-top: 1px solid rgba(0,0,0,0.15);
+	border-top: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .footer-widgets-columns {
@@ -411,7 +412,7 @@
 }
 
 /*--------------------------------------------------------------
-# Footer Navigation
+# Footer Menu
 --------------------------------------------------------------*/
 .footer-navigation {
 	float: right;
@@ -450,7 +451,7 @@
 
 .footer-navigation-menu a:hover,
 .footer-navigation-menu a:active {
-	color: rgba(0,0,0,0.5);
+	color: rgba(0, 0, 0, 0.5);
 }
 
 /*--------------------------------------------------------------
@@ -513,14 +514,13 @@
 	.footer-navigation-menu {
 		padding: 2em 0;
 	}
-
 }
 
 /*--------------------------------------------------------------
 ## Desktop Medium ( < 1040px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 70em) {
-	.widget-magazine-posts .magazine-horizontal-box .large-post .more-link  {
+	.widget-magazine-posts .magazine-horizontal-box .large-post .more-link {
 		display: none;
 	}
 
@@ -537,7 +537,6 @@
 		font-size: 16px;
 		font-size: 1rem;
 	}
-
 }
 
 /*--------------------------------------------------------------
@@ -606,11 +605,11 @@
 	}
 
 	/*** Mobile Top Navigation ***/
-
 	/* Reset */
 	.top-navigation-menu {
 		margin: 0;
 	}
+
 	.top-navigation-menu li {
 		position: static;
 		float: none;
@@ -655,7 +654,7 @@
 
 	.top-navigation-toggle:hover,
 	.top-navigation-toggle:active {
-		color: rgba(0,0,0,0.5);
+		color: rgba(0, 0, 0, 0.5);
 		background: none;
 		cursor: pointer;
 	}
@@ -692,7 +691,7 @@
 		display: block;
 		clear: left;
 		padding: 1em 1.25em;
-		border-top: 1px solid rgba(255,255,255,0.1);
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
 	}
 
 	.top-navigation-menu a:link,
@@ -702,7 +701,7 @@
 
 	.top-navigation-menu a:hover,
 	.top-navigation-menu a:active {
-		background: rgba(255,255,255,0.1);
+		background: rgba(255, 255, 255, 0.1);
 	}
 
 	.top-navigation-menu ul {
@@ -751,7 +750,7 @@
 
 	.top-navigation-menu .submenu-dropdown-toggle:hover,
 	.top-navigation-menu .submenu-dropdown-toggle:active {
-		background: rgba(255,255,255,0.1);
+		background: rgba(255, 255, 255, 0.1);
 		cursor: pointer;
 	}
 
@@ -792,7 +791,7 @@
 ## Tablet Medium ( < 800px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 50em) {
-	.widget-magazine-posts .magazine-horizontal-box .large-post .more-link  {
+	.widget-magazine-posts .magazine-horizontal-box .large-post .more-link {
 		display: none;
 	}
 
@@ -867,7 +866,7 @@
 	/* Footer Navigation Menu */
 	.footer-navigation {
 		padding-bottom: 2em;
-		border-bottom: 1px solid rgba(0,0,0,0.15);
+		border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 	}
 
 	.footer-navigation-menu li,
@@ -893,7 +892,6 @@
 		padding-right: 0;
 		width: 100%;
 	}
-
 }
 
 /*--------------------------------------------------------------
@@ -939,7 +937,6 @@
 	.footer-widgets .widget {
 		margin: 0 0 1.5em;
 	}
-
 }
 
 /*--------------------------------------------------------------
@@ -952,7 +949,6 @@
 		font-size: 20px;
 		font-size: 1.25rem;
 	}
-
 }
 
 /*--------------------------------------------------------------
@@ -964,7 +960,6 @@
 	.top-navigation-menu {
 		display: block !important;
 	}
-
 }
 
 /*--------------------------------------------------------------
@@ -972,19 +967,5 @@
 --------------------------------------------------------------*/
 
 /* Fix Flexbox issues for Safari 6.1-10.0 */
-@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
-	@media {
-		.footer-widgets-columns .footer-widget-column {
-			margin-right: -1px;
-		}
-	}
-}
 
 /* Fix Flexbox issues for Safari 10.1+ */
-@media not all and (min-resolution:.001dpcm) {
-	@media {
-		.footer-widgets-columns .footer-widget-column {
-			margin-right: -1px;
-		}
-	}
-}

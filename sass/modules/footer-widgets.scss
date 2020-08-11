@@ -1,0 +1,38 @@
+.footer-widgets-wrap {
+	padding: 2.5em 0 0;
+	border-top: 1px solid rgba(0,0,0,0.15);
+}
+
+.footer-widgets-columns {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	margin-right: -3em;
+}
+
+.footer-widget-column {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	box-sizing: border-box;
+	padding-right: 3em;
+	width: 33.333333333333%;
+}
+
+.footer-widget-column .widget {
+	width: 100%;
+}
+
+/* Footer Columns Fixes for IE 10 and IE 11 */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	.footer-widgets-columns {
+		display: block;
+	}
+
+	.footer-widget-column {
+		display: block;
+		float: left;
+	}
+}

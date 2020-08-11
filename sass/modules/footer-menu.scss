@@ -1,0 +1,39 @@
+.footer-navigation {
+	float: right;
+}
+
+.footer-navigation-toggle {
+	display: none;
+}
+
+.footer-navigation-menu {
+	position: relative;
+	display: block;
+	margin: 0;
+	padding: 3em 0;
+	list-style-position: outside;
+	list-style-type: none;
+}
+
+.footer-navigation-menu li {
+	position: relative;
+	float: left;
+}
+
+.footer-navigation-menu a {
+	display: block;
+	padding: 0 0.8em;
+	text-decoration: none;
+	font-family: 'Titillium Web', Tahoma, Arial;
+}
+
+.footer-navigation-menu a:link,
+.footer-navigation-menu a:visited {
+	color: #303030;
+	text-decoration: none;
+}
+
+.footer-navigation-menu a:hover,
+.footer-navigation-menu a:active {
+	color: rgba(0,0,0,0.5);
+}
