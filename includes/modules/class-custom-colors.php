@@ -163,12 +163,11 @@ class Maxwell_Pro_Custom_Colors {
 					a:hover,
 					a:focus,
 					a:active,
-					.main-navigation-menu a:link,
-					.main-navigation-menu a:visited,
-					.main-navigation-toggle,
+					.primary-menu-toggle,
+					.secondary-menu-toggle,
+					.primary-menu-toggle:focus,
+					.secondary-menu-toggle:focus,
 					.post-navigation .nav-links .nav-link-text,
-					.top-navigation-menu a:link,
-					.top-navigation-menu a:visited,
 					.header-bar .social-icons-menu li a,
 					.header-search .header-search-icon,
 					.header-search .header-search-form .header-search-close,
@@ -177,10 +176,17 @@ class Maxwell_Pro_Custom_Colors {
 						color: #fff;
 					}
 
-					.main-navigation-menu a:hover,
-					.main-navigation-menu a:active,
-					.main-navigation-toggle:hover,
-					.main-navigation-toggle:active,
+					.primary-menu-toggle .icon,
+					.secondary-menu-toggle .icon,
+					.top-navigation > ul > .menu-item-has-children > a > .icon,
+					.main-navigation > ul > .menu-item-has-children > a > .icon {
+						fill: #fff;
+					}
+
+					.primary-menu-toggle:hover,
+					.primary-menu-toggle:active,
+					.secondary-menu-toggle:hover,
+					.secondary-menu-toggle:active,
 					.entry-meta,
 					.entry-meta a:link,
 					.entry-meta a:visited,
@@ -189,8 +195,6 @@ class Maxwell_Pro_Custom_Colors {
 					.entry-tags .meta-tags a:link,
 					.entry-tags .meta-tags a:visited,
 					.post-navigation .nav-links a:hover .nav-link-text,
-					.top-navigation-menu a:hover,
-					.top-navigation-menu a:active,
 					.header-bar .social-icons-menu li a:hover,
 					.header-search .header-search-icon:hover,
 					.header-search .header-search-icon:active,
@@ -199,6 +203,31 @@ class Maxwell_Pro_Custom_Colors {
 					.footer-navigation-menu a:active {
 						color: rgba(255,255,255,0.5);
 					}
+
+					.primary-menu-toggle:hover .icon,
+					.primary-menu-toggle:active .icon,
+					.secondary-menu-toggle:hover .icon,
+					.secondary-menu-toggle:active .icon,
+					.top-navigation > ul > .menu-item-has-children > a:hover > .icon,
+					.main-navigation > ul > .menu-item-has-children > a:hover > .icon {
+						fill: rgba(255,255,255,0.5);
+					}
+
+					@media only screen and (min-width: 60.001em) {
+						.top-navigation > ul > li > a:link,
+						.top-navigation > ul > li > a:visited,
+						.main-navigation > ul > li > a:link,
+						.main-navigation > ul > li > a:visited {
+							color: #fff;
+						}
+						
+						.top-navigation > ul > li > a:hover,
+						.top-navigation > ul > li > a:active,
+						.main-navigation > ul > li > a:hover,
+						.main-navigation > ul > li > a:active {
+							color: rgba(255,255,255,0.5);
+						}
+					}	
 
 					input[type="text"],
 					input[type="email"],
@@ -321,14 +350,14 @@ class Maxwell_Pro_Custom_Colors {
 			$custom_css .= '
 				/* Top Navigation Color Setting */
 				@media only screen and (min-width: 60.001em) {
-					.top-navigation-menu ul {
+					.top-navigation ul ul {
 						background: ' . $theme_options['top_navi_color'] . ';
 					}
 				}
 
 				@media only screen and (max-width: 60em) {
-					.top-navigation-menu,
-					.top-navigation-menu ul {
+					.top-navigation ul,
+					.top-navigation ul ul {
 						background: ' . $theme_options['top_navi_color'] . ';
 					}
 				}
@@ -337,33 +366,39 @@ class Maxwell_Pro_Custom_Colors {
 			// Check if a light background color was chosen.
 			if ( self::is_color_light( $theme_options['top_navi_color'] ) ) {
 				$custom_css .= '
-					.top-navigation-menu a,
-					.top-navigation-menu ul,
-					.top-navigation-menu ul a {
+					.top-navigation ul a,
+					.top-navigation ul ul,
+					.top-navigation ul ul li a {
 						border-color: rgba(0,0,0,0.1);
 					}
 
-					.top-navigation-menu ul a:link,
-					.top-navigation-menu ul a:visited,
-					.top-navigation-menu .submenu-dropdown-toggle {
+					.top-navigation ul ul a:link,
+					.top-navigation ul ul a:visited {
 						color: #222;
 					}
+					
+					.top-navigation ul .dropdown-toggle .icon,
+					.top-navigation ul ul .menu-item-has-children > a > .icon {
+					    fill: #222;
+					}
 
-					.top-navigation-menu ul a:hover,
-					.top-navigation-menu ul a:active,
-					.top-navigation-menu .submenu-dropdown-toggle:hover,
-					.top-navigation-menu .submenu-dropdown-toggle:active {
+					.top-navigation ul ul a:hover,
+					.top-navigation ul ul a:active,
+					.top-navigation ul .dropdown-toggle:hover,
+					.top-navigation ul .dropdown-toggle:active,
+					.top-navigation ul ul .menu-item-has-children > a:hover,
+					.top-navigation ul ul .menu-item-has-children > a:active {
 						background: rgba(0,0,0,0.1);
 					}
 
 					@media only screen and (max-width: 60em) {
-						.top-navigation-menu a:link,
-						.top-navigation-menu a:visited {
+						.top-navigation ul a:link,
+						.top-navigation ul a:visited {
 							color: #222;
 						}
 
-						.top-navigation-menu a:hover,
-						.top-navigation-menu a:active {
+						.top-navigation ul a:hover,
+						.top-navigation ul a:active {
 							background: rgba(0,0,0,0.1);
 						}
 					}
@@ -377,22 +412,22 @@ class Maxwell_Pro_Custom_Colors {
 			$custom_css .= '
 				/* Main Navigation Color Setting */
 				@media only screen and (min-width: 60.001em) {
-					.main-navigation-menu ul {
+					.main-navigation ul ul {
 						background: ' . $theme_options['navi_color'] . ';
 					}
 
-					.main-navigation-menu > li.current-menu-item > a {
+					.main-navigation ul > li.current-menu-item > a {
 						border-color: ' . $theme_options['navi_color'] . ';
 					}
 				}
 
 				@media only screen and (max-width: 60em) {
-					.main-navigation-toggle {
+					.primary-menu-toggle {
 						border-color: ' . $theme_options['navi_color'] . ';
 					}
 
-					.main-navigation-menu,
-					.main-navigation-menu ul {
+					.main-navigation ul,
+					.main-navigation ul ul {
 						background: ' . $theme_options['navi_color'] . ';
 					}
 				}
@@ -401,37 +436,43 @@ class Maxwell_Pro_Custom_Colors {
 			// Check if a light background color was chosen.
 			if ( self::is_color_light( $theme_options['navi_color'] ) ) {
 				$custom_css .= '
-					.main-navigation-menu ul,
-					.main-navigation-menu ul a {
+					.main-navigation ul ul,
+					.main-navigation ul ul a {
 						border-color: rgba(0,0,0,0.1);
 					}
 
-					.main-navigation-menu ul a:link,
-					.main-navigation-menu ul a:visited,
-					.main-navigation-menu .submenu-dropdown-toggle {
+					.main-navigation ul ul a:link,
+					.main-navigation ul ul a:visiteds {
 						color: #222;
 					}
 
-					.main-navigation-menu ul a:hover,
-					.main-navigation-menu ul a:active,
-					.main-navigation-menu .submenu-dropdown-toggle:hover,
-					.main-navigation-menu .submenu-dropdown-toggle:active {
+					.main-navigation ul ul a:hover,
+					.main-navigation ul ul a:active,
+					.main-navigation .dropdown-toggle:hover,
+					.main-navigation .dropdown-toggle:active,
+					.main-navigation ul .menu-item-has-children > a:hover,
+					.main-navigation ul .menu-item-has-children > a:active {
 						background: rgba(0,0,0,0.1);
 					}
 
+					.main-navigation .dropdown-toggle .icon,
+					.main-navigation ul .menu-item-has-children > a > .icon {
+					    fill: #222;
+					}
+
 					@media only screen and (max-width: 60em) {
-						.main-navigation-menu a,
-						.main-navigation-menu > li.current-menu-item > a {
+						.main-navigation ul a,
+						.main-navigation ul > li.current-menu-item > a {
 							border-color: rgba(0,0,0,0.1);
 						}
 
-						.main-navigation-menu a:link,
-						.main-navigation-menu a:visited {
+						.main-navigation ul a:link,
+						.main-navigation ul a:visited {
 							color: #222;
 						}
 
-						.main-navigation-menu a:hover,
-						.main-navigation-menu a:active {
+						.main-navigation ul a:hover,
+						.main-navigation ul a:active {
 							background: rgba(0,0,0,0.1);
 						}
 					}

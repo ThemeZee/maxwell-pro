@@ -105,7 +105,7 @@
 
 .secondary-menu-toggle:hover .icon,
 .secondary-menu-toggle:active .icon {
-	color: rgba(0, 0, 0, 0.5);
+	fill: rgba(0, 0, 0, 0.5);
 }
 
 .secondary-menu-toggle[aria-expanded="true"] .icon-menu,
@@ -269,11 +269,7 @@
 	.top-navigation > ul > li > a:hover,
 	.top-navigation > ul > li > a:active {
 		color: rgba(0, 0, 0, 0.5);
-	}
-
-	.top-navigation > ul > li.current-menu-item > a {
-		border-color: #303030;
-		text-decoration: none;
+		background: none;
 	}
 
 	/* Dropdown Menus */

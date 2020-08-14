@@ -85,14 +85,18 @@
 				bg_color = '#ffffff';
 			}
 
-			custom_css += 'body, input, select, textarea, a:hover, a:focus, a:active, .main-navigation-menu a:link, .main-navigation-menu a:visited, .main-navigation-toggle, .post-navigation .nav-links .nav-link-text, .top-navigation-menu a:link, .top-navigation-menu a:visited, .header-bar .social-icons-menu li a, .header-search .header-search-icon, .header-search .header-search-form .header-search-close, .footer-navigation-menu a:link, .footer-navigation-menu a:visited { color: ' + text_color + '; }';
-			custom_css += '.main-navigation-menu a:hover, .main-navigation-menu a:active, .main-navigation-toggle:hover, .main-navigation-toggle:active, .entry-meta, .entry-meta a:link, .entry-meta a:visited, .widget_tag_cloud .tagcloud a:link, .widget_tag_cloud .tagcloud a:visited, .entry-tags .meta-tags a:link, .entry-tags .meta-tags a:visited, .post-navigation .nav-links a:hover .nav-link-text, .top-navigation-menu a:hover, .top-navigation-menu a:active, .header-bar .social-icons-menu li a:hover, .header-search .header-search-icon:hover, .header-search .header-search-icon:active, .header-search .header-search-form .header-search-close:hover, .footer-navigation-menu a:hover, .footer-navigation-menu a:active { color: ' + hover_color + '; }';
+			custom_css += 'body, input, select, textarea, a:hover, a:focus, a:active, .primary-menu-toggle, .secondary-menu-toggle, .primary-menu-toggle:focus, .secondary-menu-toggle:focus, .post-navigation .nav-links .nav-link-text, .header-bar .social-icons-menu li a, .header-search .header-search-icon, .header-search .header-search-form .header-search-close, .footer-navigation-menu a:link, .footer-navigation-menu a:visited { color: ' + text_color + '; }';
+			custom_css += '.primary-menu-toggle .icon, .secondary-menu-toggle .icon, .top-navigation > ul > .menu-item-has-children > a > .icon, .main-navigation > ul > .menu-item-has-children > a > .icon { fill: ' + text_color + '; }';
+			custom_css += '.primary-menu-toggle:hover, .primary-menu-toggle:active, .secondary-menu-toggle:hover, .secondary-menu-toggle:active, .entry-meta, .entry-meta a:link, .entry-meta a:visited, .widget_tag_cloud .tagcloud a:link, .widget_tag_cloud .tagcloud a:visited, .entry-tags .meta-tags a:link, .entry-tags .meta-tags a:visited, .post-navigation .nav-links a:hover .nav-link-text, .top-navigation ul a:hover, .top-navigation ul a:active, .header-bar .social-icons-menu li a:hover, .header-search .header-search-icon:hover, .header-search .header-search-icon:active, .header-search .header-search-form .header-search-close:hover, .footer-navigation-menu a:hover, .footer-navigation-menu a:active { color: ' + hover_color + '; }';
+			custom_css += '.primary-menu-toggle:hover .icon, .primary-menu-toggle:active .icon, .secondary-menu-toggle:hover .icon, .secondary-menu-toggle:active .icon, .top-navigation > ul > .menu-item-has-children > a:hover > .icon, .main-navigation > ul > .menu-item-has-children > a:hover > .icon { fill: ' + hover_color + '; }';
 			custom_css += 'input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], textarea, .entry-meta a:hover, .entry-meta a:active { color: ' + accent_color + '; }';
 			custom_css += 'input[type="text"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="search"]:focus, textarea:focus { color: ' + text_color + '; border: 1px solid ' + focus_color + '; }';
 			custom_css += 'pre, th, td, input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], textarea, .primary-navigation-wrap, .widget_tag_cloud .tagcloud a, .entry-tags .meta-tags a, .post-navigation, .comment, .footer-wrap, .header-bar, .header-search .header-search-form, .entry-author, .footer-widgets-wrap, .footer-navigation { border-color: ' + border_color + '; }';
 			custom_css += '.widget_tag_cloud .tagcloud a:hover, .widget_tag_cloud .tagcloud a:active, .entry-tags .meta-tags a:hover, .entry-tags .meta-tags a:active { border-color: ' + hover_color + '; color: ' + text_color + '; }';
 			custom_css += '.post-slider-wrap { background: ' + slider_color + '; }';
 			custom_css += 'button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, button:focus, input[type="button"]:focus, input[type="reset"]:focus, input[type="submit"]:focus, button:active, input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:active, .more-link:hover, .more-link:active, .pagination a, .pagination a:link, .pagination a:visited, .infinite-scroll #infinite-handle span, .tzwb-tabbed-content .tzwb-tabnavi li a:link, .tzwb-tabbed-content .tzwb-tabnavi li a:visited, .tzwb-social-icons .social-icons-menu li a:hover, .tzwb-social-icons .social-icons-menu li a:active, .post-slider-controls .zeeflex-direction-nav a:hover, .scroll-to-top-button:hover { color: ' + bg_color + '; background: ' + text_color + '; }';
+			custom_css += '@media only screen and (min-width: 60.001em) { .top-navigation > ul > li > a:link, .top-navigation > ul > li > a:visited, .main-navigation > ul > li > a:link, .main-navigation > ul > li > a:visited { color: ' + text_color + '; } }';
+			custom_css += '@media only screen and (min-width: 60.001em) { .top-navigation > ul > li > a:hover, .top-navigation > ul > li > a:active, .main-navigation > ul > li > a:hover, .main-navigation > ul > li > a:active { color: ' + hover_color + '; } }';
 
 			addColorStyles( custom_css, 2 );
 		} );
@@ -103,8 +107,8 @@
 		value.bind( function( newval ) {
 			var custom_css, text_color, border_color;
 
-			custom_css = '@media only screen and (min-width: 60.001em) { .top-navigation-menu ul { background: ' + newval + '; } }';
-			custom_css += '@media only screen and (max-width: 60em) { .top-navigation-menu, .top-navigation-menu ul { background: ' + newval + '; } }';
+			custom_css = '@media only screen and (min-width: 60.001em) { .top-navigation ul ul { background: ' + newval + '; } }';
+			custom_css += '@media only screen and (max-width: 60em) { .top-navigation ul, .top-navigation ul ul { background: ' + newval + '; } }';
 
 			if( isColorLight( newval ) ) {
 				text_color = '#222222';
@@ -114,12 +118,13 @@
 				border_color = 'rgba(255,255,255,0.1)';
 			}
 
-			custom_css += '.top-navigation-menu a, .top-navigation-menu ul, .top-navigation-menu ul a { border-color: ' + border_color + '; }';
-			custom_css += '.top-navigation-menu ul a:link, .top-navigation-menu ul a:visited, .top-navigation-menu .submenu-dropdown-toggle { color: ' + text_color + '; }';
-			custom_css += '.top-navigation-menu ul a:hover, .top-navigation-menu ul a:active, .top-navigation-menu .submenu-dropdown-toggle:hover, .top-navigation-menu .submenu-dropdown-toggle:active { background: ' + border_color + '; }';
+			custom_css += '.top-navigation ul a, .top-navigation ul ul, .top-navigation ul ul li a { border-color: ' + border_color + '; }';
+			custom_css += '.top-navigation ul ul a:link, .top-navigation ul ul a:visited { color: ' + text_color + '; }';
+			custom_css += '.top-navigation ul .dropdown-toggle .icon, .top-navigation ul ul .menu-item-has-children > a > .icon { fill: ' + text_color + '; }';
+			custom_css += '.top-navigation ul ul a:hover, .top-navigation ul ul a:active, .top-navigation ul .dropdown-toggle:hover, .top-navigation ul .dropdown-toggle:active, .top-navigation ul ul .menu-item-has-children > a:hover, .top-navigation ul ul .menu-item-has-children > a:active { background: ' + border_color + '; }';
 
-			custom_css += '@media only screen and (max-width: 60em) { .top-navigation-menu a:link, .top-navigation-menu a:visited { color: ' + text_color + '; } }';
-			custom_css += '@media only screen and (max-width: 60em) { .top-navigation-menu a:hover, .top-navigation-menu a:active { background: ' + border_color + '; } }';
+			custom_css += '@media only screen and (max-width: 60em) { .top-navigation ul a:link, .top-navigation ul a:visited { color: ' + text_color + '; } }';
+			custom_css += '@media only screen and (max-width: 60em) { .top-navigation ul a:hover, .top-navigation ul a:active { background: ' + border_color + '; } }';
 
 			addColorStyles( custom_css, 4 );
 		} );
@@ -130,8 +135,8 @@
 		value.bind( function( newval ) {
 			var custom_css, text_color, border_color;
 
-			custom_css = '@media only screen and (min-width: 60.001em) { .main-navigation-menu ul { background: ' + newval + '; } .main-navigation-menu > li.current-menu-item > a { border-color: ' + newval + '; } }';
-			custom_css += '@media only screen and (max-width: 60em) { .main-navigation-menu, .main-navigation-menu ul { background: ' + newval + '; } .main-navigation-toggle { border-color: ' + newval + '; } }';
+			custom_css = '@media only screen and (min-width: 60.001em) { .main-navigation ul ul { background: ' + newval + '; } .main-navigation ul > li.current-menu-item > a { border-color: ' + newval + '; } }';
+			custom_css += '@media only screen and (max-width: 60em) { .main-navigation ul, .main-navigation ul ul { background: ' + newval + '; } .primary-menu-toggle { border-color: ' + newval + '; } }';
 
 			if( isColorLight( newval ) ) {
 				text_color = '#222222';
@@ -141,13 +146,13 @@
 				border_color = 'rgba(255,255,255,0.1)';
 			}
 
-			custom_css += '.main-navigation-menu ul, .main-navigation-menu ul a { border-color: ' + border_color + '; }';
-			custom_css += '.main-navigation-menu ul a:link, .main-navigation-menu ul a:visited, .main-navigation-menu .submenu-dropdown-toggle { color: ' + text_color + '; }';
-			custom_css += '.main-navigation-menu ul a:hover, .main-navigation-menu ul a:active, .main-navigation-menu .submenu-dropdown-toggle:hover, .main-navigation-menu .submenu-dropdown-toggle:active { background: ' + border_color + '; }';
+			custom_css += '.main-navigation ul ul, .main-navigation ul ul a { border-color: ' + border_color + '; }';
+			custom_css += '.main-navigation ul ul a:link, .main-navigation ul ul a:visited, .main-navigation ul .submenu-dropdown-toggle { color: ' + text_color + '; }';
+			custom_css += '.main-navigation ul ul a:hover, .main-navigation ul ul a:active, .main-navigation ul .submenu-dropdown-toggle:hover, .main-navigation ul .submenu-dropdown-toggle:active { background: ' + border_color + '; }';
 
-			custom_css += '@media only screen and (max-width: 60em) { .main-navigation-menu a, .main-navigation-menu > li.current-menu-item > a { border-color: ' + border_color + '; } }';
-			custom_css += '@media only screen and (max-width: 60em) { .main-navigation-menu a:link, .main-navigation-menu a:visited { color: ' + text_color + '; } }';
-			custom_css += '@media only screen and (max-width: 60em) { .main-navigation-menu a:hover, .main-navigation-menu a:active { background: ' + border_color + '; } }';
+			custom_css += '@media only screen and (max-width: 60em) { .main-navigation ul a, .main-navigation ul > li.current-menu-item > a { border-color: ' + border_color + '; } }';
+			custom_css += '@media only screen and (max-width: 60em) { .main-navigation ul a:link, .main-navigation ul a:visited { color: ' + text_color + '; } }';
+			custom_css += '@media only screen and (max-width: 60em) { .main-navigation ul a:hover, .main-navigation ul a:active { background: ' + border_color + '; } }';
 
 			addColorStyles( custom_css, 5 );
 		} );
@@ -239,7 +244,7 @@
 			var newFont = newval === 'SystemFontStack' ? systemFont : newval;
 
 			// Set CSS.
-			$( '.top-navigation-menu a, .main-navigation-menu a, .footer-navigation-menu a' )
+			$( '.top-navigation ul a, .main-navigation ul a, .footer-navigation-menu a' )
 				.css( 'font-family', newFont );
 
 		} );
