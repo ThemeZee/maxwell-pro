@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Maxwell Pro\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
-"POT-Creation-Date: 2018-04-13 09:59+0200\n"
-"PO-Revision-Date: 2018-04-13 09:59+0200\n"
+"POT-Creation-Date: 2020-08-18 14:18+0200\n"
+"PO-Revision-Date: 2020-08-18 14:18+0200\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
 "Language: de_DE\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 2.0.3\n"
+"X-Generator: Poedit 2.4.1\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #: includes/admin/class-admin-notices.php:52
@@ -192,59 +192,59 @@ msgstr "Alle Beiträge ansehen"
 msgid "Display Author Bio"
 msgstr "Autor Bio anzeigen"
 
-#: includes/modules/class-custom-colors.php:480
+#: includes/modules/class-custom-colors.php:578
 msgid "Theme Colors"
 msgstr "Theme Farben"
 
-#: includes/modules/class-custom-colors.php:497
+#: includes/modules/class-custom-colors.php:595
 msgctxt "color setting"
 msgid "Page Background"
 msgstr "Theme Hintergrund"
 
-#: includes/modules/class-custom-colors.php:513
+#: includes/modules/class-custom-colors.php:611
 msgctxt "color setting"
 msgid "Links and Buttons"
 msgstr "Links und Buttons"
 
-#: includes/modules/class-custom-colors.php:529
+#: includes/modules/class-custom-colors.php:627
 msgctxt "color setting"
 msgid "Top Navigation"
 msgstr "Obere Navigation"
 
-#: includes/modules/class-custom-colors.php:545
+#: includes/modules/class-custom-colors.php:643
 msgctxt "color setting"
 msgid "Main Navigation"
 msgstr "Hauptnavigation"
 
-#: includes/modules/class-custom-colors.php:561
+#: includes/modules/class-custom-colors.php:659
 msgctxt "color setting"
 msgid "Post Titles"
 msgstr "Beitrags-Titel"
 
-#: includes/modules/class-custom-colors.php:577
+#: includes/modules/class-custom-colors.php:675
 msgctxt "color setting"
 msgid "Widget Titles"
 msgstr "Widget Titel"
 
-#: includes/modules/class-custom-fonts.php:211
+#: includes/modules/class-custom-fonts.php:254
 msgid "Theme Fonts"
 msgstr "Theme Schriftarten"
 
-#: includes/modules/class-custom-fonts.php:230
+#: includes/modules/class-custom-fonts.php:271
 msgid "Base Font"
 msgstr "Basis Schriftart"
 
-#: includes/modules/class-custom-fonts.php:246
+#: includes/modules/class-custom-fonts.php:286
 msgctxt "font setting"
 msgid "Headings"
 msgstr "Überschriften"
 
-#: includes/modules/class-custom-fonts.php:262
+#: includes/modules/class-custom-fonts.php:301
 msgctxt "font setting"
 msgid "Navigation"
 msgstr "Navigation"
 
-#: includes/modules/class-custom-fonts.php:278
+#: includes/modules/class-custom-fonts.php:316
 msgctxt "font setting"
 msgid "Widget Titles"
 msgstr "Widget Titel"
@@ -273,11 +273,19 @@ msgstr "Footer"
 msgid "Appears on the footer area."
 msgstr "Erscheint im Footerbereich."
 
-#: includes/modules/class-header-bar.php:105
+#: includes/modules/class-header-bar.php:77
+msgid "Navigation"
+msgstr "Navigation"
+
+#: includes/modules/class-header-bar.php:82
+msgid "Secondary Menu"
+msgstr "Sekundäres Menü"
+
+#: includes/modules/class-header-bar.php:129
 msgid "Top Navigation"
 msgstr "Obere Navigation"
 
-#: includes/modules/class-header-bar.php:106
+#: includes/modules/class-header-bar.php:130
 msgid "Social Icons"
 msgstr "Social Icons"
 
@@ -396,7 +404,7 @@ msgstr "Magazin (Vertikale Box)"
 msgid "Displays your posts from a selected category in a vertical box."
 msgstr "Zeigt die Beiträge einer gewählten Kategorie in einer vertikalen Box."
 
-#: maxwell-pro.php:214
+#: maxwell-pro.php:210
 msgid "Settings"
 msgstr "Einstellungen"
 
