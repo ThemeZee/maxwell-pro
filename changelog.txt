@@ -2,6 +2,12 @@
 Maxwell Pro Changelog
 ===================================
 
+Version 1.7
+-----------------------------------
+* updated styles and scripts of top navigation menu
+* updated header search functionality
+* updated color settings for new navigation menus
+
 Version 1.6.2
 -----------------------------------
 * fixed footer widget layout for Safari flexbox bug
