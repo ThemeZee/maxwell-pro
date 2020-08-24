@@ -123,6 +123,7 @@
 	text-decoration: none;
 }
 
+.top-navigation ul a,
 .top-navigation ul a:link,
 .top-navigation ul a:visited {
 	color: #fff;
@@ -241,6 +242,7 @@
 		border: none;
 	}
 
+	.top-navigation > ul > li > a,
 	.top-navigation > ul > li > a:link,
 	.top-navigation > ul > li > a:visited {
 		color: #303030;

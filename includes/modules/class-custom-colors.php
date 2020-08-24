@@ -214,8 +214,10 @@ class Maxwell_Pro_Custom_Colors {
 					}
 
 					@media only screen and (min-width: 60.001em) {
+						.top-navigation > ul > li > a,
 						.top-navigation > ul > li > a:link,
 						.top-navigation > ul > li > a:visited,
+						.main-navigation > ul > li > a,
 						.main-navigation > ul > li > a:link,
 						.main-navigation > ul > li > a:visited {
 							color: #fff;
@@ -372,6 +374,7 @@ class Maxwell_Pro_Custom_Colors {
 						border-color: rgba(0,0,0,0.1);
 					}
 
+					.top-navigation ul ul a,
 					.top-navigation ul ul a:link,
 					.top-navigation ul ul a:visited {
 						color: #222;
@@ -392,6 +395,7 @@ class Maxwell_Pro_Custom_Colors {
 					}
 
 					@media only screen and (max-width: 60em) {
+						.top-navigation ul a,
 						.top-navigation ul a:link,
 						.top-navigation ul a:visited {
 							color: #222;
@@ -441,6 +445,7 @@ class Maxwell_Pro_Custom_Colors {
 						border-color: rgba(0,0,0,0.1);
 					}
 
+					.main-navigation ul ul a,
 					.main-navigation ul ul a:link,
 					.main-navigation ul ul a:visiteds {
 						color: #222;
@@ -466,6 +471,7 @@ class Maxwell_Pro_Custom_Colors {
 							border-color: rgba(0,0,0,0.1);
 						}
 
+						.main-navigation ul a,
 						.main-navigation ul a:link,
 						.main-navigation ul a:visited {
 							color: #222;
