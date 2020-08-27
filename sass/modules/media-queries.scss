@@ -13,7 +13,6 @@
 	.footer-navigation-menu {
 		padding: 2em 0;
 	}
-
 }
 
 /*--------------------------------------------------------------
@@ -37,7 +36,6 @@
 		font-size: 16px;
 		font-size: 1rem;
 	}
-
 }
 
 /*--------------------------------------------------------------
@@ -166,7 +164,6 @@
 ## Mobile Extra Large ( < 640px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 40em) {
-	/* Magazine Posts */
 	.widget-magazine-posts .magazine-horizontal-box .large-post .wp-post-image,
 	.widget-magazine-posts .magazine-horizontal-box .large-post .post-content,
 	.widget-magazine-posts .magazine-vertical-box .large-post {
@@ -235,14 +232,12 @@
 		padding-right: 0;
 		width: 100%;
 	}
-
 }
 
 /*--------------------------------------------------------------
 ## Mobile Medium ( < 480px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 30em) {
-	/* Magazine Posts */
 	.widget-magazine-posts-list .type-post .entry-title,
 	.widget-magazine-posts-sidebar .type-post .entry-title {
 		font-size: 24px;
@@ -281,40 +276,15 @@
 	.footer-widgets .widget {
 		margin: 0 0 1.5em;
 	}
-
 }
 
 /*--------------------------------------------------------------
 ## Mobile Small ( < 320px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 20em) {
-	/* Magazine Posts */
 	.widget-magazine-posts-list .type-post .entry-title,
 	.widget-magazine-posts-sidebar .type-post .entry-title {
 		font-size: 20px;
 		font-size: 1.25rem;
-	}
-
-}
-
-/*--------------------------------------------------------------
-# CSS Hacks for Safari
---------------------------------------------------------------*/
-
-/* Fix Flexbox issues for Safari 6.1-10.0 */
-@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
-	@media all {
-		.footer-widgets-columns .footer-widget-column {
-			margin-right: -1px;
-		}
-	}
-}
-
-/* Fix Flexbox issues for Safari 10.1+ */
-@media not all and (min-resolution:.001dpcm) {
-	@media all {
-		.footer-widgets-columns .footer-widget-column {
-			margin-right: -1px;
-		}
 	}
 }
