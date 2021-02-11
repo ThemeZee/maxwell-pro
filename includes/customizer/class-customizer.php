@@ -8,7 +8,9 @@
  */
 
 // Exit if accessed directly.
-if ( ! defined( 'ABSPATH' ) ) { exit; }
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 /**
  * Customizer Class
@@ -43,11 +45,7 @@ class Maxwell_Pro_Customizer {
 	static function get_theme_options() {
 
 		// Merge Theme Options Array from Database with Default Options Array.
-		$theme_options = wp_parse_args( get_option( 'maxwell_theme_options', array() ), self::get_default_options() );
-
-		// Return theme options.
-		return $theme_options;
-
+		return wp_parse_args( get_option( 'maxwell_theme_options', array() ), self::get_default_options() );
 	}
 
 
@@ -59,28 +57,33 @@ class Maxwell_Pro_Customizer {
 	static function get_default_options() {
 
 		$default_options = array(
-			'header_logo'        => '',
-			'header_spacing'     => 30,
-			'logo_spacing'       => 0,
-			'header_search'      => false,
-			'author_bio'         => false,
-			'scroll_to_top'      => false,
-			'footer_text'        => '',
-			'credit_link'        => true,
-			'page_bg_color'      => '#ffffff',
-			'top_navi_color'     => '#303030',
-			'link_color'         => '#33bbcc',
-			'navi_color'         => '#303030',
-			'title_color'        => '#303030',
-			'widget_title_color' => '#303030',
-			'text_font'          => 'Titillium Web',
-			'title_font'         => 'Amaranth',
-			'navi_font'          => 'Titillium Web',
-			'widget_title_font'  => 'Amaranth',
+			'header_logo'               => '',
+			'header_spacing'            => 30,
+			'logo_spacing'              => 0,
+			'header_search'             => false,
+			'author_bio'                => false,
+			'scroll_to_top'             => false,
+			'footer_text'               => '',
+			'credit_link'               => true,
+			'page_bg_color'             => '#ffffff',
+			'top_navi_color'            => '#303030',
+			'link_color'                => '#33bbcc',
+			'navi_color'                => '#303030',
+			'title_color'               => '#303030',
+			'widget_title_color'        => '#303030',
+			'text_font'                 => 'Titillium Web',
+			'title_font'                => 'Amaranth',
+			'title_is_bold'             => true,
+			'title_is_uppercase'        => false,
+			'navi_font'                 => 'Titillium Web',
+			'navi_is_bold'              => false,
+			'navi_is_uppercase'         => false,
+			'widget_title_font'         => 'Amaranth',
+			'widget_title_is_bold'      => true,
+			'widget_title_is_uppercase' => false,
 		);
 
 		return $default_options;
-
 	}
 
 	/**
@@ -89,9 +92,7 @@ class Maxwell_Pro_Customizer {
 	 * @return void
 	 */
 	static function customize_preview_js() {
-
-		wp_enqueue_script( 'maxwell-pro-customizer-js', MAXWELL_PRO_PLUGIN_URL . 'assets/js/customizer.js', array( 'customize-preview' ), MAXWELL_PRO_VERSION, true );
-
+		wp_enqueue_script( 'maxwell-pro-customizer-js', MAXWELL_PRO_PLUGIN_URL . 'assets/js/customizer.js', array( 'customize-preview' ), '20201119', true );
 	}
 
 	/**
@@ -100,9 +101,7 @@ class Maxwell_Pro_Customizer {
 	 * @return void
 	 */
 	static function customize_preview_css() {
-
-		wp_enqueue_style( 'maxwell-pro-customizer-css', MAXWELL_PRO_PLUGIN_URL . 'assets/css/customizer.css', array(), MAXWELL_PRO_VERSION );
-
+		wp_enqueue_style( 'maxwell-pro-customizer-css', MAXWELL_PRO_PLUGIN_URL . 'assets/css/customizer.css', array(), '20201119' );
 	}
 }
 
