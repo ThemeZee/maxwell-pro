@@ -75,7 +75,12 @@
 	text-decoration: none;
 	font-size: 15px;
 	font-size: 0.9375rem;
-	font-family: 'Titillium Web', Tahoma, Arial;
+	font-family: "Titillium Web", arial, helvetica, sans-serif;
+	font-family: var(--navi-font);
+	font-weight: normal;
+	font-weight: var(--navi-font-weight);
+	text-transform: none;
+	text-transform: var(--navi-text-transform);
 	text-align: left;
 	transition: all 0.15s ease;
 	align-items: center;
@@ -126,7 +131,12 @@
 	list-style: none;
 	font-size: 15px;
 	font-size: 0.9375rem;
-	font-family: 'Titillium Web', Tahoma, Arial;
+	font-family: "Titillium Web", arial, helvetica, sans-serif;
+	font-family: var(--navi-font);
+	font-weight: normal;
+	font-weight: var(--navi-font-weight);
+	text-transform: none;
+	text-transform: var(--navi-text-transform);
 }
 
 .top-navigation ul li {
