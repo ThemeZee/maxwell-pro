@@ -209,6 +209,12 @@
 	height: 16px;
 }
 
+@media only screen and (max-width: 60em) {
+	.header-bar {
+		padding: 0;
+	}
+}
+
 @media only screen and (min-width: 60em) {
 	.secondary-menu-toggle,
 	.top-navigation .dropdown-toggle {
