@@ -11,6 +11,16 @@
 /*--------------------------------------------------------------
 # - CSS Variables
 --------------------------------------------------------------*/
+:root {
+	--header-bar-background-color: #fff;
+	--header-bar-text-color: #303030;
+	--header-bar-text-hover-color: rgba(0, 0, 0, 0.5);
+	--header-bar-border-color: rgba(0, 0, 0, 0.15);
+	--top-navi-submenu-color: #303030;
+	--top-navi-submenu-text-color: #fff;
+	--top-navi-submenu-hover-color: rgba(255, 255, 255, 0.1);
+	--top-navi-submenu-border-color: rgba(255, 255, 255, 0.1);
+}
 
 /*--------------------------------------------------------------
 # Header Bar
@@ -22,8 +32,11 @@
 	margin: 0 auto;
 	max-width: 1340px;
 	width: 100%;
-	border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-	background: #fff;
+	border-bottom: 1px solid;
+	border-color: rgba(0, 0, 0, 0.15);
+	border-color: var(--header-bar-border-color);
+	background-color: #fff;
+	background-color: var(--header-bar-background-color);
 }
 
 /* Social Icons Menu */
@@ -36,14 +49,16 @@
 .header-bar .social-icons-menu li a {
 	padding: 0.8em;
 	color: #303030;
+	color: var(--header-bar-text-color);
 }
 
 .header-bar .social-icons-menu li a:hover {
 	color: rgba(0, 0, 0, 0.5);
+	color: var(--header-bar-text-hover-color);
 	text-decoration: none;
 }
 
-.header-bar .social-icons-menu li a:before {
+.header-bar .social-icons-menu li a::before {
 	font-size: 22px;
 }
 
@@ -72,6 +87,7 @@
 	padding: 0.8em;
 	background: none;
 	color: #303030;
+	color: var(--header-bar-text-color);
 	text-decoration: none;
 	font-size: 15px;
 	font-size: 0.9375rem;
@@ -89,12 +105,14 @@
 .secondary-menu-toggle:focus {
 	outline: thin dotted;
 	color: #303030;
+	color: var(--header-bar-text-color);
 	background: none;
 }
 
 .secondary-menu-toggle:hover,
 .secondary-menu-toggle:active {
 	color: rgba(0, 0, 0, 0.5);
+	color: var(--header-bar-text-hover-color);
 	background: none;
 	cursor: pointer;
 }
@@ -105,12 +123,14 @@
 	height: 24px;
 	vertical-align: top;
 	fill: #303030;
+	fill: var(--header-bar-text-color);
 	transition: fill 0.15s ease;
 }
 
 .secondary-menu-toggle:hover .icon,
 .secondary-menu-toggle:active .icon {
 	fill: rgba(0, 0, 0, 0.5);
+	fill: var(--header-bar-text-hover-color);
 }
 
 .secondary-menu-toggle[aria-expanded="true"] .icon-menu,
@@ -127,7 +147,9 @@
 	margin: 0;
 	padding: 0;
 	color: #fff;
-	background: #303030;
+	color: var(--top-navi-submenu-text-color);
+	background-color: #303030;
+	background-color: var(--top-navi-submenu-color);
 	list-style: none;
 	font-size: 15px;
 	font-size: 0.9375rem;
@@ -148,7 +170,9 @@
 	display: block;
 	margin: 0;
 	padding: 1em 1.25em;
-	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	border-top: 1px solid;
+	border-color: rgba(255, 255, 255, 0.1);
+	border-color: var(--top-navi-submenu-border-color);
 	text-decoration: none;
 }
 
@@ -156,6 +180,7 @@
 .top-navigation ul a:link,
 .top-navigation ul a:visited {
 	color: #fff;
+	color: var(--top-navi-submenu-text-color);
 	text-decoration: none;
 	transition: all 0.15s ease;
 }
@@ -163,7 +188,8 @@
 .top-navigation ul a:hover,
 .top-navigation ul a:active,
 .top-navigation ul a:focus {
-	background: rgba(255, 255, 255, 0.1);
+	background-color: rgba(255, 255, 255, 0.1);
+	background-color: var(--top-navi-submenu-border-color);
 }
 
 .top-navigation ul li.current-menu-item > a {
@@ -207,6 +233,7 @@
 .top-navigation .dropdown-toggle:focus {
 	outline: thin dotted;
 	color: #fff;
+	color: var(--top-navi-submenu-text-color);
 	background: none;
 }
 
@@ -221,6 +248,7 @@
 	height: 18px;
 	vertical-align: top;
 	fill: #fff;
+	fill: var(--top-navi-submenu-text-color);
 	transition: fill 0.15s ease;
 }
 
@@ -282,11 +310,13 @@
 	.top-navigation > ul > li > a:link,
 	.top-navigation > ul > li > a:visited {
 		color: #303030;
+		color: var(--header-bar-text-color);
 	}
 
 	.top-navigation > ul > li > a:hover,
 	.top-navigation > ul > li > a:active {
 		color: rgba(0, 0, 0, 0.5);
+		color: var(--header-bar-text-hover-color);
 		background: none;
 	}
 
@@ -296,7 +326,8 @@
 		left: -999em;
 		top: 100%;
 		z-index: 99999;
-		background: #303030;
+		background-color: #303030;
+		background-color: var(--top-navi-submenu-color);
 	}
 
 	.top-navigation ul li:hover > ul,
@@ -308,7 +339,9 @@
 	.top-navigation ul ul li a {
 		width: 16rem;
 		border: none;
-		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+		border-bottom: 1px solid;
+		border-color: rgba(255, 255, 255, 0.1);
+		border-color: var(--top-navi-submenu-border-color);
 	}
 
 	.top-navigation ul ul ul {
@@ -337,6 +370,7 @@
 		width: 11px;
 		height: 11px;
 		fill: #303030;
+		fill: var(--header-bar-text-color);
 		transition: fill 0.15s ease;
 	}
 
@@ -347,6 +381,7 @@
 		top: 50%;
 		margin-top: -0.3rem;
 		fill: #fff;
+		fill: var(--top-navi-submenu-text-color);
 		-webkit-transform: rotate(-90deg);
 		-ms-transform: rotate(-90deg);
 		transform: rotate(-90deg);
@@ -362,6 +397,7 @@
 	display: inline-block;
 	padding: 0.8em;
 	color: #303030;
+	color: var(--navi-color);
 	z-index: 99;
 }
 
@@ -369,6 +405,7 @@
 .header-search .header-search-icon:active {
 	cursor: pointer;
 	color: rgba(0, 0, 0, 0.5);
+	color: var(--navi-hover-color);
 }
 
 .header-search .header-search-icon:focus {
@@ -399,7 +436,9 @@
 	margin: -1px 0 0;
 	padding: 0;
 	z-index: 99;
-	border-top: 1px solid rgba(0, 0, 0, 0.15);
+	border-top: 1px solid;
+	border-color: rgba(0, 0, 0, 0.15);
+	border-color: var(--light-border-color);
 	width: 100%;
 	box-sizing: border-box;
 	background: #fff;
@@ -430,11 +469,13 @@
 	float: right;
 	padding: 0.75em;
 	color: #303030;
+	color: var(--navi-color);
 }
 
 .header-search .header-search-form .header-search-close:hover {
 	cursor: pointer;
 	color: rgba(0, 0, 0, 0.5);
+	color: var(--navi-hover-color);
 }
 
 .header-search .header-search-form .header-search-close .genericon-close {
@@ -674,7 +715,9 @@
 .entry-author {
 	margin: 1.75em 0 0;
 	padding: 2em 0 0;
-	border-top: 1px solid rgba(0, 0, 0, 0.15);
+	border-top: 1px solid;
+	border-color: rgba(0, 0, 0, 0.15);
+	border-color: var(--light-border-color);
 }
 
 .entry-author .author-avatar {
@@ -691,9 +734,18 @@
 	display: inline-block;
 	margin: 0 1em 0.25em 0;
 	padding: 0;
+	color: #303030;
+	color: var(--widget-title-color);
 	font-size: 18px;
 	font-size: 1.125rem;
-	font-family: "Amaranth", Tahoma, Arial;
+	font-family: "Amaranth", arial, helvetica, sans-serif;
+	font-family: var(--widget-title-font);
+	font-weight: bold;
+	font-weight: var(--widget-title-font-weight);
+	text-transform: none;
+	text-transform: var(--widget-title-text-transform);
+	line-height: 1.4;
+	line-height: var(--title-line-height);
 }
 
 .entry-author .author-heading .author-link {
@@ -731,7 +783,9 @@
 --------------------------------------------------------------*/
 .footer-widgets-wrap {
 	padding: 2.5em 0 0;
-	border-top: 1px solid rgba(0, 0, 0, 0.15);
+	border-top: 1px solid;
+	border-color: rgba(0, 0, 0, 0.15);
+	border-color: var(--footer-border-color);
 }
 
 .footer-widgets-columns {
@@ -862,18 +916,19 @@
 	display: block;
 	padding: 0 0.8em;
 	text-decoration: none;
-	font-family: 'Titillium Web', Tahoma, Arial;
 }
 
 .footer-navigation-menu a:link,
 .footer-navigation-menu a:visited {
 	color: #303030;
+	color: var(--footer-text-color);
 	text-decoration: none;
 }
 
 .footer-navigation-menu a:hover,
 .footer-navigation-menu a:active {
 	color: rgba(0, 0, 0, 0.5);
+	color: var(--footer-text-hover-color);
 }
 
 @media only screen and (max-width: 60em) {
@@ -895,7 +950,9 @@
 @media only screen and (max-width: 40em) {
 	.footer-navigation {
 		padding-bottom: 2em;
-		border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+		border-bottom: 1px solid;
+		border-color: rgba(0, 0, 0, 0.15);
+		border-color: var(--footer-border-color);
 	}
 
 	.footer-navigation-menu li,
@@ -922,18 +979,26 @@
 	padding: 0;
 	right: 0.75em;
 	bottom: 0.75em;
+	background-color: #33bbcc;
+	background-color: var(--button-color);
 	color: #fff;
-	background: #33bbcc;
+	color: var(--button-text-color);
 	transition: none;
 }
 
-.scroll-to-top-button:focus,
-.scroll-to-top-button:active {
-	background: #33bbcc;
+.scroll-to-top-button:focus {
+	background-color: #33bbcc;
+	background-color: var(--button-color);
+	color: #fff;
+	color: var(--button-text-color);
 }
 
-.scroll-to-top-button:hover {
-	background: #303030;
+.scroll-to-top-button:hover,
+.scroll-to-top-button:active {
+	background-color: #303030;
+	background-color: var(--button-hover-color);
+	color: #fff;
+	color: var(--button-hover-text-color);
 }
 
 .scroll-to-top-button:after {

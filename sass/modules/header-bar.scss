@@ -5,8 +5,9 @@
 	margin: 0 auto;
 	max-width: 1340px;
 	width: 100%;
-	border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-	background: #fff;
+	border-bottom: 1px solid;
+	@include border-color(--header-bar-border-color);
+	@include background(--header-bar-background-color);
 }
 
 /* Social Icons Menu */
@@ -18,15 +19,15 @@
 
 .header-bar .social-icons-menu li a {
 	padding: 0.8em;
-	color: #303030;
+	@include color(--header-bar-text-color);
 }
 
 .header-bar .social-icons-menu li a:hover {
-	color: rgba(0, 0, 0, 0.5);
+	@include color(--header-bar-text-hover-color);
 	text-decoration: none;
 }
 
-.header-bar .social-icons-menu li a:before {
+.header-bar .social-icons-menu li a::before {
 	font-size: 22px;
 }
 
@@ -54,7 +55,7 @@
 	margin: 0;
 	padding: 0.8em;
 	background: none;
-	color: #303030;
+	@include color(--header-bar-text-color);
 	text-decoration: none;
 	@include font-size(15);
 	@include font-family(--navi-font);
@@ -67,13 +68,13 @@
 
 .secondary-menu-toggle:focus {
 	outline: thin dotted;
-	color: #303030;
+	@include color(--header-bar-text-color);
 	background: none;
 }
 
 .secondary-menu-toggle:hover,
 .secondary-menu-toggle:active {
-	color: rgba(0, 0, 0, 0.5);
+	@include color(--header-bar-text-hover-color);
 	background: none;
 	cursor: pointer;
 }
@@ -83,13 +84,13 @@
 	width: 24px;
 	height: 24px;
 	vertical-align: top;
-	fill: #303030;
+	@include fill(--header-bar-text-color);
 	transition: fill 0.15s ease;
 }
 
 .secondary-menu-toggle:hover .icon,
 .secondary-menu-toggle:active .icon {
-	fill: rgba(0, 0, 0, 0.5);
+	@include fill(--header-bar-text-hover-color);
 }
 
 .secondary-menu-toggle[aria-expanded="true"] .icon-menu,
@@ -105,8 +106,8 @@
 .top-navigation ul {
 	margin: 0;
 	padding: 0;
-	color: #fff;
-	background: #303030;
+	@include color(--top-navi-submenu-text-color);
+	@include background(--top-navi-submenu-color);
 	list-style: none;
 	@include font-size(15);
 	@include font-family(--navi-font);
@@ -123,14 +124,15 @@
 	display: block;
 	margin: 0;
 	padding: 1em 1.25em;
-	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	border-top: 1px solid;
+	@include border-color(--top-navi-submenu-border-color);
 	text-decoration: none;
 }
 
 .top-navigation ul a,
 .top-navigation ul a:link,
 .top-navigation ul a:visited {
-	color: #fff;
+	@include color(--top-navi-submenu-text-color);
 	text-decoration: none;
 	transition: all 0.15s ease;
 }
@@ -138,7 +140,7 @@
 .top-navigation ul a:hover,
 .top-navigation ul a:active,
 .top-navigation ul a:focus {
-	background: rgba(255, 255, 255, 0.1);
+	@include background(--top-navi-submenu-border-color);
 }
 
 .top-navigation ul li.current-menu-item > a {
@@ -180,7 +182,7 @@
 
 .top-navigation .dropdown-toggle:focus {
 	outline: thin dotted;
-	color: #fff;
+	@include color(--top-navi-submenu-text-color);
 	background: none;
 }
 
@@ -194,7 +196,7 @@
 	width: 18px;
 	height: 18px;
 	vertical-align: top;
-	fill: #fff;
+	@include fill(--top-navi-submenu-text-color);
 	transition: fill 0.15s ease;
 }
 
@@ -255,12 +257,12 @@
 	.top-navigation > ul > li > a,
 	.top-navigation > ul > li > a:link,
 	.top-navigation > ul > li > a:visited {
-		color: #303030;
+		@include color(--header-bar-text-color);
 	}
 
 	.top-navigation > ul > li > a:hover,
 	.top-navigation > ul > li > a:active {
-		color: rgba(0, 0, 0, 0.5);
+		@include color(--header-bar-text-hover-color);
 		background: none;
 	}
 
@@ -270,7 +272,7 @@
 		left: -999em;
 		top: 100%;
 		z-index: 99999;
-		background: #303030;
+		@include background(--top-navi-submenu-color);
 	}
 
 	.top-navigation ul li:hover > ul,
@@ -282,7 +284,8 @@
 	.top-navigation ul ul li a {
 		width: 16rem;
 		border: none;
-		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+		border-bottom: 1px solid;
+		@include border-color(--top-navi-submenu-border-color);
 	}
 
 	.top-navigation ul ul ul {
@@ -310,7 +313,7 @@
 		top: 0.05rem;
 		width: 11px;
 		height: 11px;
-		fill: #303030;
+		@include fill(--header-bar-text-color);
 		transition: fill 0.15s ease;
 	}
 
@@ -320,7 +323,7 @@
 		right: 1em;
 		top: 50%;
 		margin-top: -0.3rem;
-		fill: #fff;
+		@include fill(--top-navi-submenu-text-color);
 		-webkit-transform: rotate(-90deg);
 		-ms-transform: rotate(-90deg);
 		transform: rotate(-90deg);

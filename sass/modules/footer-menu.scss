@@ -24,18 +24,17 @@
 	display: block;
 	padding: 0 0.8em;
 	text-decoration: none;
-	font-family: 'Titillium Web', Tahoma, Arial;
 }
 
 .footer-navigation-menu a:link,
 .footer-navigation-menu a:visited {
-	color: #303030;
+	@include color(--footer-text-color);
 	text-decoration: none;
 }
 
 .footer-navigation-menu a:hover,
 .footer-navigation-menu a:active {
-	color: rgba(0,0,0,0.5);
+	@include color(--footer-text-hover-color);
 }
 
 @media only screen and (max-width: 60em) {
@@ -57,7 +56,8 @@
 @media only screen and (max-width: 40em) {
 	.footer-navigation {
 		padding-bottom: 2em;
-		border-bottom: 1px solid rgba(0,0,0,0.15);
+		border-bottom: 1px solid;
+		@include border-color(--footer-border-color);
 	}
 
 	.footer-navigation-menu li,

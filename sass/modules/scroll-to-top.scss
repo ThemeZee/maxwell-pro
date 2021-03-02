@@ -9,18 +9,20 @@
 	padding: 0;
 	right: 0.75em;
 	bottom: 0.75em;
-	color: #fff;
-	background: #33bbcc;
+	@include background(--button-color);
+	@include color(--button-text-color);
 	transition: none;
 }
 
-.scroll-to-top-button:focus,
-.scroll-to-top-button:active {
-	background: #33bbcc;
+.scroll-to-top-button:focus {
+	@include background(--button-color);
+	@include color(--button-text-color);
 }
 
-.scroll-to-top-button:hover {
-	background: #303030;
+.scroll-to-top-button:hover,
+.scroll-to-top-button:active {
+	@include background(--button-hover-color);
+	@include color(--button-hover-text-color);
 }
 
 .scroll-to-top-button:after {
