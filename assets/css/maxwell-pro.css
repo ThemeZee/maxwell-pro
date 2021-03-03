@@ -189,7 +189,7 @@
 .top-navigation ul a:active,
 .top-navigation ul a:focus {
 	background-color: rgba(255, 255, 255, 0.1);
-	background-color: var(--top-navi-submenu-border-color);
+	background-color: var(--top-navi-submenu-hover-color);
 }
 
 .top-navigation ul li.current-menu-item > a {
@@ -239,7 +239,8 @@
 
 .top-navigation .dropdown-toggle:hover,
 .top-navigation .dropdown-toggle:active {
-	background: rgba(255, 255, 255, 0.1);
+	background-color: rgba(255, 255, 255, 0.1);
+	background-color: var(--top-navi-submenu-hover-color);
 }
 
 .top-navigation .dropdown-toggle .icon {
@@ -441,7 +442,8 @@
 	border-color: var(--light-border-color);
 	width: 100%;
 	box-sizing: border-box;
-	background: #fff;
+	background-color: #fff;
+	background-color: var(--page-background-color);
 }
 
 .header-search .header-search-form.toggled-on {

@@ -140,7 +140,7 @@
 .top-navigation ul a:hover,
 .top-navigation ul a:active,
 .top-navigation ul a:focus {
-	@include background(--top-navi-submenu-border-color);
+	@include background(--top-navi-submenu-hover-color);
 }
 
 .top-navigation ul li.current-menu-item > a {
@@ -188,7 +188,7 @@
 
 .top-navigation .dropdown-toggle:hover,
 .top-navigation .dropdown-toggle:active {
-	background: rgba(255, 255, 255, 0.1);
+	@include background(--top-navi-submenu-hover-color);
 }
 
 .top-navigation .dropdown-toggle .icon {

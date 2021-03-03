@@ -45,7 +45,7 @@
 	@include border-color(--light-border-color);
 	width: 100%;
 	box-sizing: border-box;
-	background: #fff;
+	@include background(--page-background-color);
 }
 
 .header-search .header-search-form.toggled-on {
