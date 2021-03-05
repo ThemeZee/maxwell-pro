@@ -31,146 +31,125 @@
 		} );
 	} );
 
-	/* Link & Button Color Option */
-	wp.customize( 'maxwell_theme_options[link_color]', function( value ) {
-		value.bind( function( newval ) {
-			var custom_css, text_color;
-
-			custom_css = 'a:link, a:visited { color: ' + newval + '; }';
-			custom_css += 'a:hover, a:focus, a:active { color: #303030; }';
-			custom_css += 'button, input[type="button"], input[type="reset"], input[type="submit"], .more-link, .pagination a:hover, .pagination a:active, .pagination .current, .infinite-scroll #infinite-handle span:hover, .tzwb-tabbed-content .tzwb-tabnavi li a:hover, .tzwb-tabbed-content .tzwb-tabnavi li a:active, .tzwb-tabbed-content .tzwb-tabnavi li a.current-tab, .tzwb-social-icons .social-icons-menu li a, .post-slider-controls .zeeflex-direction-nav a, .scroll-to-top-button, .scroll-to-top-button:focus, .scroll-to-top-button:active { background: ' + newval + '; }';
-
-			if( isColorLight( newval ) ) {
-				text_color = '#222222';
-			} else {
-				text_color = '#ffffff';
-			}
-
-			custom_css += 'button, input[type="button"], input[type="reset"], input[type="submit"], .more-link, .more-link:link, .more-link:visited, .pagination a:hover, .pagination a:active, .pagination .current, .infinite-scroll #infinite-handle span:hover, .tzwb-tabbed-content .tzwb-tabnavi li a:hover, .tzwb-tabbed-content .tzwb-tabnavi li a:active, .tzwb-tabbed-content .tzwb-tabnavi li a.current-tab, .tzwb-social-icons .social-icons-menu li a, .post-slider-controls .zeeflex-direction-nav a, .scroll-to-top-button, .scroll-to-top-button:focus, .scroll-to-top-button:active { color: ' + text_color + '; }';
-			custom_css += 'button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, button:focus, input[type="button"]:focus, input[type="reset"]:focus, input[type="submit"]:focus, button:active, input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:active, .more-link:hover, .more-link:active, .infinite-scroll #infinite-handle span, .tzwb-social-icons .social-icons-menu li a:hover, .post-slider-controls .zeeflex-direction-nav a:hover, .scroll-to-top-button:hover { color: #ffffff; }';
-
-			addColorStyles( custom_css, 1 );
-
-			custom_css = '.pagination a:hover, .pagination a:active, .tzwb-tabbed-content .tzwb-tabnavi li a:hover, .tzwb-tabbed-content .tzwb-tabnavi li a:active, .tzwb-tabbed-content .tzwb-tabnavi li a.current-tab { color: ' + text_color + '; background: ' + newval + '; }';
-
-			addColorStyles( custom_css, 3 );
-
-			$( '.has-primary-color' ).css( 'color', newval );
-			$( '.has-primary-background-color' ).css( 'background-color', newval );
-		} );
-	} );
-
 	/* Page Background Color Option */
 	wp.customize( 'maxwell_theme_options[page_bg_color]', function( value ) {
 		value.bind( function( newval ) {
-			var custom_css, text_color, hover_color, accent_color, focus_color, border_color, slider_color, bg_color;
-
-			custom_css = '.site, .header-bar, .header-search .header-search-form { background: ' + newval + '; }';
+			var text_color, medium_text_color, light_text_color, dark_border_color, medium_border_color, light_border_color;
 
 			if( isColorDark( newval ) ) {
-				text_color = '#ffffff';
-				hover_color = 'rgba(255,255,255,0.5)';
-				accent_color = 'rgba(255,255,255,0.75)';
-				focus_color = 'rgba(255,255,255,0.25)';
-				border_color = 'rgba(255,255,255,0.1)';
-				slider_color = 'rgba(255,255,255,0.035)';
-				bg_color = '#222222';
+				text_color = '#fff';
+				medium_text_color = 'rgba(255,255,255,0.75)';
+				light_text_color = 'rgba(255,255,255,0.5)';
+				dark_border_color = '#fff';
+				medium_border_color = 'rgba(255,255,255,0.25)';
+				light_border_color = 'rgba(255,255,255,0.15)';
+
 			} else {
-				text_color = '#222222';
-				hover_color = 'rgba(0,0,0,0.5)';
-				accent_color = 'rgba(0,0,0,0.75)';
-				focus_color = 'rgba(0,0,0,0.25)';
-				border_color = 'rgba(0,0,0,0.1)';
-				slider_color = 'rgba(0,0,0,0.035)';
-				bg_color = '#ffffff';
+				text_color = '#303030';
+				medium_text_color = 'rgba(0, 0, 0, 0.75)';
+				light_text_color = 'rgba(0, 0, 0, 0.5)';
+				dark_border_color = '#303030';
+				medium_border_color = 'rgba(0, 0, 0, 0.25)';
+				light_border_color = 'rgba(0, 0, 0, 0.15)';
 			}
 
-			custom_css += 'body, input, select, textarea, a:hover, a:focus, a:active, .primary-menu-toggle, .secondary-menu-toggle, .primary-menu-toggle:focus, .secondary-menu-toggle:focus, .post-navigation .nav-links .nav-link-text, .header-bar .social-icons-menu li a, .header-search .header-search-icon, .header-search .header-search-form .header-search-close, .footer-navigation-menu a:link, .footer-navigation-menu a:visited { color: ' + text_color + '; }';
-			custom_css += '.primary-menu-toggle .icon, .secondary-menu-toggle .icon, .top-navigation > ul > .menu-item-has-children > a > .icon, .main-navigation > ul > .menu-item-has-children > a > .icon { fill: ' + text_color + '; }';
-			custom_css += '.primary-menu-toggle:hover, .primary-menu-toggle:active, .secondary-menu-toggle:hover, .secondary-menu-toggle:active, .entry-meta, .entry-meta a:link, .entry-meta a:visited, .widget_tag_cloud .tagcloud a:link, .widget_tag_cloud .tagcloud a:visited, .entry-tags .meta-tags a:link, .entry-tags .meta-tags a:visited, .post-navigation .nav-links a:hover .nav-link-text, .top-navigation ul a:hover, .top-navigation ul a:active, .header-bar .social-icons-menu li a:hover, .header-search .header-search-icon:hover, .header-search .header-search-icon:active, .header-search .header-search-form .header-search-close:hover, .footer-navigation-menu a:hover, .footer-navigation-menu a:active { color: ' + hover_color + '; }';
-			custom_css += '.primary-menu-toggle:hover .icon, .primary-menu-toggle:active .icon, .secondary-menu-toggle:hover .icon, .secondary-menu-toggle:active .icon, .top-navigation > ul > .menu-item-has-children > a:hover > .icon, .main-navigation > ul > .menu-item-has-children > a:hover > .icon { fill: ' + hover_color + '; }';
-			custom_css += 'input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], textarea, .entry-meta a:hover, .entry-meta a:active { color: ' + accent_color + '; }';
-			custom_css += 'input[type="text"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="search"]:focus, textarea:focus { color: ' + text_color + '; border: 1px solid ' + focus_color + '; }';
-			custom_css += 'pre, th, td, input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], textarea, .primary-navigation-wrap, .widget_tag_cloud .tagcloud a, .entry-tags .meta-tags a, .post-navigation, .comment, .footer-wrap, .header-bar, .header-search .header-search-form, .entry-author, .footer-widgets-wrap, .footer-navigation { border-color: ' + border_color + '; }';
-			custom_css += '.widget_tag_cloud .tagcloud a:hover, .widget_tag_cloud .tagcloud a:active, .entry-tags .meta-tags a:hover, .entry-tags .meta-tags a:active { border-color: ' + hover_color + '; color: ' + text_color + '; }';
-			custom_css += '.post-slider-wrap { background: ' + slider_color + '; }';
-			custom_css += 'button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, button:focus, input[type="button"]:focus, input[type="reset"]:focus, input[type="submit"]:focus, button:active, input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:active, .more-link:hover, .more-link:active, .pagination a, .pagination a:link, .pagination a:visited, .infinite-scroll #infinite-handle span, .tzwb-tabbed-content .tzwb-tabnavi li a:link, .tzwb-tabbed-content .tzwb-tabnavi li a:visited, .tzwb-social-icons .social-icons-menu li a:hover, .tzwb-social-icons .social-icons-menu li a:active, .post-slider-controls .zeeflex-direction-nav a:hover, .scroll-to-top-button:hover { color: ' + bg_color + '; background: ' + text_color + '; }';
-			custom_css += '@media only screen and (min-width: 60.001em) { .top-navigation > ul > li > a:link, .top-navigation > ul > li > a:visited, .main-navigation > ul > li > a:link, .main-navigation > ul > li > a:visited { color: ' + text_color + '; } }';
-			custom_css += '@media only screen and (min-width: 60.001em) { .top-navigation > ul > li > a:hover, .top-navigation > ul > li > a:active, .main-navigation > ul > li > a:hover, .main-navigation > ul > li > a:active { color: ' + hover_color + '; } }';
+			document.documentElement.style.setProperty( '--page-background-color', newval );
+			document.documentElement.style.setProperty( '--header-bar-background-color', newval );
 
-			addColorStyles( custom_css, 2 );
+			document.documentElement.style.setProperty( '--text-color', text_color );
+			document.documentElement.style.setProperty( '--medium-text-color', medium_text_color );
+			document.documentElement.style.setProperty( '--light-text-color', light_text_color );
+			document.documentElement.style.setProperty( '--dark-border-color', dark_border_color );
+			document.documentElement.style.setProperty( '--medium-border-color', medium_border_color );
+			document.documentElement.style.setProperty( '--light-border-color', light_border_color );
+
+			document.documentElement.style.setProperty( '--header-bar-text-color', text_color );
+			document.documentElement.style.setProperty( '--header-bar-text-hover-color', light_text_color );
+			document.documentElement.style.setProperty( '--header-bar-border-color', light_border_color );
+
+			document.documentElement.style.setProperty( '--navi-color', text_color );
+			document.documentElement.style.setProperty( '--navi-hover-color', light_text_color );
+			document.documentElement.style.setProperty( '--link-hover-color', text_color );
+
+			document.documentElement.style.setProperty( '--footer-text-color', text_color );
+			document.documentElement.style.setProperty( '--footer-text-hover-color', light_text_color );
+			document.documentElement.style.setProperty( '--footer-border-color', light_border_color );
+		} );
+	} );
+
+	/* Link & Button Color Option */
+	wp.customize( 'maxwell_theme_options[link_color]', function( value ) {
+		value.bind( function( newval ) {
+			var text_color;
+
+			if( isColorLight( newval ) ) {
+				text_color = '#111';
+			} else {
+				text_color = '#fff';
+			}
+
+			document.documentElement.style.setProperty( '--link-color', newval );
+			document.documentElement.style.setProperty( '--button-color', newval );
+			document.documentElement.style.setProperty( '--button-text-color', text_color );
 		} );
 	} );
 
 	/* Top Navigation Color Option */
 	wp.customize( 'maxwell_theme_options[top_navi_color]', function( value ) {
 		value.bind( function( newval ) {
-			var custom_css, text_color, border_color;
-
-			custom_css = '@media only screen and (min-width: 60.001em) { .top-navigation ul ul { background: ' + newval + '; } }';
-			custom_css += '@media only screen and (max-width: 60em) { .top-navigation ul, .top-navigation ul ul { background: ' + newval + '; } }';
+			var text_color, hover_color, border_color;
 
 			if( isColorLight( newval ) ) {
-				text_color = '#222222';
-				border_color = 'rgba(0,0,0,0.1)';
+				text_color = '#111';
+				hover_color = 'rgba(0, 0, 0, 0.1)';
+				border_color = 'rgba(0, 0, 0, 0.1)';
 			} else {
-				text_color = '#ffffff';
-				border_color = 'rgba(255,255,255,0.1)';
+				text_color = '#fff';
+				hover_color = 'rgba(255, 255, 255, 0.1)';
+				border_color = 'rgba(255, 255, 255, 0.1)';
 			}
 
-			custom_css += '.top-navigation ul a, .top-navigation ul ul, .top-navigation ul ul li a { border-color: ' + border_color + '; }';
-			custom_css += '.top-navigation ul ul a:link, .top-navigation ul ul a:visited { color: ' + text_color + '; }';
-			custom_css += '.top-navigation ul .dropdown-toggle .icon, .top-navigation ul ul .menu-item-has-children > a > .icon { fill: ' + text_color + '; }';
-			custom_css += '.top-navigation ul ul a:hover, .top-navigation ul ul a:active, .top-navigation ul .dropdown-toggle:hover, .top-navigation ul .dropdown-toggle:active, .top-navigation ul ul .menu-item-has-children > a:hover, .top-navigation ul ul .menu-item-has-children > a:active { background: ' + border_color + '; }';
-
-			custom_css += '@media only screen and (max-width: 60em) { .top-navigation ul a:link, .top-navigation ul a:visited { color: ' + text_color + '; } }';
-			custom_css += '@media only screen and (max-width: 60em) { .top-navigation ul a:hover, .top-navigation ul a:active { background: ' + border_color + '; } }';
-
-			addColorStyles( custom_css, 4 );
+			document.documentElement.style.setProperty( '--top-navi-submenu-color', newval );
+			document.documentElement.style.setProperty( '--top-navi-submenu-text-color', text_color );
+			document.documentElement.style.setProperty( '--top-navi-submenu-hover-color', hover_color );
+			document.documentElement.style.setProperty( '--top-navi-submenu-border-color', border_color );
 		} );
 	} );
 
 	/* Navigation Color Option */
 	wp.customize( 'maxwell_theme_options[navi_color]', function( value ) {
 		value.bind( function( newval ) {
-			var custom_css, text_color, border_color;
-
-			custom_css = '@media only screen and (min-width: 60.001em) { .main-navigation ul ul { background: ' + newval + '; } .main-navigation ul > li.current-menu-item > a { border-color: ' + newval + '; } }';
-			custom_css += '@media only screen and (max-width: 60em) { .main-navigation ul, .main-navigation ul ul { background: ' + newval + '; } .primary-menu-toggle { border-color: ' + newval + '; } }';
+			var text_color, hover_color, border_color;
 
 			if( isColorLight( newval ) ) {
-				text_color = '#222222';
-				border_color = 'rgba(0,0,0,0.1)';
+				text_color = '#111';
+				hover_color = 'rgba(0, 0, 0, 0.1)';
+				border_color = 'rgba(0, 0, 0, 0.1)';
 			} else {
-				text_color = '#ffffff';
-				border_color = 'rgba(255,255,255,0.1)';
+				text_color = '#fff';
+				hover_color = 'rgba(255, 255, 255, 0.1)';
+				border_color = 'rgba(255, 255, 255, 0.1)';
 			}
 
-			custom_css += '.main-navigation ul ul, .main-navigation ul ul a { border-color: ' + border_color + '; }';
-			custom_css += '.main-navigation ul ul a:link, .main-navigation ul ul a:visited, .main-navigation ul .submenu-dropdown-toggle { color: ' + text_color + '; }';
-			custom_css += '.main-navigation ul ul a:hover, .main-navigation ul ul a:active, .main-navigation ul .submenu-dropdown-toggle:hover, .main-navigation ul .submenu-dropdown-toggle:active { background: ' + border_color + '; }';
-
-			custom_css += '@media only screen and (max-width: 60em) { .main-navigation ul a, .main-navigation ul > li.current-menu-item > a { border-color: ' + border_color + '; } }';
-			custom_css += '@media only screen and (max-width: 60em) { .main-navigation ul a:link, .main-navigation ul a:visited { color: ' + text_color + '; } }';
-			custom_css += '@media only screen and (max-width: 60em) { .main-navigation ul a:hover, .main-navigation ul a:active { background: ' + border_color + '; } }';
-
-			addColorStyles( custom_css, 5 );
+			document.documentElement.style.setProperty( '--navi-submenu-color', newval );
+			document.documentElement.style.setProperty( '--navi-submenu-text-color', text_color );
+			document.documentElement.style.setProperty( '--navi-submenu-hover-color', hover_color );
+			document.documentElement.style.setProperty( '--navi-submenu-border-color', border_color );
 		} );
 	} );
 
 	/* Title Color Option */
 	wp.customize( 'maxwell_theme_options[title_color]', function( value ) {
 		value.bind( function( newval ) {
-			$( '.site-title, .site-title a:link, .site-title a:visited, .page-title, .entry-title, .entry-title a:link, .entry-title a:visited' )
-				.css( 'color', newval );
+			document.documentElement.style.setProperty( '--title-color', newval );
+			document.documentElement.style.setProperty( '--site-title-color', newval );
 		} );
 	} );
 
 	/* Widget Title Color Option */
 	wp.customize( 'maxwell_theme_options[widget_title_color]', function( value ) {
 		value.bind( function( newval ) {
-			$( '.widget-title, .widget-title a:link, .widget-title a:visited, .archive-title, .comments-header .comments-title, .comment-reply-title span' )
-				.css( 'color', newval );
+			document.documentElement.style.setProperty( '--widget-title-color', newval );
 		} );
 	} );
 
@@ -330,22 +309,6 @@
 
 	function isColorDark( hexColor ) {
 		return ( getColorBrightness( hexColor ) <= 149 );
-	}
-
-	function writeColorStyles() {
-		for( var i = 1; i < 7; i++) {
-			$( 'head' ).append( '<style id="maxwell-pro-colors-' + i + '"></style>' );
-		}
-	}
-
-	function addColorStyles( colorRules, priority ) {
-
-		// Write Color Styles if they do not exist.
-		if ( ! $( '#maxwell-pro-colors-1' ).length ) {
-			writeColorStyles();
-		}
-
-		$( '#maxwell-pro-colors-' + priority ).html( colorRules );
 	}
 
 	function loadCustomFont( font, type ) {

@@ -69,7 +69,7 @@ class Maxwell_Pro_Custom_Colors {
 
 				$color_variables .= '--header-bar-text-color: #fff;';
 				$color_variables .= '--header-bar-text-hover-color: rgba(255,255,255,0.5);';
-				$color_variables .= '--header-bar-border-color: rgba(255,255,255,0.1);';
+				$color_variables .= '--header-bar-border-color: rgba(255,255,255,0.15);';
 
 				$color_variables .= '--navi-color: #fff;';
 				$color_variables .= '--navi-hover-color: rgba(255,255,255,0.5);';
@@ -78,7 +78,7 @@ class Maxwell_Pro_Custom_Colors {
 
 				$color_variables .= '--footer-text-color: #fff;';
 				$color_variables .= '--footer-text-hover-color: rgba(255,255,255,0.5);';
-				$color_variables .= '--footer-border-color: rgba(255,255,255,0.1);';
+				$color_variables .= '--footer-border-color: rgba(255,255,255,0.15);';
 			}
 		}
 
