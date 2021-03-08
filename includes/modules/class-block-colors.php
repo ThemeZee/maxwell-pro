@@ -134,7 +134,7 @@ class Maxwell_Pro_Block_Colors {
 		// Add Section for Block Colors.
 		$wp_customize->add_section( 'maxwell_pro_section_block_colors', array(
 			'title'    => esc_html__( 'Block Colors', 'maxwell-pro' ),
-			'priority' => 55,
+			'priority' => 60,
 			'panel'    => 'maxwell_options_panel',
 		) );
 

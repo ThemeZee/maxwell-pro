@@ -212,7 +212,7 @@ class Maxwell_Pro_Custom_Fonts {
 		// Add Section for Theme Fonts.
 		$wp_customize->add_section( 'maxwell_pro_section_typography', array(
 			'title'    => __( 'Typography', 'maxwell-pro' ),
-			'priority' => 70,
+			'priority' => 80,
 			'panel'    => 'maxwell_options_panel',
 		) );
 

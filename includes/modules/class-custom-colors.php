@@ -146,7 +146,7 @@ class Maxwell_Pro_Custom_Colors {
 		// Add Section for Theme Colors.
 		$wp_customize->add_section( 'maxwell_pro_section_colors', array(
 			'title'    => __( 'Theme Colors', 'maxwell-pro' ),
-			'priority' => 60,
+			'priority' => 70,
 			'panel'    => 'maxwell_options_panel',
 		) );
 
