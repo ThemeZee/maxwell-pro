@@ -66,30 +66,14 @@ class Maxwell_Pro_Custom_Colors {
 				$color_variables .= '--dark-border-color: #fff;';
 				$color_variables .= '--medium-border-color: rgba(255,255,255,0.25);';
 				$color_variables .= '--light-border-color: rgba(255,255,255,0.15);';
-
 				$color_variables .= '--header-bar-text-color: #fff;';
 				$color_variables .= '--header-bar-text-hover-color: rgba(255,255,255,0.5);';
 				$color_variables .= '--header-bar-border-color: rgba(255,255,255,0.15);';
-
 				$color_variables .= '--navi-color: #fff;';
 				$color_variables .= '--navi-hover-color: rgba(255,255,255,0.5);';
-
-				$color_variables .= '--link-hover-color: #fff;';
-
 				$color_variables .= '--footer-text-color: #fff;';
 				$color_variables .= '--footer-text-hover-color: rgba(255,255,255,0.5);';
 				$color_variables .= '--footer-border-color: rgba(255,255,255,0.15);';
-			}
-		}
-
-		// Set Link Color.
-		if ( $theme_options['link_color'] !== $default_options['link_color'] ) {
-			$color_variables .= '--link-color: ' . $theme_options['link_color'] . ';';
-			$color_variables .= '--button-color: ' . $theme_options['link_color'] . ';';
-
-			// Check if a light background color was chosen.
-			if ( self::is_color_light( $theme_options['link_color'] ) ) {
-				$color_variables .= '--button-text-color: #111;';
 			}
 		}
 
@@ -114,6 +98,36 @@ class Maxwell_Pro_Custom_Colors {
 				$color_variables .= '--navi-submenu-text-color: #111;';
 				$color_variables .= '--navi-submenu-hover-color: rgba(0, 0, 0, 0.1);';
 				$color_variables .= '--navi-submenu-border-color: rgba(0, 0, 0, 0.1);';
+			}
+		}
+
+		// Set Link Color.
+		if ( $theme_options['link_color'] !== $default_options['link_color'] ) {
+			$color_variables .= '--link-color: ' . $theme_options['link_color'] . ';';
+		}
+
+		// Set Link Hover Color.
+		if ( $theme_options['link_hover_color'] !== $default_options['link_hover_color'] ) {
+			$color_variables .= '--link-hover-color: ' . $theme_options['link_hover_color'] . ';';
+		}
+
+		// Set Button Color.
+		if ( $theme_options['button_color'] !== $default_options['button_color'] ) {
+			$color_variables .= '--button-color: ' . $theme_options['button_color'] . ';';
+
+			// Check if a light background color was chosen.
+			if ( self::is_color_light( $theme_options['button_color'] ) ) {
+				$color_variables .= '--button-text-color: #111;';
+			}
+		}
+
+		// Set Button Hover Color.
+		if ( $theme_options['button_hover_color'] !== $default_options['button_hover_color'] ) {
+			$color_variables .= '--button-hover-color: ' . $theme_options['button_hover_color'] . ';';
+
+			// Check if a light background color was chosen.
+			if ( self::is_color_light( $theme_options['button_hover_color'] ) ) {
+				$color_variables .= '--button-hover-text-color: #111;';
 			}
 		}
 
@@ -162,26 +176,10 @@ class Maxwell_Pro_Custom_Colors {
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
 			$wp_customize, 'maxwell_theme_options[page_bg_color]', array(
-				'label'    => esc_html_x( 'Page Background', 'color setting', 'maxwell-pro' ),
+				'label'    => esc_html_x( 'Page Background', 'Color Option', 'maxwell-pro' ),
 				'section'  => 'maxwell_pro_section_colors',
 				'settings' => 'maxwell_theme_options[page_bg_color]',
 				'priority' => 10,
-			)
-		) );
-
-		// Add Link and Button Color setting.
-		$wp_customize->add_setting( 'maxwell_theme_options[link_color]', array(
-			'default'           => $default_options['link_color'],
-			'type'              => 'option',
-			'transport'         => 'postMessage',
-			'sanitize_callback' => 'sanitize_hex_color',
-		) );
-		$wp_customize->add_control( new WP_Customize_Color_Control(
-			$wp_customize, 'maxwell_theme_options[link_color]', array(
-				'label'    => esc_html_x( 'Links and Buttons', 'color setting', 'maxwell-pro' ),
-				'section'  => 'maxwell_pro_section_colors',
-				'settings' => 'maxwell_theme_options[link_color]',
-				'priority' => 20,
 			)
 		) );
 
@@ -194,10 +192,10 @@ class Maxwell_Pro_Custom_Colors {
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
 			$wp_customize, 'maxwell_theme_options[top_navi_color]', array(
-				'label'    => esc_html_x( 'Top Navigation', 'color setting', 'maxwell-pro' ),
+				'label'    => esc_html_x( 'Top Navigation', 'Color Option', 'maxwell-pro' ),
 				'section'  => 'maxwell_pro_section_colors',
 				'settings' => 'maxwell_theme_options[top_navi_color]',
-				'priority' => 30,
+				'priority' => 20,
 			)
 		) );
 
@@ -210,10 +208,74 @@ class Maxwell_Pro_Custom_Colors {
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
 			$wp_customize, 'maxwell_theme_options[navi_color]', array(
-				'label'    => esc_html_x( 'Main Navigation', 'color setting', 'maxwell-pro' ),
+				'label'    => esc_html_x( 'Main Navigation', 'Color Option', 'maxwell-pro' ),
 				'section'  => 'maxwell_pro_section_colors',
 				'settings' => 'maxwell_theme_options[navi_color]',
+				'priority' => 30,
+			)
+		) );
+
+		// Add Link and Button Color setting.
+		$wp_customize->add_setting( 'maxwell_theme_options[link_color]', array(
+			'default'           => $default_options['link_color'],
+			'type'              => 'option',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_hex_color',
+		) );
+		$wp_customize->add_control( new WP_Customize_Color_Control(
+			$wp_customize, 'maxwell_theme_options[link_color]', array(
+				'label'    => esc_html_x( 'Links', 'Color Option', 'maxwell-pro' ),
+				'section'  => 'maxwell_pro_section_colors',
+				'settings' => 'maxwell_theme_options[link_color]',
 				'priority' => 40,
+			)
+		) );
+
+		// Add Link Hover Color setting.
+		$wp_customize->add_setting( 'maxwell_theme_options[link_hover_color]', array(
+			'default'           => $default_options['link_hover_color'],
+			'type'              => 'option',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_hex_color',
+		) );
+		$wp_customize->add_control( new WP_Customize_Color_Control(
+			$wp_customize, 'maxwell_theme_options[link_hover_color]', array(
+				'label'    => esc_html_x( 'Link Hover', 'Color Option', 'maxwell-pro' ),
+				'section'  => 'maxwell_pro_section_colors',
+				'settings' => 'maxwell_theme_options[link_hover_color]',
+				'priority' => 50,
+			)
+		) );
+
+		// Add Button Color setting.
+		$wp_customize->add_setting( 'maxwell_theme_options[button_color]', array(
+			'default'           => $default_options['button_color'],
+			'type'              => 'option',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_hex_color',
+		) );
+		$wp_customize->add_control( new WP_Customize_Color_Control(
+			$wp_customize, 'maxwell_theme_options[button_color]', array(
+				'label'    => esc_html_x( 'Buttons', 'Color Option', 'maxwell-pro' ),
+				'section'  => 'maxwell_pro_section_colors',
+				'settings' => 'maxwell_theme_options[button_color]',
+				'priority' => 60,
+			)
+		) );
+
+		// Add Button Hover Color setting.
+		$wp_customize->add_setting( 'maxwell_theme_options[button_hover_color]', array(
+			'default'           => $default_options['button_hover_color'],
+			'type'              => 'option',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_hex_color',
+		) );
+		$wp_customize->add_control( new WP_Customize_Color_Control(
+			$wp_customize, 'maxwell_theme_options[button_hover_color]', array(
+				'label'    => esc_html_x( 'Button Hover', 'Color Option', 'maxwell-pro' ),
+				'section'  => 'maxwell_pro_section_colors',
+				'settings' => 'maxwell_theme_options[button_hover_color]',
+				'priority' => 70,
 			)
 		) );
 
@@ -226,10 +288,10 @@ class Maxwell_Pro_Custom_Colors {
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
 			$wp_customize, 'maxwell_theme_options[title_color]', array(
-				'label'    => esc_html_x( 'Post Titles', 'color setting', 'maxwell-pro' ),
+				'label'    => esc_html_x( 'Post Titles', 'Color Option', 'maxwell-pro' ),
 				'section'  => 'maxwell_pro_section_colors',
 				'settings' => 'maxwell_theme_options[title_color]',
-				'priority' => 50,
+				'priority' => 80,
 			)
 		) );
 
@@ -242,10 +304,10 @@ class Maxwell_Pro_Custom_Colors {
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
 			$wp_customize, 'maxwell_theme_options[widget_title_color]', array(
-				'label'    => esc_html_x( 'Widget Titles', 'color setting', 'maxwell-pro' ),
+				'label'    => esc_html_x( 'Widget Titles', 'Color Option', 'maxwell-pro' ),
 				'section'  => 'maxwell_pro_section_colors',
 				'settings' => 'maxwell_theme_options[widget_title_color]',
-				'priority' => 60,
+				'priority' => 90,
 			)
 		) );
 	}
