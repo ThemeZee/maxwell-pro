@@ -76,14 +76,14 @@ class Maxwell_Pro_Header_Search {
 			<div class="header-search">
 
 				<a class="header-search-icon" aria-expanded="false" <?php self::amp_search_toggle(); ?>>
-					<span class="genericon-search"></span>
+					<?php echo self::get_svg( 'search' ); ?>
 					<span class="screen-reader-text"><?php esc_html_e( 'Search', 'maxwell-pro' ); ?></span>
 				</a>
 
 				<div class="header-search-form" <?php self::amp_search_is_toggled(); ?>>
 					<?php get_search_form(); ?>
 					<a class="header-search-close" aria-expanded="true" <?php self::amp_search_toggle(); ?>>
-						<span class="genericon-close"></span>
+						<?php echo self::get_svg( 'close' ); ?>
 					</a>
 				</div>
 
@@ -91,6 +91,17 @@ class Maxwell_Pro_Header_Search {
 
 			<?php
 		endif;
+	}
+
+	/**
+	 * Get SVG icon.
+	 *
+	 * @return void
+	 */
+	static function get_svg( $icon ) {
+		if ( function_exists( 'maxwell_get_svg' ) ) {
+			return maxwell_get_svg( $icon );
+		}
 	}
 
 	/**
