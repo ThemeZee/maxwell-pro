@@ -28,7 +28,7 @@ class Maxwell_Pro_Footer_Widgets {
 		}
 
 		// Display widgets.
-		add_action( 'maxwell_before_footer', array( __CLASS__, 'display_widgets' ) );
+		add_action( 'maxwell_before_footer', array( __CLASS__, 'display_widgets' ), 30 );
 
 	}
 
