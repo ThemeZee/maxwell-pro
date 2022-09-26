@@ -383,6 +383,7 @@
 	padding: 0.8em;
 	color: #303030;
 	color: var(--navi-color);
+	background: none;
 	z-index: 99;
 }
 
