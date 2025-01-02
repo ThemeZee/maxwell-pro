@@ -117,12 +117,12 @@
 	fill: var(--header-bar-text-hover-color);
 }
 
-.secondary-menu-toggle[aria-expanded="true"] .icon-menu,
-.secondary-menu-toggle[aria-expanded="false"] .icon-close {
+.secondary-menu-toggle[aria-expanded=true] .icon-menu,
+.secondary-menu-toggle[aria-expanded=false] .icon-close {
 	display: none;
 }
 
-.secondary-menu-toggle[aria-expanded="true"] .icon-close {
+.secondary-menu-toggle[aria-expanded=true] .icon-close {
 	display: inline-block;
 }
 
@@ -257,7 +257,6 @@
 		padding: 0;
 	}
 }
-
 @media only screen and (min-width: 60em) {
 	.secondary-menu-toggle,
 	.top-navigation .dropdown-toggle {
@@ -372,7 +371,6 @@
 		transform: rotate(-90deg);
 	}
 }
-
 /*--------------------------------------------------------------
 # Header Search
 --------------------------------------------------------------*/
@@ -474,7 +472,6 @@
 .before-header-widget-area {
 	padding-top: 3em;
 }
-
 .before-header-widget-area .widget:last-child {
 	margin-bottom: 0;
 }
@@ -488,7 +485,6 @@
 		padding-top: 2em;
 	}
 }
-
 /*--------------------------------------------------------------
 # Social Icons
 --------------------------------------------------------------*/
@@ -619,13 +615,11 @@
 		font-size: 1rem;
 	}
 }
-
 @media only screen and (max-width: 65em) {
 	.widget-magazine-posts .magazine-horizontal-box .large-post .entry-content {
 		display: none;
 	}
 }
-
 @media only screen and (max-width: 60em) {
 	.widget-magazine-posts .magazine-horizontal-box .large-post .entry-content,
 	.widget-magazine-posts .magazine-horizontal-box .large-post .more-link {
@@ -662,7 +656,6 @@
 		font-size: 1.0625rem;
 	}
 }
-
 @media only screen and (max-width: 50em) {
 	.widget-magazine-posts .magazine-horizontal-box .large-post .more-link {
 		display: none;
@@ -682,13 +675,11 @@
 		font-size: 1rem;
 	}
 }
-
 @media only screen and (max-width: 45em) {
 	.widget-magazine-posts .magazine-horizontal-box .large-post .entry-content {
 		display: none;
 	}
 }
-
 @media only screen and (max-width: 40em) {
 	.widget-magazine-posts .magazine-horizontal-box .large-post .wp-post-image,
 	.widget-magazine-posts .magazine-horizontal-box .large-post .post-content,
@@ -729,7 +720,6 @@
 		font-size: 1.0625rem;
 	}
 }
-
 @media only screen and (max-width: 30em) {
 	.widget-magazine-posts-list .type-post .entry-title,
 	.widget-magazine-posts-sidebar .type-post .entry-title {
@@ -737,7 +727,6 @@
 		font-size: 1.5rem;
 	}
 }
-
 @media only screen and (max-width: 20em) {
 	.widget-magazine-posts-list .type-post .entry-title,
 	.widget-magazine-posts-sidebar .type-post .entry-title {
@@ -745,7 +734,6 @@
 		font-size: 1.25rem;
 	}
 }
-
 /*--------------------------------------------------------------
 # Author Bio
 --------------------------------------------------------------*/
@@ -814,7 +802,6 @@
 		display: block;
 	}
 }
-
 /*--------------------------------------------------------------
 # Footer Widgets
 --------------------------------------------------------------*/
@@ -840,7 +827,7 @@
 	display: flex;
 	box-sizing: border-box;
 	padding-right: 3em;
-	width: 33.333333333333%;
+	width: 33.3333333333%;
 }
 
 .footer-widget-column .widget {
@@ -860,7 +847,6 @@
 		padding: 2em 0;
 	}
 }
-
 /* Footer Columns Fixes for IE 10 and IE 11 */
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
 	.footer-widgets-columns {
@@ -872,7 +858,6 @@
 		float: left;
 	}
 }
-
 @media only screen and (max-width: 60em) {
 	.footer-widgets-columns {
 		margin-right: 0;
@@ -893,7 +878,6 @@
 		margin: 0 0 2em;
 	}
 }
-
 @media only screen and (max-width: 35em) {
 	.footer-widgets {
 		margin-right: 0;
@@ -905,7 +889,6 @@
 		width: 100%;
 	}
 }
-
 @media only screen and (max-width: 30em) {
 	.footer-widgets-background {
 		padding: 1.5em 0 0;
@@ -923,7 +906,6 @@
 		margin: 0 0 1.5em;
 	}
 }
-
 /*--------------------------------------------------------------
 # Footer Menu
 --------------------------------------------------------------*/
@@ -983,7 +965,6 @@
 		display: inline-block;
 	}
 }
-
 @media only screen and (max-width: 40em) {
 	.footer-navigation {
 		padding-bottom: 2em;
@@ -1001,7 +982,6 @@
 		padding: 0.4em 0;
 	}
 }
-
 /*--------------------------------------------------------------
 # Scroll to Top Button
 --------------------------------------------------------------*/

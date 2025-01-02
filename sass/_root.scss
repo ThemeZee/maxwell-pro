@@ -1,10 +1,13 @@
+@use "_mixins";
+@use "_variables";
+
 :root {
-	@include variable(--header-bar-background-color, $themeColors);
-	@include variable(--header-bar-text-color, $themeColors);
-	@include variable(--header-bar-text-hover-color, $themeColors);
-	@include variable(--header-bar-border-color, $themeColors);
-	@include variable(--top-navi-submenu-color, $themeColors);
-	@include variable(--top-navi-submenu-text-color, $themeColors);
-	@include variable(--top-navi-submenu-hover-color, $themeColors);
-	@include variable(--top-navi-submenu-border-color, $themeColors);
+	@include mixins.variable(--header-bar-background-color, variables.$themeColors);
+	@include mixins.variable(--header-bar-text-color, variables.$themeColors);
+	@include mixins.variable(--header-bar-text-hover-color, variables.$themeColors);
+	@include mixins.variable(--header-bar-border-color, variables.$themeColors);
+	@include mixins.variable(--top-navi-submenu-color, variables.$themeColors);
+	@include mixins.variable(--top-navi-submenu-text-color, variables.$themeColors);
+	@include mixins.variable(--top-navi-submenu-hover-color, variables.$themeColors);
+	@include mixins.variable(--top-navi-submenu-border-color, variables.$themeColors);
 }

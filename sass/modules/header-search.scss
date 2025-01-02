@@ -1,9 +1,11 @@
+@use "../_mixins";
+
 .header-search .header-search-icon {
 	position: absolute;
 	right: 0;
 	display: inline-block;
 	padding: 0.8em;
-	@include color(--navi-color);
+	@include mixins.color(--navi-color);
 	background: none;
 	z-index: 99;
 }
@@ -11,7 +13,7 @@
 .header-search .header-search-icon:hover,
 .header-search .header-search-icon:active {
 	cursor: pointer;
-	@include color(--navi-hover-color);
+	@include mixins.color(--navi-hover-color);
 }
 
 .header-search .header-search-icon:focus {
@@ -36,10 +38,10 @@
 	padding: 0;
 	z-index: 99;
 	border-top: 1px solid;
-	@include border-color(--light-border-color);
+	@include mixins.border-color(--light-border-color);
 	width: 100%;
 	box-sizing: border-box;
-	@include background(--page-background-color);
+	@include mixins.background(--page-background-color);
 }
 
 .header-search .header-search-form.toggled-on {
@@ -67,12 +69,12 @@
 .header-search .header-search-form .header-search-close {
 	float: right;
 	padding: 0.75em;
-	@include color(--navi-color);
+	@include mixins.color(--navi-color);
 }
 
 .header-search .header-search-form .header-search-close:hover {
 	cursor: pointer;
-	@include color(--navi-hover-color);
+	@include mixins.color(--navi-hover-color);
 }
 
 .header-search .header-search-form .header-search-close .icon-close {
